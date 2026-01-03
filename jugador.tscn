@@ -1,0 +1,155 @@
+[gd_scene load_steps=19 format=3 uid="uid://bwpfe8dlfwebt"]
+
+[ext_resource type="Script" uid="uid://dsne8jewx2idg" path="res://character_body_3d.gd" id="1_buwlj"]
+[ext_resource type="Shader" uid="uid://cw5knwb2l2dm" path="res://jugador.gdshader" id="2_7st5j"]
+[ext_resource type="Script" uid="uid://mv50p8m773sp" path="res://rayo_interaccion.gd" id="2_omvyu"]
+[ext_resource type="Script" uid="uid://d4apnaahjrlr6" path="res://sway.gd" id="3_btb33"]
+[ext_resource type="FontFile" uid="uid://brt7cqfkuxxnd" path="res://Fuentes_de_letra/Fira_Code/FiraCode-Light.ttf" id="3_ukil5"]
+[ext_resource type="PackedScene" uid="uid://drhcvw4x6d7og" path="res://doble_cañon.tscn" id="4_btb33"]
+[ext_resource type="Texture2D" uid="uid://cmqleoieo1a6i" path="res://texturas/puntero_2.png" id="7_btb33"]
+[ext_resource type="PackedScene" uid="uid://7j63vnb5aps4" path="res://barra_salud.tscn" id="8_qw2bf"]
+[ext_resource type="Texture2D" uid="uid://bltbold0sk62j" path="res://sprites/estado_vida.png" id="9_g5h5a"]
+[ext_resource type="FontFile" uid="uid://censi8hyd7ld8" path="res://Fuentes_de_letra/SmackAttack/smackattackbb_bld.ttf" id="11_hcpjn"]
+[ext_resource type="Texture2D" uid="uid://m8fb3herhnw8" path="res://sprites/icono_municion.png" id="12_xwd11"]
+[ext_resource type="AudioStream" uid="uid://chqt87c0gbqps" path="res://audio/Muerte_prota.mp3" id="13_bpxwk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o2m60"]
+render_priority = 0
+shader = ExtResource("2_7st5j")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ukil5"]
+material = SubResource("ShaderMaterial_o2m60")
+flip_faces = true
+top_radius = 0.3
+bottom_radius = 0.3
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r7xtl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hir5a"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_cs4bw"]
+material = SubResource("StandardMaterial3D_hir5a")
+
+[sub_resource type="LabelSettings" id="LabelSettings_xwd11"]
+font_size = 32
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Jugador" type="CharacterBody3D" groups=["jugador"]]
+script = ExtResource("1_buwlj")
+velocidad = 5.0
+fuerza_salto = 5.0
+
+[node name="cabeza" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.69844, 0)
+
+[node name="Camera3D" type="Camera3D" parent="cabeza"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.808, 0)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="cabeza/Camera3D"]
+transform = Transform3D(1.4, 0, 0, 0, 1, 0, 0, 0, 1.4, 0, -0.62966, 0)
+mesh = SubResource("CylinderMesh_ukil5")
+
+[node name="sway" type="Node3D" parent="cabeza"]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0.320356, -0.551845, 0.280335)
+script = ExtResource("3_btb33")
+
+[node name="doble cañon" parent="cabeza/sway" instance=ExtResource("4_btb33")]
+transform = Transform3D(0.698398, -0.00159667, 0.0473133, 0.00420474, 0.698929, -0.03848, -0.0471532, 0.0386761, 0.697338, 0.242552, 0.153228, -0.919445)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15066, 0)
+shape = SubResource("CapsuleShape3D_r7xtl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("CapsuleMesh_cs4bw")
+skeleton = NodePath("../..")
+
+[node name="rayo_interaccion" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.72684, -0.474818)
+target_position = Vector3(0, -2, 0)
+script = ExtResource("2_omvyu")
+
+[node name="Label" type="Label" parent="rayo_interaccion"]
+texture_filter = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -207.0
+offset_top = -120.0
+offset_right = 207.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_ukil5")
+theme_override_font_sizes/font_size = 32
+text = "Texto_interaccion [E]"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 0.493
+anchor_top = 0.488
+anchor_right = 0.507
+anchor_bottom = 0.512
+offset_left = 7.06396
+offset_top = 6.77597
+offset_right = -7.06403
+offset_bottom = -6.776
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = ExtResource("7_btb33")
+
+[node name="Barra_Salud" parent="." instance=ExtResource("8_qw2bf")]
+anchor_left = 0.062
+anchor_top = 0.938
+anchor_right = 0.323
+anchor_bottom = 0.951
+offset_left = -0.424004
+offset_top = 0.175964
+offset_right = -0.0960083
+offset_bottom = -0.248047
+grow_horizontal = 1
+grow_vertical = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Barra_Salud"]
+position = Vector2(-37.5, 6.5)
+scale = Vector2(1.84375, 1.84375)
+texture = ExtResource("9_g5h5a")
+hframes = 6
+
+[node name="quejidos" type="AudioStreamPlayer3D" parent="."]
+
+[node name="Timer_quejidos" type="Timer" parent="."]
+
+[node name="muerte" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("13_bpxwk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Municion" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.866319
+anchor_top = 0.91358
+anchor_right = 0.935764
+anchor_bottom = 0.972222
+theme_override_fonts/font = ExtResource("11_hcpjn")
+label_settings = SubResource("LabelSettings_xwd11")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="icono" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.935764
+anchor_top = 0.873457
+anchor_right = 0.993056
+anchor_bottom = 0.987654
+texture = ExtResource("12_xwd11")
+metadata/_edit_use_anchors_ = true

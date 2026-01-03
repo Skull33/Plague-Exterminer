@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cdgjjik4mugky"
+path="res://.godot/imported/Consumir Botiquin.mp3-0d62c9cfa274c1826b9fb522da73d228.mp3str"
+
+[deps]
+
+source_file="res://audio/Consumir Botiquin.mp3"
+dest_files=["res://.godot/imported/Consumir Botiquin.mp3-0d62c9cfa274c1826b9fb522da73d228.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

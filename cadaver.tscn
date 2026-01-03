@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbqlubv1gks4s"]
+
+[ext_resource type="Texture2D" uid="uid://jkuvyglpeak2" path="res://Enemigos/rata_mutante1.png" id="1_4gbp1"]
+
+[node name="cadaver" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 2
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("1_4gbp1")
+hframes = 4
+vframes = 4
+frame = 15

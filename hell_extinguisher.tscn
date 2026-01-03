@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=3 uid="uid://dsjxht30lg2gw"]
+
+[ext_resource type="PackedScene" uid="uid://cinytxxeyf4hn" path="res://vehiculos/hell_extinguisher.blend" id="1_yippa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yippa"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o8k41"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x38j5"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xg2ng"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k66fn"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aq341"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w371h"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o8k41"]
+size = Vector3(2.02374, 1.91174, 4.60342)
+
+[node name="hell_extinguisher" instance=ExtResource("1_yippa")]
+
+[node name="Cube_002" parent="." index="0"]
+surface_material_override/1 = SubResource("StandardMaterial3D_yippa")
+
+[node name="Cylinder" parent="." index="1"]
+surface_material_override/1 = SubResource("StandardMaterial3D_o8k41")
+
+[node name="Cylinder_001" parent="." index="2"]
+surface_material_override/1 = SubResource("StandardMaterial3D_x38j5")
+
+[node name="Cylinder_002" parent="." index="3"]
+surface_material_override/1 = SubResource("StandardMaterial3D_xg2ng")
+
+[node name="Cylinder_003" parent="." index="4"]
+surface_material_override/1 = SubResource("StandardMaterial3D_k66fn")
+
+[node name="Cube" parent="." index="5"]
+surface_material_override/1 = SubResource("StandardMaterial3D_aq341")
+
+[node name="Cube_001" parent="." index="6"]
+surface_material_override/1 = SubResource("StandardMaterial3D_w371h")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0139462, 0.048645, 0.12355)
+shape = SubResource("BoxShape3D_o8k41")

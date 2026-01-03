@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dml7g0ctktqc2"]
+
+[ext_resource type="PackedScene" uid="uid://cn7elmkusxanu" path="res://Elementos de escena/pastillas.blend" id="1_sw777"]
+[ext_resource type="Script" uid="uid://djw4wc3tgnblo" path="res://Objeto_curacion.gd" id="2_osg6v"]
+[ext_resource type="AudioStream" uid="uid://div2tjwyyxkfb" path="res://audio/tomar_pastillas.mp3" id="3_anki3"]
+
+[node name="pastillas" instance=ExtResource("1_sw777")]
+
+[node name="Cylinder" parent="." index="0"]
+transform = Transform3D(0.0276263, 0, 0, 0, 0.0276263, 0, 0, 0, 0.0276263, 0, -0.0543957, 0)
+
+[node name="StaticBody3D" parent="Cylinder" index="0"]
+script = ExtResource("2_osg6v")
+puntos_de_salud = 5
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Cylinder/StaticBody3D" index="1"]
+transform = Transform3D(36.1974, 0, 0, 0, 36.1974, 0, 0, 0, 36.1974, 0, 1.96898, 0)
+stream = ExtResource("3_anki3")
+
+[node name="Cylinder_001" parent="." index="1"]
+transform = Transform3D(0.0329238, 0, 0, 0, 0.00871291, 0, 0, 0, 0.0329238, 0, 0.0531811, 0)

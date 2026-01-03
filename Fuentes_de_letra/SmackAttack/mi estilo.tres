@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=9 format=3 uid="uid://bsknym7nd0i0e"]
+
+[ext_resource type="PackedScene" uid="uid://syki6k0e6aac" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_TextBubble/text_bubble_base.tscn" id="1_2apxr"]
+[ext_resource type="Script" uid="uid://bwg6yncmh2cml" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_mhe3f"]
+[ext_resource type="Script" uid="uid://dv08k6ljua6fm" path="res://addons/dialogic/Resources/dialogic_style.gd" id="2_h7b7q"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="4_q5ujf"]
+[ext_resource type="PackedScene" uid="uid://d2it0xiap3gnt" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Textbubble/text_bubble_layer.tscn" id="4_y64tv"]
+
+[sub_resource type="Resource" id="Resource_62nqn"]
+script = ExtResource("1_mhe3f")
+scene = ExtResource("1_2apxr")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_gsqyj"]
+script = ExtResource("1_mhe3f")
+scene = ExtResource("4_q5ujf")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_2yb3y"]
+script = ExtResource("1_mhe3f")
+scene = ExtResource("4_y64tv")
+overrides = {
+"bold_font": "\"res://Fuentes_de_letra/SmackAttack/smackattackbb_bld.ttf\"",
+"bold_italic_font": "\"res://Fuentes_de_letra/SmackAttack/smackattackbb_bld.ttf\"",
+"choices_text_color_focus": "Color(1, 0, 0, 1)",
+"choices_text_color_hover": "Color(0.246094, 0.246094, 0.246094, 1)",
+"choices_text_size": "32.0",
+"italic_font": "\"res://Fuentes_de_letra/SmackAttack/smackattackbb_bld.ttf\"",
+"name_label_box_modulate": "Color(0.589844, 0.589844, 0.589844, 1)",
+"name_label_font": "\"res://Fuentes_de_letra/SmackAttack/smackattackbb_reg.ttf\"",
+"name_label_font_size": "32.0",
+"normal_font": "\"res://Fuentes_de_letra/SmackAttack/smackattackbb_bld.ttf\"",
+"text_size": "32.0"
+}
+
+[resource]
+script = ExtResource("2_h7b7q")
+name = "mi estilo"
+layer_list = Array[String](["10", "11"])
+layer_info = {
+"": SubResource("Resource_62nqn"),
+"10": SubResource("Resource_gsqyj"),
+"11": SubResource("Resource_2yb3y")
+}
+base_overrides = {}
+layers = Array[ExtResource("1_mhe3f")]([])
+metadata/_latest_layer = "11"

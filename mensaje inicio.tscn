@@ -1,0 +1,114 @@
+[gd_scene load_steps=10 format=3 uid="uid://c1nsmagew6uqg"]
+
+[ext_resource type="Texture2D" uid="uid://d3u0nwujojhik" path="res://texturas/muerte.png" id="1_7mi5a"]
+[ext_resource type="Script" uid="uid://br4adp2nxbw5h" path="res://mensaje_inicio.gd" id="1_ljbcs"]
+[ext_resource type="FontFile" uid="uid://bgs2g5hiwesik" path="res://Fuentes_de_letra/SmackAttack/smackattackbb_reg.ttf" id="2_tnaib"]
+[ext_resource type="AudioStream" uid="uid://7j28n574jf4u" path="res://audio/Efecto de sonido de martillazo a un yunque.mp3" id="4_g86oo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sjcqq"]
+font_size = 32
+font_color = Color(1, 1, 1, 0)
+
+[sub_resource type="Animation" id="Animation_g86oo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect/Label:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ljbcs"]
+resource_name = "aparece"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect/Label:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fing2"]
+resource_name = "desaparece"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect/Label:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fing2"]
+_data = {
+&"RESET": SubResource("Animation_g86oo"),
+&"aparece": SubResource("Animation_ljbcs"),
+&"desaparece": SubResource("Animation_fing2")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ljbcs")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_7mi5a")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0607639
+anchor_top = 0.445216
+anchor_right = 0.939236
+anchor_bottom = 0.554784
+offset_left = 311.0
+offset_top = 11.0
+offset_right = -311.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_tnaib")
+theme_override_font_sizes/font_size = 64
+text = "La clave del exito es intentar y seguir intentando, 
+no dejes que las plagas de tu mente te exterminen
+
+                                  Una frase que nadie dijo"
+label_settings = SubResource("LabelSettings_sjcqq")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_fing2")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_g86oo")

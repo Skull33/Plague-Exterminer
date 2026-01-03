@@ -1,0 +1,95 @@
+[gd_scene load_steps=10 format=3 uid="uid://bg5bxvt2ucqab"]
+
+[ext_resource type="Shader" uid="uid://cw5knwb2l2dm" path="res://jugador.gdshader" id="1_2loul"]
+[ext_resource type="Script" uid="uid://oetipky3rboo" path="res://escena_menu.gd" id="1_xxsd6"]
+[ext_resource type="PackedScene" uid="uid://dj704ocyekoar" path="res://menu.tscn" id="2_fhyej"]
+[ext_resource type="Texture2D" uid="uid://boge8pm6uj2vw" path="res://logo/plague_exterminer_title.png" id="4_kl22l"]
+[ext_resource type="FontFile" uid="uid://b5nqddtabu8m0" path="res://Fuentes_de_letra/Sinister Sunday.otf" id="5_mem5e"]
+[ext_resource type="AudioStream" uid="uid://cbxg0qk5gsi2d" path="res://audio/shotgun shot.mp3" id="6_mem5e"]
+[ext_resource type="AudioStream" uid="uid://brvljtfqtdcbe" path="res://audio/municion.mp3" id="7_2ql7s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7st5j"]
+render_priority = 0
+shader = ExtResource("1_2loul")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xxsd6"]
+material = SubResource("ShaderMaterial_7st5j")
+flip_faces = true
+top_radius = 0.3
+bottom_radius = 0.3
+
+[node name="escena menu" type="Node3D"]
+script = ExtResource("1_xxsd6")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.859121, 0.511773, 0, -0.511773, 0.859121, 6.27554, 4.0751, -0.712377)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Camera3D"]
+transform = Transform3D(1.4, 0, 0, 0, 1.07072, -3.57628e-07, 0, -5.96046e-08, 2.53786, 0, 0.00651336, -0.348865)
+mesh = SubResource("CylinderMesh_xxsd6")
+
+[node name="Menu" parent="." instance=ExtResource("2_fhyej")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33428, 0, 0.00115979)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.296
+anchor_top = 0.12
+anchor_right = 0.719
+anchor_bottom = 0.373
+offset_left = 0.00799561
+offset_top = 0.239998
+offset_right = -0.288025
+offset_bottom = 0.29599
+texture = ExtResource("4_kl22l")
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.396
+anchor_top = 0.477
+anchor_right = 0.621
+anchor_bottom = 0.6
+offset_left = -0.192017
+offset_top = -0.0960083
+offset_right = -0.39209
+offset_bottom = 0.199982
+theme_override_colors/font_color = Color(0.617455, 0.617455, 0.617455, 1)
+theme_override_colors/font_hover_color = Color(0.419608, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_mem5e")
+theme_override_font_sizes/font_size = 64
+text = "Nueva Partida"
+flat = true
+
+[node name="Button2" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.396
+anchor_top = 0.656
+anchor_right = 0.621
+anchor_bottom = 0.779
+offset_left = -0.192017
+offset_top = -0.0880127
+offset_right = -0.39209
+offset_bottom = 0.207977
+theme_override_colors/font_color = Color(0.617455, 0.617455, 0.617455, 1)
+theme_override_colors/font_hover_color = Color(0.419608, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_mem5e")
+theme_override_font_sizes/font_size = 64
+text = "Salir"
+flat = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_mem5e")
+
+[node name="menu_mostrar" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("7_2ql7s")

@@ -1,0 +1,35 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://b5nqddtabu8m0"
+path="res://.godot/imported/Sinister Sunday.otf-c92661d8edd5af0d00c06c93082b27f7.fontdata"
+
+[deps]
+
+source_file="res://Fuentes_de_letra/Sinister Sunday.otf"
+dest_files=["res://.godot/imported/Sinister Sunday.otf-c92661d8edd5af0d00c06c93082b27f7.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+disable_embedded_bitmaps=true
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=4
+keep_rounding_remainders=true
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}

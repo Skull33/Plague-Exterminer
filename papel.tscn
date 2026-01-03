@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dx4ed2c1tiyy6"]
+
+[ext_resource type="Texture2D" uid="uid://ljsgrtkt25ac" path="res://texturas/Papers_001.png" id="1_r3jnr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r3jnr"]
+size = Vector3(1, 1, 0.0263672)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3jnr"]
+render_priority = 1
+transparency = 1
+albedo_texture = ExtResource("1_r3jnr")
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_me75w"]
+material = SubResource("StandardMaterial3D_r3jnr")
+
+[node name="papel" type="Node3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0119982)
+shape = SubResource("BoxShape3D_r3jnr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("QuadMesh_me75w")
+skeleton = NodePath("../..")

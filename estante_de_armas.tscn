@@ -1,0 +1,119 @@
+[gd_scene load_steps=10 format=3 uid="uid://xf30xgfvhcwi"]
+
+[ext_resource type="PackedScene" uid="uid://cpctlf7qdri7s" path="res://Elementos de escena/estante_de_armas.blend" id="1_pptxj"]
+[ext_resource type="Script" uid="uid://1kktyc66mwpg" path="res://puerta_general.gd" id="2_jhio7"]
+[ext_resource type="AudioStream" uid="uid://jusdg80vx1f1" path="res://audio/abrir gabeta.mp3" id="3_p7eyp"]
+
+[sub_resource type="Animation" id="Animation_jhio7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pptxj"]
+resource_name = "abrir"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.5708, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p7eyp"]
+_data = {
+&"RESET": SubResource("Animation_jhio7"),
+&"abrir": SubResource("Animation_pptxj")
+}
+
+[sub_resource type="Animation" id="Animation_f4lvj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../Cube_002:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_768hs"]
+resource_name = "abrir"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../Cube_002:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fgmwn"]
+_data = {
+&"RESET": SubResource("Animation_f4lvj"),
+&"abrir": SubResource("Animation_768hs")
+}
+
+[node name="estante_de_armas" instance=ExtResource("1_pptxj")]
+
+[node name="Cube" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Cube_001" parent="." index="1"]
+transform = Transform3D(0.421748, 0, 0, 0, 1.06221, 0, 0, 0, 0.0202593, 0.939407, 0.472289, -0.384323)
+
+[node name="StaticBody3D" parent="Cube_001" index="0" node_paths=PackedStringArray("animacion", "sonido_abrir")]
+script = ExtResource("2_jhio7")
+animacion = NodePath("AnimationPlayer")
+sonido_abrir = NodePath("AudioStreamPlayer3D")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cube_001/StaticBody3D" index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_p7eyp")
+}
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Cube_001/StaticBody3D" index="2"]
+transform = Transform3D(2.37108, 0, 0, 0, 0.941433, 0, 0, 0, 49.36, 0, 0, 0)
+stream = ExtResource("3_p7eyp")
+
+[node name="Cube_002" parent="." index="2"]
+transform = Transform3D(0.421748, 0, 0, 0, 1.06221, 0, 0, 0, 0.0202593, -0.934226, 0.463872, -0.389377)
+
+[node name="StaticBody3D" parent="Cube_002" index="0" node_paths=PackedStringArray("animacion", "sonido_abrir")]
+script = ExtResource("2_jhio7")
+animacion = NodePath("AnimationPlayer")
+sonido_abrir = NodePath("AudioStreamPlayer3D")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cube_002/StaticBody3D" index="1"]
+root_node = NodePath("../../../Cube_001/StaticBody3D/AnimationPlayer")
+libraries = {
+&"": SubResource("AnimationLibrary_fgmwn")
+}
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Cube_002/StaticBody3D" index="2"]
+transform = Transform3D(2.37108, 0, 0, 0, 0.941433, 0, 0, 0, 49.36, 0, 0, 0)
+stream = ExtResource("3_p7eyp")

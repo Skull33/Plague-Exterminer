@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd5gtf8mc2wln"]
+
+[ext_resource type="Texture2D" uid="uid://db4urxi6s8lt5" path="res://sprites/cadaver_002.png" id="1_sykn2"]
+
+[node name="cadaver_002" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 2
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("1_sykn2")

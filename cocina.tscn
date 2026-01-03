@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh6t8xnajcjr"]
+
+[ext_resource type="PackedScene" uid="uid://d3yjjw4blii17" path="res://escenarios/cocina.blend" id="1_7kuti"]
+
+[node name="cocina" instance=ExtResource("1_7kuti")]

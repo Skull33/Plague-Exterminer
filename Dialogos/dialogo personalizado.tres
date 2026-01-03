@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=9 format=3 uid="uid://dn2114mgpeqcx"]
+
+[ext_resource type="PackedScene" uid="uid://syki6k0e6aac" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_TextBubble/text_bubble_base.tscn" id="1_lrj3e"]
+[ext_resource type="Script" uid="uid://bwg6yncmh2cml" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_lojql"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="3_buhbq"]
+[ext_resource type="PackedScene" uid="uid://d2it0xiap3gnt" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Textbubble/text_bubble_layer.tscn" id="4_g8y7w"]
+[ext_resource type="Script" uid="uid://dv08k6ljua6fm" path="res://addons/dialogic/Resources/dialogic_style.gd" id="5_ybftn"]
+
+[sub_resource type="Resource" id="Resource_ctywc"]
+script = ExtResource("2_lojql")
+scene = ExtResource("1_lrj3e")
+
+[sub_resource type="Resource" id="Resource_1l2ln"]
+script = ExtResource("2_lojql")
+scene = ExtResource("3_buhbq")
+
+[sub_resource type="Resource" id="Resource_uru1b"]
+script = ExtResource("2_lojql")
+scene = ExtResource("4_g8y7w")
+overrides = {
+"bold_font": "\"res://Fuentes_de_letra/SmackAttack/smackattackbb_bld.ttf\"",
+"bold_italic_font": "\"res://Fuentes_de_letra/SmackAttack/smackattackbb_bld.ttf\"",
+"choices_text_color": "Color(0, 0.0625, 1, 1)",
+"choices_text_color_focus": "Color(0.257813, 0.257813, 0.257813, 1)",
+"choices_text_color_hover": "Color(0.545098, 0, 0, 1)",
+"choices_text_font": "\"res://Fuentes_de_letra/SmackAttack/smackattackbb_bld.ttf\"",
+"italic_font": "\"res://Fuentes_de_letra/SmackAttack/smackattackbb_bld.ttf\"",
+"name_label_box_modulate": "Color(0, 0, 0, 1)",
+"name_label_color": "Color(1, 0, 0, 1)",
+"name_label_font": "\"res://Fuentes_de_letra/SmackAttack/smackattackbb_bld.ttf\"",
+"name_label_font_size": "32.0",
+"normal_font": "\"res://Fuentes_de_letra/SmackAttack/smackattackbb_bld.ttf\"",
+"text_size": "32.0"
+}
+
+[resource]
+script = ExtResource("5_ybftn")
+name = "dialogo personalizado"
+layer_list = Array[String](["10", "11"])
+layer_info = {
+"": SubResource("Resource_ctywc"),
+"10": SubResource("Resource_1l2ln"),
+"11": SubResource("Resource_uru1b")
+}
+metadata/_latest_layer = "11"

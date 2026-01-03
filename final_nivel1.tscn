@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxkrib166j75g"]
+
+[ext_resource type="Script" uid="uid://dnwtq6ch5kk2e" path="res://final_nivel 1.gd" id="2_4vxuf"]
+[ext_resource type="Texture2D" uid="uid://yts0xm56n3u" path="res://animacionwa/plague_exterminer.png" id="2_mapq1"]
+[ext_resource type="FontFile" uid="uid://bgs2g5hiwesik" path="res://Fuentes_de_letra/SmackAttack/smackattackbb_reg.ttf" id="3_2ofia"]
+[ext_resource type="AudioStream" uid="uid://dm7fl1q3k5al4" path="res://audio/Audio final.mp3" id="4_dy5sg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wth5e"]
+font = ExtResource("3_2ofia")
+font_size = 32
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_4vxuf")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_mapq1")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Un juego hecho por Skull Studios"
+label_settings = SubResource("LabelSettings_wth5e")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -88.0
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Gracias por jugar la demo"
+label_settings = SubResource("LabelSettings_wth5e")
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_dy5sg")

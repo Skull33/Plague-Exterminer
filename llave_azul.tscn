@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5p7yftjoqfj1"]
+
+[ext_resource type="Texture2D" uid="uid://n6l17ekv128k" path="res://sprites/llave azul.png" id="1_eykk3"]
+[ext_resource type="Script" uid="uid://6fhu8d2s761j" path="res://llave_azul.gd" id="2_qy44c"]
+[ext_resource type="AudioStream" uid="uid://5w8nw5skly0t" path="res://audio/take_llave.mp3" id="3_08dhd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qy44c"]
+size = Vector3(0.590849, 0.371704, 0.320435)
+
+[node name="llave azul" type="Sprite3D" groups=["Puertas_Azules"]]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+billboard = 2
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("1_eykk3")
+script = ExtResource("2_qy44c")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.32817e-05, 0.0964966, 0.0010376)
+shape = SubResource("BoxShape3D_qy44c")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_08dhd")

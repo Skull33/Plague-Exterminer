@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cehh0qmbxtxnv"]
+
+[ext_resource type="PackedScene" uid="uid://c4jcmpyhnlurx" path="res://escenarios/sillon.blend" id="1_oqk4y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oqk4y"]
+size = Vector3(2.67378, 3.71472, 2.5352)
+
+[node name="sillon" instance=ExtResource("1_oqk4y")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.123497, 1.13324, -0.0171642)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+shape = SubResource("BoxShape3D_oqk4y")

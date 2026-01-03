@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://b3e4gaouscqht"]
+
+[ext_resource type="PackedScene" uid="uid://bwpfe8dlfwebt" path="res://jugador.tscn" id="1_qo3qe"]
+[ext_resource type="PackedScene" uid="uid://be2cug272k3tt" path="res://dormitorio_viejo.tscn" id="2_54rad"]
+[ext_resource type="PackedScene" uid="uid://dhsi7kx1jcw1y" path="res://Elementos de escena/cama.blend" id="4_c4635"]
+[ext_resource type="PackedScene" uid="uid://dgibgykwt2v3o" path="res://old_tv.tscn" id="4_ecpyt"]
+[ext_resource type="PackedScene" uid="uid://bb3pagd2ldafa" path="res://rat_minion.tscn" id="5_ecpyt"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_ecpyt"]
+vertices = PackedVector3Array(-7.47408, 1.97798, -0.751133, -7.47408, 1.97798, 5.74887, 5.02592, 1.97798, 5.74887, 5.02592, 1.97798, -0.751133, -7.22408, 0.0179797, -0.501133, -7.22408, 0.0179797, 0.998867, -6.47408, 0.0179797, 0.998867, -6.47408, 0.0179797, -0.501133, -3.22408, -0.71202, 5.49887, -2.47408, -0.71202, 5.49887, -2.22408, -0.71202, 4.74887, -3.22408, -0.71202, 4.24887, 2.02592, -0.71202, 4.24887, 3.02592, -0.71202, 4.24887, 3.02592, -0.71202, 3.24887, 1.77592, -0.71202, 2.99887, 0.0259218, -0.71202, 4.74887, 0.275922, -0.71202, 5.49887, 1.77592, -0.71202, 5.49887, -3.47408, -0.71202, 3.24887, -4.47408, -0.71202, 2.99887, -4.22408, -0.71202, 3.99887, 3.27592, -0.71202, 5.49887, 4.77592, -0.71202, 5.49887, 4.77592, -0.71202, -0.501133, 3.27592, -0.71202, -0.501133, -4.47408, -0.71202, -0.501133, -5.47408, -0.71202, -0.501133, -5.72408, -0.71202, 1.99887, 1.77592, -0.71202, -0.501133, -3.22408, -0.71202, -0.501133, -7.22408, -0.71202, 1.99887, -7.22408, -0.71202, 5.49887, -4.47408, -0.71202, 5.49887)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(7, 6, 4), PackedInt32Array(4, 6, 5), PackedInt32Array(9, 8, 10), PackedInt32Array(10, 8, 11), PackedInt32Array(13, 12, 14), PackedInt32Array(14, 12, 15), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 12), PackedInt32Array(12, 16, 15), PackedInt32Array(11, 21, 19), PackedInt32Array(19, 21, 20), PackedInt32Array(13, 14, 22), PackedInt32Array(22, 14, 23), PackedInt32Array(23, 14, 25), PackedInt32Array(23, 25, 24), PackedInt32Array(27, 26, 28), PackedInt32Array(28, 26, 20), PackedInt32Array(11, 19, 16), PackedInt32Array(16, 19, 15), PackedInt32Array(15, 19, 30), PackedInt32Array(15, 30, 29), PackedInt32Array(21, 33, 20), PackedInt32Array(20, 33, 28), PackedInt32Array(28, 33, 31), PackedInt32Array(31, 33, 32), PackedInt32Array(16, 10, 11)]
+cell_height = 0.01
+
+[node name="Cuarto_prota" type="Node3D"]
+
+[node name="Jugador" parent="." instance=ExtResource("1_qo3qe")]
+transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 0.381503, -0.884478, 2.4171)
+
+[node name="rata" parent="." instance=ExtResource("5_ecpyt")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.09935, 0.290357, 3.76828)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_ecpyt")
+
+[node name="Dormitorio_viejo2" parent="NavigationRegion3D" instance=ExtResource("2_54rad")]
+transform = Transform3D(0.8, 0, 0, 0, 0.9, 0, 0, 0, 1, 0.759835, -0.0020203, 2.51887)
+
+[node name="tv" parent="NavigationRegion3D" instance=ExtResource("4_ecpyt")]
+transform = Transform3D(-2.62268e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.62268e-08, -1.11346, -0.359911, 5.71577)
+
+[node name="cama" parent="NavigationRegion3D" instance=ExtResource("4_c4635")]
+physics_interpolation_mode = 1
+transform = Transform3D(-0.8, 0, -9.05975e-08, 0, 0.8, 0, 1.20797e-07, 0, -0.6, -6.62359, -0.414362, 0.245954)

@@ -1,0 +1,122 @@
+[gd_scene load_steps=8 format=3 uid="uid://bh1xsdbpc17pi"]
+
+[ext_resource type="Texture2D" uid="uid://d3u0nwujojhik" path="res://texturas/muerte.png" id="1_7dyh8"]
+[ext_resource type="Script" uid="uid://b7xxjxkmbdkoa" path="res://escena_de_muerte.gd" id="1_ws0ss"]
+[ext_resource type="FontFile" uid="uid://b5nqddtabu8m0" path="res://Fuentes_de_letra/Sinister Sunday.otf" id="3_u7sv4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7dyh8"]
+font = ExtResource("3_u7sv4")
+font_size = 128
+font_color = Color(1, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_u7sv4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect/Label:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ws0ss"]
+resource_name = "texto"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect/Label:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 0), Color(1, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_edwq2"]
+_data = {
+&"RESET": SubResource("Animation_u7sv4"),
+&"texto": SubResource("Animation_ws0ss")
+}
+
+[node name="death" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ws0ss")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_7dyh8")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.389661
+anchor_right = 1.0
+anchor_bottom = 0.61034
+offset_top = -1.52588e-05
+grow_horizontal = 2
+grow_vertical = 2
+text = "Has Muerto"
+label_settings = SubResource("LabelSettings_7dyh8")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_edwq2")
+}
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.409
+anchor_top = 0.617
+anchor_right = 0.591
+anchor_bottom = 0.741
+offset_left = 100.832
+offset_top = 36.184
+offset_right = -100.832
+offset_bottom = -36.168
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_u7sv4")
+theme_override_font_sizes/font_size = 64
+text = "Reintentar"
+flat = true
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.411458
+anchor_top = 0.753086
+anchor_right = 0.592882
+anchor_bottom = 0.876543
+offset_top = -3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_u7sv4")
+theme_override_font_sizes/font_size = 64
+text = "Salir al menu"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]

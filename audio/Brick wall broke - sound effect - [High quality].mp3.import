@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d38hbdeu2l47r"
+path="res://.godot/imported/Brick wall broke - sound effect - [High quality].mp3-99338708154877edcae77057cff35d28.mp3str"
+
+[deps]
+
+source_file="res://audio/Brick wall broke - sound effect - [High quality].mp3"
+dest_files=["res://.godot/imported/Brick wall broke - sound effect - [High quality].mp3-99338708154877edcae77057cff35d28.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

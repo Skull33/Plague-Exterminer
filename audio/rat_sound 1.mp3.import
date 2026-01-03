@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cfkji50a8hmld"
+path="res://.godot/imported/rat_sound 1.mp3-769974c9876caa9d71e4bc4c1bce2782.mp3str"
+
+[deps]
+
+source_file="res://audio/rat_sound 1.mp3"
+dest_files=["res://.godot/imported/rat_sound 1.mp3-769974c9876caa9d71e4bc4c1bce2782.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

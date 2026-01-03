@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://gg3mpn3ns32c"]
+
+[ext_resource type="PackedScene" uid="uid://c65pseqql5or" path="res://escenarios/botiquin pequeño.blend" id="1_s0vol"]
+[ext_resource type="Script" uid="uid://djw4wc3tgnblo" path="res://Objeto_curacion.gd" id="2_iqutg"]
+[ext_resource type="AudioStream" uid="uid://cdgjjik4mugky" path="res://audio/Consumir Botiquin.mp3" id="3_iqutg"]
+
+[node name="botiquin pequeño" instance=ExtResource("1_s0vol")]
+
+[node name="StaticBody3D" parent="Cube" index="0"]
+script = ExtResource("2_iqutg")
+puntos_de_salud = 10
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Cube/StaticBody3D" index="1"]
+transform = Transform3D(2.72596, 0, 0, 0, 0, -2.72596, 0, 2.72596, 0, 0, 0, 0)
+stream = ExtResource("3_iqutg")

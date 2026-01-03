@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b125mctwhvalq"]
+
+[ext_resource type="PackedScene" uid="uid://sdmpuxu6smt3" path="res://escenarios/refrigerador.blend" id="1_hn00y"]
+
+[node name="refrigerador" instance=ExtResource("1_hn00y")]
