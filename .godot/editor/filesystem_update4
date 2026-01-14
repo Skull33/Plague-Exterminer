@@ -1,6 +1,7 @@
-res://cuarto_prota.tscn
+res://escena_menu.tscn
 res://Dialogos/dialogo personalizado.tres
 res://clipping_shader.gdshader
 res://jugador.gdshader
 res://fuego.tres
 res://particulas_flotantes.tres
+res://escena_menu.gd

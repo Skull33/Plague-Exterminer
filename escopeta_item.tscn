@@ -175,7 +175,7 @@ _surfaces = [{
 blend_shape_mode = 0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p5dgb"]
-size = Vector3(0.405396, 0.806213, 4.78564)
+size = Vector3(0.81234753, 0.806213, 4.78564)
 
 [node name="escopeta_Item" type="Node3D"]
 
@@ -213,7 +213,7 @@ skeleton = NodePath("")
 script = ExtResource("6_i8b2b")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0132446, 0.152679, -0.269287)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014419459, 0.152679, -0.269287)
 shape = SubResource("BoxShape3D_p5dgb")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="StaticBody3D"]

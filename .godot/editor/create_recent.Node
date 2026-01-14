@@ -1,8 +1,10 @@
+AnimationPlayer
+TextEdit
+TextureRect
 OmniLight3D
 AudioStreamPlayer
 AudioStreamPlayer2D
 Label
-TextureRect
 VideoStreamPlayer
 Sprite3D
 CanvasLayer
@@ -11,5 +13,3 @@ CollisionShape3D
 StaticBody3D
 Area3D
 GPUParticles3D
-Marker3D
-AnimationPlayer

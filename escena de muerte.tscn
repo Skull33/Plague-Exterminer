@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bh1xsdbpc17pi"]
+[gd_scene load_steps=10 format=3 uid="uid://bh1xsdbpc17pi"]
 
 [ext_resource type="Texture2D" uid="uid://d3u0nwujojhik" path="res://texturas/muerte.png" id="1_7dyh8"]
 [ext_resource type="Script" uid="uid://b7xxjxkmbdkoa" path="res://escena_de_muerte.gd" id="1_ws0ss"]
@@ -44,6 +44,10 @@ _data = {
 &"RESET": SubResource("Animation_u7sv4"),
 &"texto": SubResource("Animation_ws0ss")
 }
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ws0ss"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u7sv4"]
 
 [node name="death" type="Control"]
 layout_mode = 3
@@ -98,6 +102,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_u7sv4")
 theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ws0ss")
 text = "Reintentar"
 flat = true
 
@@ -113,6 +118,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_u7sv4")
 theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_u7sv4")
 text = "Salir al menu"
 flat = true
 metadata/_edit_use_anchors_ = true

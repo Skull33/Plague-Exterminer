@@ -137,7 +137,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3102, -0.239046, -4.3767)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3979492, -0.2390461, 4.3189297)
 
 [node name="Marker3D3" type="Marker3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4593124, -0.2390461, -2.69726)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4593124, -0.2390461, -1.1097546)
 
 [node name="Marker3D4" type="Marker3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1126604, -0.2390461, 4.24498)
