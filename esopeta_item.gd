@@ -2,7 +2,7 @@ class_name Escopeta_Item
 extends StaticBody3D
 
 signal interactuado_1
-@export var mensaje = "Agarrar Escopeta"
+@export var mensaje = "Agarrar Escopeta [E]"
 @onready var sonido = $AudioStreamPlayer3D
 @onready var colision = $CollisionShape3D
 @onready var item = $".."

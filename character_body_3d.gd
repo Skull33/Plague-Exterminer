@@ -14,15 +14,7 @@ signal persigueme
 @onready var icono = $icono
 var sonar = false
 var nueva_salud
-var bala = preload("res://bala disparo.tscn")
-@onready var spawners = [
-	$"cabeza/sway/doble cañon/bulletSpawn",
-	$"cabeza/sway/doble cañon/bulletSpawn2",
-	$"cabeza/sway/doble cañon/bulletSpawn3",
-	$"cabeza/sway/doble cañon/bulletSpawn4",
-	$"cabeza/sway/doble cañon/bulletSpawn5"
-]
-@onready var shotgun_audio = $"cabeza/sway/doble cañon/disparar"
+
 @onready var escopeta = $"cabeza/sway/doble cañon"
 @onready var quejidos = $quejidos
 @onready var muerte = $muerte
@@ -50,9 +42,6 @@ var gravedad_camara = 20.0
 var tiempo_cabeceo = 0.0
 @export var cantidad_salud = 100
 var tiene_la_escopeta = false
-@export var municion_maxima = 50
-@export var municion_minima = 0
-@export var municion_actual = 0
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -70,18 +59,6 @@ func _ready():
 	municion.hide()
 	icono.hide()
 	escopeta.hide()
-
-func inicio_dialogo():
-	puede_moverse = false
-	puede_disparar = false
-	velocidad = 0.0
-	print("estas detenido")
-
-func fin_dialogo():
-	print("ya te puedes mover")
-	velocidad = 5.0
-	puede_moverse = true
-	puede_disparar = true
 
 func _physics_process(delta):
 	if estamos_vivos:
@@ -104,26 +81,11 @@ func _physics_process(delta):
 		if tiene_la_escopeta:
 				municion.show()
 				icono.show()
-				municion.text = str(municion_actual)
-				if municion_actual > municion_maxima:
-					for municiones in get_tree().get_nodes_in_group("municion"):
-						if municiones.has_signal("Aumentar_ammo"):
-							municion_actual += municiones.añadir_municion
-				if municion_actual > municion_minima:
+				municion.text = str(escopeta.municion_actual)
+				if escopeta.municion_actual > 0:
 					puede_disparar = true
-				if municion_actual == municion_minima:
+				else:
 					puede_disparar = false
-				if puede_disparar:
-					if Input.is_action_just_pressed("disparar") and puede_disparar:
-						shotgun_audio.play()
-						for spawn in spawners:
-							var instanciar_bala = bala.instantiate()
-							instanciar_bala.position = spawn.global_position
-							instanciar_bala.transform.basis = spawn.global_transform.basis
-							get_tree().get_current_scene().add_child(instanciar_bala)
-						municion_actual -=1
-						if municion_actual == 0:
-							puede_disparar = false
 		
 		velocity.x = direccion.x * velocidad
 		velocity.z = direccion.z * velocidad

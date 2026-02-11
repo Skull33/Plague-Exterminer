@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtxggb0n8ie0t"]
+[gd_scene format=3 uid="uid://dtxggb0n8ie0t"]
 
 [ext_resource type="Script" uid="uid://b5e2epxhjbl4i" path="res://municion.gd" id="1_uw3h1"]
 [ext_resource type="Texture2D" uid="uid://bb1upal5k4a1k" path="res://sprites/municion.png" id="2_bhm6b"]
@@ -7,20 +7,20 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_1s1tl"]
 size = Vector3(0.297852, 0.21167, 0.265381)
 
-[node name="municion" type="Node3D" groups=["municion"]]
+[node name="municion" type="Node3D" unique_id=1202495064]
 process_priority = 1
 script = ExtResource("1_uw3h1")
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=341745627]
 billboard = 2
 texture_filter = 0
 render_priority = 1
 texture = ExtResource("2_bhm6b")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=1463132713]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=446702484]
 shape = SubResource("BoxShape3D_1s1tl")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=473916510]
 stream = ExtResource("3_n8aop")

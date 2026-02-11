@@ -1,7 +1,15 @@
+res://default_bus_layout.tres
 res://escena_menu.tscn
 res://Dialogos/dialogo personalizado.tres
-res://clipping_shader.gdshader
 res://jugador.gdshader
 res://fuego.tres
 res://particulas_flotantes.tres
-res://escena_menu.gd
+res://clipping_shader.gdshader
+res://fuego.tscn
+res://municion.tscn
+res://municion.gd
+res://jugador.tscn
+res://bala_disparo.gd
+res://character_body_3d.gd
+res://doble_cañon.gd
+res://doble_cañon.tscn

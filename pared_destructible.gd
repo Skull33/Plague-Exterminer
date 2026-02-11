@@ -6,7 +6,7 @@ signal SOY_destructible
 @export var audio: AudioStreamPlayer3D
 @export var colision: CollisionShape3D
 @export var muro : MeshInstance3D
-var mensaje = "Analizar muro"
+var mensaje = "Analizar muro [E]"
 var interacted = false
 
 func _destruccion():
@@ -22,9 +22,9 @@ func _interaccion_sin_destruir():
 	emit_signal("SOY_destructible")
 	interacted = true
 	if interacted:
-		mensaje = "Necesito un arma o Herramienta para \n destruir este muro viejo"
+		mensaje = "Necesito un [color=green]ARMA O HERRAMIENTA[/color] para \n destruir este muro viejo"
 		await(get_tree().create_timer(1).timeout)
 		interacted = false
 	if not interacted:
-		mensaje = "Analizar muro"
+		mensaje = "Analizar muro [E]"
 	return mensaje

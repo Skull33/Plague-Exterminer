@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://g2wl6pw4diqn"]
+
+[ext_resource type="Texture2D" uid="uid://boge8pm6uj2vw" path="res://logo/plague_exterminer_title.png" id="1_jd2x8"]
+[ext_resource type="Script" uid="uid://p6abchjuwev8" path="res://menu_pausa.gd" id="1_tyo0u"]
+[ext_resource type="FontFile" uid="uid://b5nqddtabu8m0" path="res://Fuentes_de_letra/Sinister Sunday.otf" id="2_3ml7n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tyo0u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f0gls"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tyo0u")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2873264
+anchor_top = 0.18981479
+anchor_right = 0.7100694
+anchor_bottom = 0.44290122
+offset_top = 1.5258789e-05
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_jd2x8")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.396
+anchor_top = 0.477
+anchor_right = 0.621
+anchor_bottom = 0.6
+offset_left = -0.192017
+offset_top = -0.0960083
+offset_right = -0.39209
+offset_bottom = 0.199982
+theme_override_colors/font_color = Color(0.617455, 0.617455, 0.617455, 1)
+theme_override_colors/font_hover_color = Color(0.419608, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3ml7n")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tyo0u")
+text = "Continuar"
+flat = true
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.396
+anchor_top = 0.656
+anchor_right = 0.621
+anchor_bottom = 0.779
+offset_left = -0.192017
+offset_top = -0.0880127
+offset_right = -0.39209
+offset_bottom = 0.207977
+theme_override_colors/font_color = Color(0.617455, 0.617455, 0.617455, 1)
+theme_override_colors/font_hover_color = Color(0.419608, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3ml7n")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_f0gls")
+text = "Salir al menu"
+flat = true

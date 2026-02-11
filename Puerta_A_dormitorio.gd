@@ -16,7 +16,7 @@ func _ready() :
 func hacer_texto():
 	emit_signal("interactuado_1")
 	if not llave and not interacted:
-		mensaje = "Esta puerte requiere una llave AZUL"
+		mensaje = "Esta puerte requiere una llave [color=blue]AZUL[/color]"
 		await (get_tree().create_timer(2).timeout)
 		interacted = true
 	if interacted:

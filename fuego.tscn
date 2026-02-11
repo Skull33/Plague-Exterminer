@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bos47ksqsvenl"]
+[gd_scene format=3 uid="uid://bos47ksqsvenl"]
 
 [ext_resource type="Shader" uid="uid://cakmt2qs53pmu" path="res://fuego.tres" id="1_hlspl"]
 [ext_resource type="Texture2D" uid="uid://damjgimkh080v" path="res://texturas/fuego_voronoi01.png" id="2_rhsp3"]
@@ -94,15 +94,15 @@ color = Color(4.0001154, 1.9882371, 0.6089667, 0.8)
 [sub_resource type="BoxShape3D" id="BoxShape3D_u23er"]
 size = Vector3(1, 2.65527, 1.38818)
 
-[node name="fuego" type="Node3D"]
+[node name="fuego" type="Node3D" unique_id=15460675]
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=2042005824]
 process_priority = 1
 material_override = SubResource("ShaderMaterial_rhsp3")
 process_material = SubResource("ParticleProcessMaterial_wm8xh")
 draw_pass_1 = SubResource("QuadMesh_0drri")
 
-[node name="flama" type="GPUParticles3D" parent="."]
+[node name="flama" type="GPUParticles3D" parent="." unique_id=1564907587]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.19600642, 0)
 material_override = SubResource("ShaderMaterial_wm8xh")
 amount = 20
@@ -110,7 +110,7 @@ lifetime = 1.2
 process_material = SubResource("ParticleProcessMaterial_l57gg")
 draw_pass_1 = SubResource("QuadMesh_bbyvi")
 
-[node name="humo" type="GPUParticles3D" parent="."]
+[node name="humo" type="GPUParticles3D" parent="." unique_id=287979368]
 sorting_offset = -1.0
 material_override = SubResource("ShaderMaterial_wm8xh")
 amount = 20
@@ -118,22 +118,22 @@ lifetime = 2.5
 process_material = SubResource("ParticleProcessMaterial_8g5nk")
 draw_pass_1 = SubResource("QuadMesh_bbyvi")
 
-[node name="particulas_flotantes" type="GPUParticles3D" parent="."]
+[node name="particulas_flotantes" type="GPUParticles3D" parent="." unique_id=1953202800]
 sorting_offset = 1.0
 material_override = SubResource("ShaderMaterial_8g5nk")
 amount = 50
 process_material = SubResource("ParticleProcessMaterial_u23er")
 draw_pass_1 = SubResource("QuadMesh_l57gg")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1059227192]
 stream = ExtResource("7_u23er")
-volume_db = -8.377
+volume_db = -21.009
 autoplay = true
-max_distance = 5.0
+max_distance = 15.0
 bus = &"fuego"
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1575975792]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=396400558]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.803754, 0.0310059)
 shape = SubResource("BoxShape3D_u23er")

@@ -27,6 +27,6 @@ func entro_area_daño(cuerpo):
 		malla.hide()
 		queue_free()
 	elif cuerpo is StaticBody3D:
-			colision.disabled = true
-			malla.hide()
-			queue_free()
+		colision.disabled = true
+		malla.hide()
+		queue_free()
