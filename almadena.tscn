@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://dp2pt4eyi2nfa"]
+
+[ext_resource type="Script" uid="uid://b5xsoqkg5bi36" path="res://almadena.gd" id="1_412p8"]
+[ext_resource type="Texture2D" uid="uid://mg1gfkpqa0yq" path="res://sprites/marro_item.png" id="1_u226j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_412p8"]
+size = Vector3(0.26470947, 0.6152344, 0.13085938)
+
+[sub_resource type="Animation" id="Animation_im2ci"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.4072449, 0.11882573, -0.031830948)]
+}
+
+[sub_resource type="Animation" id="Animation_412p8"]
+resource_name = "ataque"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.22340915, 0.4949552, 0), Vector3(-0.18545026, -0.1972463, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.4072449, 0.11882573, -0.031830948), Vector3(-0.04933336, 0.16440341, -1.164611), Vector3(-0.051518206, -0.16373737, 1.3859116)]
+}
+
+[sub_resource type="Animation" id="Animation_pfiwv"]
+resource_name = "podemos atacar otra vez"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.0257138, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.4072449, 0.11882573, -0.031830948), Vector3(-0.4072449, 0.11882573, -0.031830948)]
+}
+
+[sub_resource type="Animation" id="Animation_jub6g"]
+resource_name = "recoger_almadena"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.18545026, -0.1972463, 0), Vector3(0.40896308, -0.1972463, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.0515182, -0.16373736, 1.3859116), Vector3(-0.051518206, -0.16373736, 1.3859116)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_im2ci"]
+_data = {
+&"RESET": SubResource("Animation_im2ci"),
+&"ataque": SubResource("Animation_412p8"),
+&"podemos atacar otra vez": SubResource("Animation_pfiwv"),
+&"recoger_almadena": SubResource("Animation_jub6g")
+}
+
+[node name="almadena" type="Node3D" unique_id=2143944404 groups=["armas cuerpo a cuerpo"]]
+script = ExtResource("1_412p8")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=326890687]
+transform = Transform3D(0.99393964, -0.015328994, 0.1088511, -0.029222729, 0.91775006, 0.3960812, -0.10596961, -0.39686152, 0.9117411, 0, 0, 0)
+no_depth_test = true
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("1_u226j")
+
+[node name="Area3D" type="Area3D" parent="Sprite3D" unique_id=742837707]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D/Area3D" unique_id=365187677]
+transform = Transform3D(1, -3.7252903e-09, -1.6540289e-06, -5.9604645e-08, 1, 8.434057e-06, 7.450581e-09, 0, 1.0000005, -0.004302935, -0.011719145, -0.00878914)
+shape = SubResource("BoxShape3D_412p8")
+
+[node name="ataque mazo" type="AudioStreamPlayer3D" parent="." unique_id=1898887063]
+transform = Transform3D(0.62120247, 0.78365016, 0, -0.78365016, 0.62120247, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1915209342]
+libraries/ = SubResource("AnimationLibrary_im2ci")

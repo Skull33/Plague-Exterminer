@@ -1,27 +1,46 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7mydoad2ji0k"]
+[gd_scene format=3 uid="uid://b7mydoad2ji0k"]
 
 [ext_resource type="Texture2D" uid="uid://bk11n8tr5uofe" path="res://sprites/escopeta_calibre 12.png" id="1_byy6r"]
 [ext_resource type="Script" uid="uid://dkf1h6y4nbdmt" path="res://esopeta_item.gd" id="6_i8b2b"]
 [ext_resource type="AudioStream" uid="uid://8o8gmuxytghw" path="res://audio/tomar_Arma.mp3" id="7_udw2m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p5dgb"]
-size = Vector3(0.81234753, 0.806213, 0.41844934)
+size = Vector3(1.3420029, 0.42707816, 0.41844934)
 
-[node name="escopeta_Item" type="Node3D"]
+[node name="escopeta_Item" type="Node3D" unique_id=931581546]
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=998992522]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 texture_filter = 0
 render_priority = 1
 texture = ExtResource("1_byy6r")
 hframes = 2
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1645822447 node_paths=PackedStringArray("mensaje", "sonido", "colision", "item") groups=["armas"]]
 script = ExtResource("6_i8b2b")
+msg = "Agarrar escopeta [E]"
+mensaje = NodePath("Label")
+sonido = NodePath("AudioStreamPlayer3D")
+colision = NodePath("CollisionShape3D")
+item = NodePath("..")
+tipo_arma = "escopeta"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.004565507)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1749004521]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0531196, 0.008018538, 0.004565507)
 shape = SubResource("BoxShape3D_p5dgb")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="StaticBody3D"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="StaticBody3D" unique_id=1596514182]
 stream = ExtResource("7_udw2m")
+
+[node name="Label" type="Label" parent="StaticBody3D" unique_id=1902160243]
+anchors_preset = -1
+anchor_left = -0.048
+anchor_top = -0.105000004
+anchor_right = -0.048
+anchor_bottom = -0.105000004
+offset_left = 0.29600143
+offset_top = 0.040000916
+offset_right = 156.296
+offset_bottom = 23.04
+text = "Agarrar Escopeta [E]"
+metadata/_edit_use_anchors_ = true

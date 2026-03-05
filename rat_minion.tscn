@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bb3pagd2ldafa"]
+[gd_scene format=3 uid="uid://bb3pagd2ldafa"]
 
 [ext_resource type="Script" uid="uid://c6b8wvu0ljbel" path="res://rat_minion.gd" id="1_2xc13"]
 [ext_resource type="Texture2D" uid="uid://jkuvyglpeak2" path="res://Enemigos/rata_mutante1.png" id="2_i1x11"]
@@ -109,16 +109,16 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="SphereShape3D" id="SphereShape3D_2xc13"]
 radius = 1.13567
 
-[node name="Enemigo" type="CharacterBody3D"]
+[node name="Enemigo" type="CharacterBody3D" unique_id=1274499079]
 process_priority = 1
 script = ExtResource("1_2xc13")
 velocidad = 5.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=209852847]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.261626, -0.0507771)
 shape = SubResource("BoxShape3D_2xc13")
 
-[node name="Sprite3D" type="Sprite3D" parent="CollisionShape3D"]
+[node name="Sprite3D" type="Sprite3D" parent="CollisionShape3D" unique_id=515862183]
 process_mode = 3
 process_priority = 1
 transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0.0462129, -0.00159737, -0.00515217)
@@ -130,264 +130,262 @@ hframes = 4
 vframes = 4
 frame = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CollisionShape3D/Sprite3D"]
-libraries = {
-&"": SubResource("AnimationLibrary_e6yhu")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CollisionShape3D/Sprite3D" unique_id=803597885]
+libraries/ = SubResource("AnimationLibrary_e6yhu")
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=818251353]
 path_max_distance = 1.01
 
-[node name="rayo_frente" type="RayCast3D" parent="."]
+[node name="rayo_frente" type="RayCast3D" parent="." unique_id=767876934]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_atras" type="RayCast3D" parent="."]
+[node name="rayo_atras" type="RayCast3D" parent="." unique_id=489768246]
 transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_izq2" type="RayCast3D" parent="."]
+[node name="rayo_izq2" type="RayCast3D" parent="." unique_id=1444048604]
 transform = Transform3D(0.707107, -0.707107, -3.09086e-08, 0, -4.37114e-08, 1, -0.707107, -0.707107, -3.09086e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_izq3" type="RayCast3D" parent="."]
+[node name="rayo_izq3" type="RayCast3D" parent="." unique_id=435196204]
 transform = Transform3D(0.866025, -0.5, -2.18557e-08, 0, -4.37114e-08, 1, -0.5, -0.866025, -3.78552e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_izq4" type="RayCast3D" parent="."]
+[node name="rayo_izq4" type="RayCast3D" parent="." unique_id=1509162920]
 transform = Transform3D(0.965926, -0.258819, -1.13133e-08, 0, -4.37114e-08, 1, -0.258819, -0.965926, -4.2222e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_izq5" type="RayCast3D" parent="."]
+[node name="rayo_izq5" type="RayCast3D" parent="." unique_id=78862293]
 transform = Transform3D(0.5, -0.866026, -3.78552e-08, 0, -4.37114e-08, 1, -0.866026, -0.5, -2.18557e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_izq6" type="RayCast3D" parent="."]
+[node name="rayo_izq6" type="RayCast3D" parent="." unique_id=1402212563]
 transform = Transform3D(0.258819, -0.965926, -4.2222e-08, 0, -4.37114e-08, 1, -0.965926, -0.258819, -1.13133e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_izq7" type="RayCast3D" parent="."]
+[node name="rayo_izq7" type="RayCast3D" parent="." unique_id=1558770921]
 transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_izq8" type="RayCast3D" parent="."]
+[node name="rayo_izq8" type="RayCast3D" parent="." unique_id=292837720]
 transform = Transform3D(-0.258819, -0.965926, -4.2222e-08, 0, -4.37114e-08, 1, -0.965926, 0.258819, 1.13133e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_izq9" type="RayCast3D" parent="."]
+[node name="rayo_izq9" type="RayCast3D" parent="." unique_id=776609339]
 transform = Transform3D(-0.5, -0.866025, -3.78552e-08, 0, -4.37114e-08, 1, -0.866025, 0.5, 2.18557e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_izq10" type="RayCast3D" parent="."]
+[node name="rayo_izq10" type="RayCast3D" parent="." unique_id=1766966833]
 transform = Transform3D(-0.707107, -0.707107, -3.09086e-08, 0, -4.37114e-08, 1, -0.707107, 0.707107, 3.09086e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_izq11" type="RayCast3D" parent="."]
+[node name="rayo_izq11" type="RayCast3D" parent="." unique_id=1115110237]
 transform = Transform3D(-0.866025, -0.5, -2.18557e-08, 0, -4.37114e-08, 1, -0.5, 0.866025, 3.78552e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_izq12" type="RayCast3D" parent="."]
+[node name="rayo_izq12" type="RayCast3D" parent="." unique_id=1833866007]
 transform = Transform3D(-0.965926, -0.258819, -1.13133e-08, 0, -4.37114e-08, 1, -0.258819, 0.965926, 4.2222e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_der2" type="RayCast3D" parent="."]
+[node name="rayo_der2" type="RayCast3D" parent="." unique_id=1819975921]
 transform = Transform3D(0.707107, 0.707107, 3.09086e-08, 0, -4.37114e-08, 1, 0.707107, -0.707107, -3.09086e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_der3" type="RayCast3D" parent="."]
+[node name="rayo_der3" type="RayCast3D" parent="." unique_id=1226700467]
 transform = Transform3D(0.866025, 0.5, 2.18557e-08, 0, -4.37114e-08, 1, 0.5, -0.866025, -3.78552e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_der4" type="RayCast3D" parent="."]
+[node name="rayo_der4" type="RayCast3D" parent="." unique_id=1170330633]
 transform = Transform3D(0.965926, 0.258819, 1.13133e-08, 0, -4.37114e-08, 1, 0.258819, -0.965926, -4.2222e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_der5" type="RayCast3D" parent="."]
+[node name="rayo_der5" type="RayCast3D" parent="." unique_id=322261677]
 transform = Transform3D(0.258819, 0.965926, 4.2222e-08, 0, -4.37114e-08, 1, 0.965926, -0.258819, -1.13133e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_der6" type="RayCast3D" parent="."]
+[node name="rayo_der6" type="RayCast3D" parent="." unique_id=1019304110]
 transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_der7" type="RayCast3D" parent="."]
+[node name="rayo_der7" type="RayCast3D" parent="." unique_id=75200809]
 transform = Transform3D(0.5, 0.866026, 3.78552e-08, 0, -4.37114e-08, 1, 0.866026, -0.5, -2.18557e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_der8" type="RayCast3D" parent="."]
+[node name="rayo_der8" type="RayCast3D" parent="." unique_id=116750201]
 transform = Transform3D(-0.258819, 0.965926, 4.2222e-08, 0, -4.37114e-08, 1, 0.965926, 0.258819, 1.13133e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_der9" type="RayCast3D" parent="."]
+[node name="rayo_der9" type="RayCast3D" parent="." unique_id=1340006605]
 transform = Transform3D(-0.5, 0.866026, 3.78552e-08, 0, -4.37114e-08, 1, 0.866026, 0.5, 2.18557e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_der10" type="RayCast3D" parent="."]
+[node name="rayo_der10" type="RayCast3D" parent="." unique_id=107469287]
 transform = Transform3D(-0.707107, 0.707107, 3.09086e-08, 0, -4.37114e-08, 1, 0.707107, 0.707107, 3.09086e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_der11" type="RayCast3D" parent="."]
+[node name="rayo_der11" type="RayCast3D" parent="." unique_id=1448176655]
 transform = Transform3D(-0.866025, 0.5, 2.18557e-08, 0, -4.37114e-08, 1, 0.5, 0.866025, 3.78552e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_der12" type="RayCast3D" parent="."]
+[node name="rayo_der12" type="RayCast3D" parent="." unique_id=300511517]
 transform = Transform3D(-0.965926, 0.258819, 1.13133e-08, 0, -4.37114e-08, 1, 0.258819, 0.965926, 4.2222e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_frente2" type="RayCast3D" parent="."]
+[node name="rayo_frente2" type="RayCast3D" parent="." unique_id=484848212]
 transform = Transform3D(0.991972, 0.126459, 5.52769e-09, 0, -4.37114e-08, 1, 0.126459, -0.991972, -4.33605e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_atras2" type="RayCast3D" parent="."]
+[node name="rayo_atras2" type="RayCast3D" parent="." unique_id=276972177]
 transform = Transform3D(-0.991972, -0.126459, -5.52768e-09, 0, -4.37114e-08, 1, -0.126459, 0.991972, 4.33605e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_izq13" type="RayCast3D" parent="."]
+[node name="rayo_izq13" type="RayCast3D" parent="." unique_id=905401493]
 transform = Transform3D(0.79085, -0.61201, -2.67518e-08, 0, -4.37114e-08, 1, -0.61201, -0.79085, -3.45691e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_izq14" type="RayCast3D" parent="."]
+[node name="rayo_izq14" type="RayCast3D" parent="." unique_id=294427352]
 transform = Transform3D(0.922302, -0.38647, -1.68931e-08, 0, -4.37114e-08, 1, -0.38647, -0.922302, -4.03151e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_izq15" type="RayCast3D" parent="."]
+[node name="rayo_izq15" type="RayCast3D" parent="." unique_id=1010385844]
 transform = Transform3D(0.990901, -0.134591, -5.88314e-09, 9.1951e-16, -4.37114e-08, 1, -0.134591, -0.990901, -4.33137e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_izq16" type="RayCast3D" parent="."]
+[node name="rayo_izq16" type="RayCast3D" parent="." unique_id=854040495]
 transform = Transform3D(0.605502, -0.795844, -3.47874e-08, -1.77636e-15, -4.37114e-08, 1, -0.795844, -0.605502, -2.64674e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_izq17" type="RayCast3D" parent="."]
+[node name="rayo_izq17" type="RayCast3D" parent="." unique_id=282029169]
 transform = Transform3D(0.378891, -0.925441, -4.04524e-08, -9.1951e-16, -4.37114e-08, 1, -0.925441, -0.378891, -1.65618e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_izq18" type="RayCast3D" parent="."]
+[node name="rayo_izq18" type="RayCast3D" parent="." unique_id=656338717]
 transform = Transform3D(0.126459, -0.991972, -4.33605e-08, 0, -4.37114e-08, 1, -0.991972, -0.126459, -5.52768e-09, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_izq19" type="RayCast3D" parent="."]
+[node name="rayo_izq19" type="RayCast3D" parent="." unique_id=1210043287]
 transform = Transform3D(-0.134591, -0.990901, -4.33137e-08, 9.1951e-16, -4.37114e-08, 1, -0.990901, 0.134591, 5.88314e-09, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_izq20" type="RayCast3D" parent="."]
+[node name="rayo_izq20" type="RayCast3D" parent="." unique_id=586393034]
 transform = Transform3D(-0.38647, -0.922302, -4.03151e-08, 0, -4.37114e-08, 1, -0.922302, 0.38647, 1.68931e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_izq21" type="RayCast3D" parent="."]
+[node name="rayo_izq21" type="RayCast3D" parent="." unique_id=1952736161]
 transform = Transform3D(-0.61201, -0.79085, -3.45691e-08, 0, -4.37114e-08, 1, -0.79085, 0.61201, 2.67518e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_izq22" type="RayCast3D" parent="."]
+[node name="rayo_izq22" type="RayCast3D" parent="." unique_id=1344577586]
 transform = Transform3D(-0.795843, -0.605502, -2.64674e-08, 0, -4.37114e-08, 1, -0.605502, 0.795843, 3.47875e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_izq23" type="RayCast3D" parent="."]
+[node name="rayo_izq23" type="RayCast3D" parent="." unique_id=675350419]
 transform = Transform3D(-0.925441, -0.378891, -1.65618e-08, -9.1951e-16, -4.37114e-08, 1, -0.378891, 0.925441, 4.04524e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_der13" type="RayCast3D" parent="."]
+[node name="rayo_der13" type="RayCast3D" parent="." unique_id=1792338272]
 transform = Transform3D(0.61201, 0.79085, 3.45691e-08, 0, -4.37114e-08, 1, 0.79085, -0.61201, -2.67518e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_der14" type="RayCast3D" parent="."]
+[node name="rayo_der14" type="RayCast3D" parent="." unique_id=1989820853]
 transform = Transform3D(0.795843, 0.605502, 2.64674e-08, 0, -4.37114e-08, 1, 0.605502, -0.795843, -3.47875e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_der15" type="RayCast3D" parent="."]
+[node name="rayo_der15" type="RayCast3D" parent="." unique_id=2100000159]
 transform = Transform3D(0.925441, 0.378891, 1.65618e-08, -9.1951e-16, -4.37114e-08, 1, 0.378891, -0.925441, -4.04524e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_der16" type="RayCast3D" parent="."]
+[node name="rayo_der16" type="RayCast3D" parent="." unique_id=163151338]
 transform = Transform3D(0.134591, 0.990901, 4.33137e-08, 9.1951e-16, -4.37114e-08, 1, 0.990901, -0.134591, -5.88314e-09, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_der17" type="RayCast3D" parent="."]
+[node name="rayo_der17" type="RayCast3D" parent="." unique_id=226579775]
 transform = Transform3D(-0.126459, 0.991972, 4.33605e-08, 0, -4.37114e-08, 1, 0.991972, 0.126459, 5.52769e-09, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_der18" type="RayCast3D" parent="."]
+[node name="rayo_der18" type="RayCast3D" parent="." unique_id=1186804188]
 transform = Transform3D(0.386469, 0.922303, 4.03151e-08, 1.77636e-15, -4.37114e-08, 1, 0.922303, -0.386469, -1.68931e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_der19" type="RayCast3D" parent="."]
+[node name="rayo_der19" type="RayCast3D" parent="." unique_id=2022941842]
 transform = Transform3D(-0.378891, 0.925441, 4.04524e-08, -9.1951e-16, -4.37114e-08, 1, 0.925441, 0.378891, 1.65618e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_der20" type="RayCast3D" parent="."]
+[node name="rayo_der20" type="RayCast3D" parent="." unique_id=11258990]
 transform = Transform3D(-0.605502, 0.795844, 3.47874e-08, -1.77636e-15, -4.37114e-08, 1, 0.795844, 0.605502, 2.64674e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_der21" type="RayCast3D" parent="."]
+[node name="rayo_der21" type="RayCast3D" parent="." unique_id=614847600]
 transform = Transform3D(-0.79085, 0.61201, 2.67518e-08, 0, -4.37114e-08, 1, 0.61201, 0.79085, 3.45691e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_der22" type="RayCast3D" parent="."]
+[node name="rayo_der22" type="RayCast3D" parent="." unique_id=20198583]
 transform = Transform3D(-0.922302, 0.38647, 1.68931e-08, 0, -4.37114e-08, 1, 0.38647, 0.922302, 4.03151e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="rayo_der23" type="RayCast3D" parent="."]
+[node name="rayo_der23" type="RayCast3D" parent="." unique_id=785780523]
 transform = Transform3D(-0.990901, 0.134591, 5.88314e-09, 9.1951e-16, -4.37114e-08, 1, 0.134591, 0.990901, 4.33137e-08, 0, 0.453889, 0)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="SubViewport" type="SubViewport" parent="."]
+[node name="SubViewport" type="SubViewport" parent="." unique_id=469858667]
 canvas_item_default_texture_filter = 0
 size = Vector2i(301, 7)
 
-[node name="Panel" type="Panel" parent="SubViewport"]
+[node name="Panel" type="Panel" parent="SubViewport" unique_id=2073889866]
 offset_right = 301.0
 offset_bottom = 7.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_2xc13")
 
-[node name="Barra_Salud" parent="SubViewport/Panel" instance=ExtResource("3_2xc13")]
+[node name="Barra_Salud" parent="SubViewport/Panel" unique_id=822482134 instance=ExtResource("3_2xc13")]
 layout_mode = 1
 anchors_preset = 14
 anchor_left = 0.0
@@ -399,7 +397,7 @@ offset_top = -4.0
 offset_right = 0.0
 offset_bottom = 4.0
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1924552844]
 process_priority = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0505865, 1.03814, -0.00573909)
 billboard = 2
@@ -407,22 +405,22 @@ texture_filter = 0
 render_priority = 1
 texture = SubResource("ViewportTexture_2xc13")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=1935804727]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1988745257]
 shape = SubResource("SphereShape3D_2xc13")
 
-[node name="TimerAtaque" type="Timer" parent="."]
+[node name="TimerAtaque" type="Timer" parent="." unique_id=1768812047]
 wait_time = 0.3
 
-[node name="atacar" type="AudioStreamPlayer3D" parent="."]
+[node name="atacar" type="AudioStreamPlayer3D" parent="." unique_id=570885047]
 stream = ExtResource("4_e6yhu")
 
-[node name="quietud" type="AudioStreamPlayer3D" parent="."]
+[node name="quietud" type="AudioStreamPlayer3D" parent="." unique_id=974701734]
 stream = ExtResource("5_04u6f")
 bus = &"efecto explocion"
 
-[node name="muerto" type="AudioStreamPlayer3D" parent="."]
+[node name="muerto" type="AudioStreamPlayer3D" parent="." unique_id=1137706619]
 stream = ExtResource("6_p0xtp")
 max_distance = 5.0
 panning_strength = 20.0

@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://c7iclou1q2vj5"]
+
+[ext_resource type="Texture2D" uid="uid://mg1gfkpqa0yq" path="res://sprites/marro_item.png" id="1_hojvn"]
+[ext_resource type="Script" uid="uid://dkf1h6y4nbdmt" path="res://esopeta_item.gd" id="2_ge516"]
+[ext_resource type="AudioStream" uid="uid://8o8gmuxytghw" path="res://audio/tomar_Arma.mp3" id="3_wrdyv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y5fg8"]
+size = Vector3(0.4765129, 1.0842437, 0.41844934)
+
+[node name="Mazo" type="Node3D" unique_id=1071693733]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=888077159]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("1_hojvn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1836844058 node_paths=PackedStringArray("mensaje", "sonido", "colision", "item") groups=["armas"]]
+script = ExtResource("2_ge516")
+msg = "Agarrar Mazo [E]"
+mensaje = NodePath("Label")
+sonido = NodePath("AudioStreamPlayer3D")
+colision = NodePath("CollisionShape3D")
+item = NodePath("..")
+tipo_arma = "mazo"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=654970916]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002977401, -0.0047531575, 0.004565507)
+shape = SubResource("BoxShape3D_y5fg8")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="StaticBody3D" unique_id=1326314084]
+stream = ExtResource("3_wrdyv")
+
+[node name="Label" type="Label" parent="StaticBody3D" unique_id=1314013235]
+anchors_preset = -1
+anchor_left = -0.048
+anchor_top = -0.105000004
+anchor_right = -0.048
+anchor_bottom = -0.105000004
+offset_left = 0.29600143
+offset_top = 0.040000916
+offset_right = 156.296
+offset_bottom = 23.04
+text = "Agarrar Mazo [E]"
+metadata/_edit_use_anchors_ = true

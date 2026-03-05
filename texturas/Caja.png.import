@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mg1gfkpqa0yq"
-path.s3tc="res://.godot/imported/marro_item.png-9afdcb28e5fffedf6f28a6f11adb573c.s3tc.ctex"
+uid="uid://dpyipb3di5wm"
+path.s3tc="res://.godot/imported/Caja.png-5499ee4ec2b3f04530e51b814666aafa.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://sprites/marro_item.png"
-dest_files=["res://.godot/imported/marro_item.png-9afdcb28e5fffedf6f28a6f11adb573c.s3tc.ctex"]
+source_file="res://texturas/Caja.png"
+dest_files=["res://.godot/imported/Caja.png-5499ee4ec2b3f04530e51b814666aafa.s3tc.ctex"]
 
 [params]
 

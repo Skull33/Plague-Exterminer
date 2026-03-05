@@ -121,19 +121,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00141289, 0.506602, -2.681
 
 [node name="bulletSpawn2" type="Node3D" parent="." unique_id=1983075829]
 process_priority = 1
-transform = Transform3D(0.996195, 0, -0.0871558, 0, 1, 0, 0.0871558, 0, 0.996195, 0.127449, 0.506602, -2.68792)
+transform = Transform3D(1.0000002, 0, 0, 0, 0.98480767, -0.17364822, 0, 0.17364816, 0.98480797, -0.00141289, 0.506602, -2.68106)
 
 [node name="bulletSpawn3" type="Node3D" parent="." unique_id=2123613978]
 process_priority = 1
-transform = Transform3D(0.996195, 0, 0.0871558, 0, 1, 0, -0.0871558, 0, 0.996195, -0.130196, 0.506602, -2.67476)
+transform = Transform3D(1.0000002, 0, 0, 0, 0.98480767, 0.17364822, 0, -0.17364816, 0.98480797, -0.00141289, 0.506602, -2.68106)
 
 [node name="bulletSpawn4" type="Node3D" parent="." unique_id=1725061384]
 process_priority = 1
-transform = Transform3D(1, 0, 0, 0, 0.996195, -0.0871558, 0, 0.0871558, 0.996195, -0.00141289, 0.593562, -2.68106)
+transform = Transform3D(0.98480767, 0, 0.17364822, 0, 1.0000002, 0, -0.17364816, 0, 0.98480797, -0.00141289, 0.506602, -2.68106)
 
 [node name="bulletSpawn5" type="Node3D" parent="." unique_id=1449265784]
 process_priority = 1
-transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871558, 0, -0.0871558, 0.996195, -0.00141289, 0.410539, -2.68106)
+transform = Transform3D(0.98480767, 0, -0.17364822, 0, 1.0000002, 0, 0.17364816, 0, 0.98480797, -0.00141289, 0.506602, -2.68106)
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1585845448]
 process_priority = 1

@@ -1,22 +1,27 @@
-class_name Escopeta_Item
 extends StaticBody3D
 
 signal interactuado_1
-@export var mensaje = "Agarrar Escopeta [E]"
-@onready var sonido = $AudioStreamPlayer3D
-@onready var colision = $CollisionShape3D
-@onready var item = $".."
+@export var msg: String = ""
+@export var mensaje: Label
+@export var sonido : AudioStreamPlayer3D
+@export var colision : CollisionShape3D
+@export var item : Node3D
+@export var tipo_arma: String
 var interactuado = false
-@onready var doble_cañon = get_tree().get_first_node_in_group("jugador")
+func _ready():
+	mensaje.text = msg
 
 func hacer_texto():
 	emit_signal("interactuado_1")
 	if Input.is_action_just_pressed("Interaccion"):
+		var jugador = get_tree().get_first_node_in_group("jugador")
+		
+		if jugador:
+			jugador.obtener_arma_tipo(tipo_arma)
+		
 		item.hide()
 		sonido.play()
 		colision.disabled = true
-		mensaje = ""
-		if doble_cañon is CharacterBody3D:
-			doble_cañon.obtener_arma()
+		msg = ""
 		interactuado = true
-	return mensaje
+	return msg

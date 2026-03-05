@@ -30,8 +30,8 @@ func _physics_process(_delta):
 			texto.text = deteccion.mensaje
 			if Input.is_action_just_pressed("Interaccion"):
 				deteccion.hacer_texto()
-		elif deteccion is Escopeta_Item:
-			texto.text = deteccion.mensaje
+		elif deteccion.is_in_group("armas"):
+			texto.text = deteccion.msg
 			if Input.is_action_just_pressed("Interaccion"):
 				deteccion.hacer_texto()
 		elif deteccion is Destruir:

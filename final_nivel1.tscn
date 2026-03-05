@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxkrib166j75g"]
+[gd_scene format=3 uid="uid://cxkrib166j75g"]
 
 [ext_resource type="Script" uid="uid://dnwtq6ch5kk2e" path="res://final_nivel 1.gd" id="2_4vxuf"]
-[ext_resource type="Texture2D" uid="uid://yts0xm56n3u" path="res://animacionwa/plague_exterminer.png" id="2_mapq1"]
+[ext_resource type="Texture2D" uid="uid://yts0xm56n3u" path="res://animacion/plague_exterminer.png" id="2_mapq1"]
 [ext_resource type="FontFile" uid="uid://bgs2g5hiwesik" path="res://Fuentes_de_letra/SmackAttack/smackattackbb_reg.ttf" id="3_2ofia"]
 [ext_resource type="AudioStream" uid="uid://dm7fl1q3k5al4" path="res://audio/Audio final.mp3" id="4_dy5sg"]
 

@@ -17,16 +17,11 @@ func entro_area_daño(cuerpo):
 	if cuerpo is Malo:
 		cuerpo.recibir_daño(self)
 		queue_free()
-	elif cuerpo is Destruir:
+	elif cuerpo.is_in_group("es destructible"):
 		cuerpo._destruccion()
-		colision.disabled = true
-		malla.hide()
 		queue_free()
 	elif cuerpo is Interactuable_A:
-		colision.disabled = true
-		malla.hide()
 		queue_free()
-	elif cuerpo is StaticBody3D:
-		colision.disabled = true
-		malla.hide()
+	elif cuerpo.is_in_group("mundo"):
+		cuerpo._destruccion()
 		queue_free()

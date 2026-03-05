@@ -16,6 +16,8 @@ var sonar = false
 var nueva_salud
 
 @onready var escopeta = $"cabeza/sway/doble cañon"
+@onready var almadena = $cabeza/sway/mazo
+@onready var arma_actual_array = []
 @onready var quejidos = $quejidos
 @onready var muerte = $muerte
 @onready var timer_quejidos = $Timer_quejidos
@@ -35,13 +37,16 @@ var estamos_vivos = true
 var camara_caida_velocidad = Vector3.ZERO
 var camara_esta_cayendo = false
 var gravedad_camara = 20.0
+var arma_actual_index = 0
+var arma_actual
 #cabeceo
 @export_group("cabeceo")
 @export var frecuencia_cabeceo = 2.0
 @export var amplitud_cabeceo = 0.04
 var tiempo_cabeceo = 0.0
 @export var cantidad_salud = 100
-var tiene_la_escopeta = false
+@export var tiene_la_escopeta = false
+@export var tiene_la_almadena = false
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -51,6 +56,8 @@ func _unhandled_input(event):
 		cabeza.rotation_degrees.x = rotacion
 
 func _ready():
+	arma_actual_array = [almadena, escopeta]
+	arma_actual = arma_actual_array[arma_actual_index]
 	emit_signal("persigueme")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	Dialogic.connect("timeline_started",Callable(self,"inicio_dialogo"))
@@ -58,10 +65,20 @@ func _ready():
 	salud.iniciar_salud(cantidad_salud)
 	municion.hide()
 	icono.hide()
-	escopeta.hide()
 
 func _physics_process(delta):
 	if estamos_vivos:
+		#añadiendo los slot de las armas
+		if Input.is_action_just_pressed("slot 1"):
+			intentar_cambio(0)
+		if Input.is_action_just_pressed("slot 2"):
+			intentar_cambio(1)
+		if Input.is_action_just_pressed("slot 3"):
+			intentar_cambio(3)
+		if Input.is_action_just_pressed("slot 4"):
+			intentar_cambio(4)
+		if Input.is_action_just_pressed("slot 5"):
+			intentar_cambio(5)
 		#todo esto es el salto, osea el eje Y
 		if not is_on_floor():
 			velocity.y -= gravedad * delta
@@ -78,14 +95,6 @@ func _physics_process(delta):
 			direccion += transform.basis.x
 		if Input.is_action_pressed("Izquierda"):
 			direccion -= transform.basis.x
-		if tiene_la_escopeta:
-				municion.show()
-				icono.show()
-				municion.text = str(escopeta.municion_actual)
-				if escopeta.municion_actual > 0:
-					puede_disparar = true
-				else:
-					puede_disparar = false
 		
 		velocity.x = direccion.x * velocidad
 		velocity.z = direccion.z * velocidad
@@ -145,12 +154,6 @@ func actualizar_estado_de_salud():
 	elif porcentaje <= 0:
 		estado_de_salud.frame = 5
 
-func obtener_arma():
-	if not tiene_la_escopeta:
-		tiene_la_escopeta = true
-		escopeta.show()
-		print("Has obtenido la escopeta")
-
 func iniciar_tiempo_quejido():
 	timer_quejidos.wait_time = 0.3
 	timer_quejidos.start()
@@ -169,3 +172,46 @@ func _curar(puntos):
 	cantidad_salud = clamp(cantidad_salud + puntos, 0, 100)
 	salud.set_salud(cantidad_salud)
 	actualizar_estado_de_salud()
+
+func cambiar_arma(i):
+	if i >= 0 and i < arma_actual_array.size():
+		arma_actual.hide()
+		arma_actual_index = i
+		arma_actual = arma_actual_array[arma_actual_index]
+		arma_actual.show()
+		UI_arma()
+
+func UI_arma():
+	if "municion_actual" in arma_actual:
+		municion.show()
+		icono.show()
+		municion.text = str(arma_actual.municion_actual)
+		puede_disparar = arma_actual.municion_actual > 0
+	else:
+		municion.hide()
+		icono.hide()
+		puede_disparar = false
+
+func obtener_arma_tipo(tipo:String):
+	for i in range(arma_actual_array.size()):
+		var arma = arma_actual_array[i]
+		if arma.tipo_arma == tipo:
+			arma.obtener_arma()
+			cambiar_arma(i)
+			return
+
+func intentar_cambio(i):
+	if i >= arma_actual_array.size():
+		return
+	var arma = arma_actual_array[i]
+	
+	if arma.tipo_arma == "escopeta" and not tiene_la_escopeta:
+		return
+	
+	if arma.tipo_arma == "almadena" and not tiene_la_almadena:
+		return
+	
+	if i == arma_actual_index:
+		return
+	
+	cambiar_arma(i)

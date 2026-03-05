@@ -6,7 +6,8 @@
 [ext_resource type="Script" uid="uid://d4apnaahjrlr6" path="res://sway.gd" id="3_btb33"]
 [ext_resource type="FontFile" uid="uid://brt7cqfkuxxnd" path="res://Fuentes_de_letra/Fira_Code/FiraCode-Light.ttf" id="3_ukil5"]
 [ext_resource type="PackedScene" uid="uid://drhcvw4x6d7og" path="res://doble_cañon.tscn" id="4_btb33"]
-[ext_resource type="Texture2D" uid="uid://cmqleoieo1a6i" path="res://texturas/puntero_2.png" id="7_btb33"]
+[ext_resource type="PackedScene" uid="uid://dp2pt4eyi2nfa" path="res://almadena.tscn" id="5_bpxwk"]
+[ext_resource type="Texture2D" uid="uid://c8t6k0foy5o30" path="res://texturas/puntero_3.png" id="8_bpxwk"]
 [ext_resource type="PackedScene" uid="uid://7j63vnb5aps4" path="res://barra_salud.tscn" id="8_qw2bf"]
 [ext_resource type="Texture2D" uid="uid://bltbold0sk62j" path="res://sprites/estado_vida.png" id="9_g5h5a"]
 [ext_resource type="FontFile" uid="uid://censi8hyd7ld8" path="res://Fuentes_de_letra/SmackAttack/smackattackbb_bld.ttf" id="11_hcpjn"]
@@ -54,27 +55,12 @@ current = true
 transform = Transform3D(1.4, 0, 0, 0, 1, 0, 0, 0, 1.4, 0, -0.62966, 0)
 mesh = SubResource("CylinderMesh_ukil5")
 
-[node name="sway" type="Node3D" parent="cabeza" unique_id=1303504075]
-transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0.320356, -0.5862378, 0.280335)
-script = ExtResource("3_btb33")
-
-[node name="doble cañon" parent="cabeza/sway" unique_id=23255287 instance=ExtResource("4_btb33")]
-transform = Transform3D(0.698398, -0.00159667, 0.0473133, 0.00420474, 0.698929, -0.03848, -0.0471532, 0.0386761, 0.697338, 0.242552, 0.153228, -0.919445)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1542337809]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15066, 0)
-shape = SubResource("CapsuleShape3D_r7xtl")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=1832994883]
-mesh = SubResource("CapsuleMesh_cs4bw")
-skeleton = NodePath("../..")
-
-[node name="rayo_interaccion" type="RayCast3D" parent="." unique_id=137565816]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.72684, -0.474818)
+[node name="rayo_interaccion" type="RayCast3D" parent="cabeza/Camera3D" unique_id=137565816]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.043118715, -0.474818)
 target_position = Vector3(0, -2, 0)
 script = ExtResource("2_omvyu")
 
-[node name="Label" type="RichTextLabel" parent="rayo_interaccion" unique_id=1849752715]
+[node name="Label" type="RichTextLabel" parent="cabeza/Camera3D/rayo_interaccion" unique_id=1849752715]
 texture_filter = 3
 anchors_preset = -1
 anchor_left = 0.32000002
@@ -95,6 +81,24 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 
+[node name="sway" type="Node3D" parent="cabeza" unique_id=1303504075]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0.320356, -0.5862378, 0.280335)
+script = ExtResource("3_btb33")
+
+[node name="doble cañon" parent="cabeza/sway" unique_id=23255287 instance=ExtResource("4_btb33")]
+transform = Transform3D(0.698398, -0.0015966701, 0.0473133, 0.00420474, 0.698929, -0.03848, -0.047153205, 0.0386761, 0.6973381, 0.24255198, 0.15322804, -1.4649668)
+
+[node name="mazo" parent="cabeza/sway" unique_id=2143944404 instance=ExtResource("5_bpxwk")]
+transform = Transform3D(-2.1855699e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855699e-07, 0.11478692, 1.0064471, -1.8244395)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1542337809]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15066, 0)
+shape = SubResource("CapsuleShape3D_r7xtl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=1832994883]
+mesh = SubResource("CapsuleMesh_cs4bw")
+skeleton = NodePath("../..")
+
 [node name="TextureRect" type="TextureRect" parent="." unique_id=241149142]
 texture_filter = 1
 anchors_preset = -1
@@ -109,7 +113,7 @@ offset_bottom = -6.776
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-texture = ExtResource("7_btb33")
+texture = ExtResource("8_bpxwk")
 
 [node name="Barra_Salud" parent="." unique_id=1757154904 instance=ExtResource("8_qw2bf")]
 anchor_left = 0.062

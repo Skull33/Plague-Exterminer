@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dpawyoho4bgon"]
+[gd_scene format=4 uid="uid://dpawyoho4bgon"]
 
 [ext_resource type="Texture2D" uid="uid://dggg8ik0ltu61" path="res://texturas/MUROS_dormitorio.png" id="1_mnw0n"]
 [ext_resource type="Script" uid="uid://c7yrdl1ni5d0o" path="res://pared_destructible.gd" id="2_ctxxm"]
@@ -77,26 +77,26 @@ shadow_mesh = SubResource("ArrayMesh_u3imk")
 [sub_resource type="BoxShape3D" id="BoxShape3D_aq71q"]
 size = Vector3(0.13189697, 2.4459229, 1.9077148)
 
-[node name="ParedDestructible" type="Node3D"]
+[node name="ParedDestructible" type="Node3D" unique_id=1814488451]
 
-[node name="Cube_004" type="MeshInstance3D" parent="."]
+[node name="Cube_004" type="MeshInstance3D" parent="." unique_id=1140639985]
 mesh = SubResource("ArrayMesh_d6d3d")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cube_004" node_paths=PackedStringArray("particulas", "audio", "colision", "muro") groups=["es destructible"]]
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_004" unique_id=1721539752 node_paths=PackedStringArray("particulas", "audio", "colision", "muro") groups=["es destructible"]]
 script = ExtResource("2_ctxxm")
 particulas = NodePath("../../Node3D")
 audio = NodePath("AudioStreamPlayer3D")
 colision = NodePath("CollisionShape3D")
 muro = NodePath("..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_004/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_004/StaticBody3D" unique_id=603934172]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055511475, -0.19403076, -0.01586914)
 shape = SubResource("BoxShape3D_aq71q")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Cube_004/StaticBody3D"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Cube_004/StaticBody3D" unique_id=1883134301]
 stream = ExtResource("3_aq71q")
 bus = &"efecto explocion"
 
-[node name="Node3D" parent="." instance=ExtResource("2_d6d3d")]
+[node name="Node3D" parent="." unique_id=1855716630 instance=ExtResource("2_d6d3d")]
 lifetime = 0.3
