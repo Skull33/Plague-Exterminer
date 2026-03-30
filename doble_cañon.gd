@@ -58,5 +58,3 @@ func obtener_arma():
 		jugador.tiene_la_escopeta = true
 		self.show()
 		print("Has obtenido la escopeta")
-	else:
-		self.show()

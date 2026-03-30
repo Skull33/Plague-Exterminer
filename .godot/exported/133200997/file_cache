@@ -106,60 +106,68 @@ res://addons/dialogic/Modules/Text/character_settings/character_moods_settings.t
 res://addons/dialogic/Modules/Text/character_settings/character_portrait_mood_settings.tscn::5039b5540515dd57d8de08f4e8a6fbc7::1749405884::res://.godot/exported/133200997/export-37c35566857061453231ad11bc175413-character_portrait_mood_settings.scn
 res://addons/dialogic/Modules/Text/settings_text.tscn::794e594e8e32909b7d3fae5193685889::1749405884::res://.godot/exported/133200997/export-67100a9f8a5726886cf8dbc525c7a035-settings_text.scn
 res://addons/dialogic/Modules/Variable/variables_editor/variables_editor.tscn::1f4a64952b7986e6aa5ae128a589dbc8::1749405884::res://.godot/exported/133200997/export-81d6117e9fbfcc345d9d0dd8f77e3c55-variables_editor.scn
-res://Dialogos/dialogo personalizado.tres::670f610c29bf65eb50f57e21209b97c9::1754748861::res://.godot/exported/133200997/export-83bbf2ffeefaa3e5f98c17807fb4a39d-dialogo personalizado.res
+res://Dialogos/dialogo personalizado.tres::90202fd01d169f665f827533b0d26057::1774811921::res://.godot/exported/133200997/export-83bbf2ffeefaa3e5f98c17807fb4a39d-dialogo personalizado.res
 res://Fuentes_de_letra/SmackAttack/mi estilo.tres::557c7f3432020a5185fae89f0d540b19::1754094695::res://.godot/exported/133200997/export-b639dc5294ccb9f5005bcbf366c2dbd6-mi estilo.res
 res://arboleda.tscn::608ff4e4555dace87eb7025d39e19cd9::1742187197::res://.godot/exported/133200997/export-e0bf698c764c5353c493969659c0b140-arboleda.scn
-res://bala disparo.tscn::b234a6fb4dd2d1f0161a53d9bed96790::1754613477::res://.godot/exported/133200997/export-9c3450e7982075493591de967ad15364-bala disparo.scn
-res://barra_salud.tscn::4a90345094acfdd72438e91ffbf162f0::1754010534::res://.godot/exported/133200997/export-ecad3b309a9a190b7938fcb1185b0581-barra_salud.scn
+res://bala disparo.tscn::de69bf6f9bf11901709f3d28ceae13a1::1771646218::res://.godot/exported/133200997/export-9c3450e7982075493591de967ad15364-bala disparo.scn
+res://barra_salud.tscn::4a90345094acfdd72438e91ffbf162f0::1758344847::res://.godot/exported/133200997/export-ecad3b309a9a190b7938fcb1185b0581-barra_salud.scn
 res://botiquin_estanteria.tscn::4395b38afa9b4f010ce46452b134e185::1754355688::res://.godot/exported/133200997/export-5aa55510385cfe3e8ad1f12fda5a2e7b-botiquin_estanteria.scn
 res://botiquin_pequeño.tscn::616f50fb210d1ef6f830441d77bce594::1754615776::res://.godot/exported/133200997/export-25ef746cd1fe9b91029adfa1ae4711be-botiquin_pequeño.scn
 res://botiquin_stateria.tscn::7f989bbb14575d704e840262c133d323::1754355136::res://.godot/exported/133200997/export-e74e773c91139dc26908a334e083c351-botiquin_stateria.scn
 res://cadaver.tscn::b984b25e45da3f4d51d21d6b54ee0f95::1754587033::res://.godot/exported/133200997/export-f168a92229cd18f782a1b5765bdbf395-cadaver.scn
-res://chispa_fuego.tscn::be0e264921f413a0de68921590775454::1752691397::res://.godot/exported/133200997/export-af135ce9eeb441831135e1f2e0de00b3-chispa_fuego.scn
+res://chispa_fuego.tscn::d70bed5b8f973b753ecb9ac9c1e5a075::1770830788::res://.godot/exported/133200997/export-af135ce9eeb441831135e1f2e0de00b3-chispa_fuego.scn
 res://cocina.tscn::fbd4137910107c0045867dae4f845b64::1754420248::res://.godot/exported/133200997/export-0a7fc6a929dac36b6f7939971f0e43be-cocina.scn
 res://contratador.tscn::f4d98b04db4c820624520761b44efca5::1752951112::res://.godot/exported/133200997/export-00cb43e5bc0c5acd5604cc2b92998e78-contratador.scn
-res://cuarto_prota.tscn::e23f0775fdc0e8f6946db8517c7af543::1754751112::res://.godot/exported/133200997/export-beea3d8508c7ad276d91af0a561c4fb1-cuarto_prota.scn
-res://default_bus_layout.tres::0ee1cb96318325fd59b2e4589826cf37::1754748829::res://.godot/exported/133200997/export-19246414aa9fb561ced4b8dce477acec-default_bus_layout.res
-res://doble_cañon.tscn::4dcdd011a4ddde0a22d399c5b4315596::1754751111::res://.godot/exported/133200997/export-43fe1c35f4a27f99e53e3943faf8d4b6-doble_cañon.scn
-res://dormitorio_viejo.tscn::66618c9475dd9ded0107dd20f5d0f6e1::1754629771::res://.godot/exported/133200997/export-207c45679472918e90d43ee4a6fcba44-dormitorio_viejo.scn
-res://escena de muerte.tscn::c75da5f163f2822ac90bcd1cb3c10f1d::1754608699::res://.godot/exported/133200997/export-ef24ee38b5113dcbba8d17c0c839ad9a-escena de muerte.scn
-res://escena_menu.tscn::9a4e49cff19c52c0f15a6df863c8db59::1754751280::res://.godot/exported/133200997/export-b9edd7372511e1830d08688545c801e1-escena_menu.scn
+res://cuarto_prota.tscn::1a6c524eefe48c83aaf778bbdadca40d::1774811921::res://.godot/exported/133200997/export-beea3d8508c7ad276d91af0a561c4fb1-cuarto_prota.scn
+res://default_bus_layout.tres::ba07c92583a54c3e5d66bf12315fcbb1::1774140650::res://.godot/exported/133200997/export-19246414aa9fb561ced4b8dce477acec-default_bus_layout.res
+res://doble_cañon.tscn::edabcaabc4438d82882971b01dde57e1::1771867738::res://.godot/exported/133200997/export-43fe1c35f4a27f99e53e3943faf8d4b6-doble_cañon.scn
+res://dormitorio_viejo.tscn::dea28c3f5198dc7b90149f2ba5ff5381::1773637225::res://.godot/exported/133200997/export-207c45679472918e90d43ee4a6fcba44-dormitorio_viejo.scn
+res://escena de muerte.tscn::3de707a61af517957693a8ee535a887d::1767497177::res://.godot/exported/133200997/export-ef24ee38b5113dcbba8d17c0c839ad9a-escena de muerte.scn
+res://escena_menu.tscn::13648bf8f09e148dae7beb12587be022::1770955669::res://.godot/exported/133200997/export-b9edd7372511e1830d08688545c801e1-escena_menu.scn
 res://escombros.tscn::90a034a7be78cf188ab2bcc4d8d49b7d::1754331199::res://.godot/exported/133200997/export-9c6d5e6cfcacfcbf7ef5460b757a1a6f-escombros.scn
-res://escopeta_item.tscn::ffa034dc1808b9c3c0c2c2319bfddc19::1754332649::res://.godot/exported/133200997/export-0fd1540ba2fa304ef72af13d6b4cf865-escopeta_item.scn
+res://escopeta_item.tscn::ea6041bc036eb4e3e541418286bd1436::1772734663::res://.godot/exported/133200997/export-0fd1540ba2fa304ef72af13d6b4cf865-escopeta_item.scn
 res://estante_de_armas.tscn::bd2813a883d02fce7cff8326ca155c77::1754235612::res://.godot/exported/133200997/export-1024f050c14c69b45fb87dd4eb0b4e8e-estante_de_armas.scn
 res://farol.tscn::baee817692c65d79fb7caf669ad7d06a::1754586647::res://.godot/exported/133200997/export-c6df9b0f09ad3d342820fc2344390677-farol.scn
-res://foco.tscn::5f20b3685ca3127b7d624c1c639b7104::1754420248::res://.godot/exported/133200997/export-360044ccfd7e39e675a503cd24edb529-foco.scn
-res://fuego.tscn::f699070740dcd6c6a83d80af94e9996c::1754699997::res://.godot/exported/133200997/export-5be53c0fcde0e76ee74117d30fcc828d-fuego.scn
+res://foco.tscn::e8a62a3d9e9b5c29795a46b08a418715::1773805228::res://.godot/exported/133200997/export-360044ccfd7e39e675a503cd24edb529-foco.scn
+res://fuego.tscn::cb77569e59c3d945385a3fe063b6b811::1773610673::res://.godot/exported/133200997/export-5be53c0fcde0e76ee74117d30fcc828d-fuego.scn
 res://hell_extinguisher.tscn::4361a60718bbab847845bef3738a5544::1752092410::res://.godot/exported/133200997/export-21069233ae53ccb98488264b140b56c8-hell_extinguisher.scn
 res://hoyo_de_bala.tscn::b2c294cafdd6f47cd15e6ad37a249b3c::1754151656::res://.godot/exported/133200997/export-9b9c4b6dc96acec30117911d5cb05793-hoyo_de_bala.scn
-res://jugador.tscn::88dfd6a809b292784e99a92ce24c5e26::1754751111::res://.godot/exported/133200997/export-f6b1af868ee71760252b5ae4782dcb2d-jugador.scn
-res://llave_azul.tscn::846a8f4cdfdc89f6c20ee0814f4323b6::1754751111::res://.godot/exported/133200997/export-cef1b8b64012953fdaea38f139da2431-llave_azul.scn
+res://jugador.tscn::ac291b47280e70402a073aa19eea6f3f::1773634789::res://.godot/exported/133200997/export-f6b1af868ee71760252b5ae4782dcb2d-jugador.scn
+res://llave_azul.tscn::846a8f4cdfdc89f6c20ee0814f4323b6::1768539914::res://.godot/exported/133200997/export-cef1b8b64012953fdaea38f139da2431-llave_azul.scn
 res://marcara_soldado.tscn::1806ad76952bd104e77100807f21fca1::1752088923::res://.godot/exported/133200997/export-36e42f93b42f71caed0f479465576451-marcara_soldado.scn
-res://mensaje inicio.tscn::880f0a292ff35c65400895bc834803c8::1754751111::res://.godot/exported/133200997/export-56878046ac97bd105df75708d171a1f0-mensaje inicio.scn
+res://mensaje inicio.tscn::880f0a292ff35c65400895bc834803c8::1756094792::res://.godot/exported/133200997/export-56878046ac97bd105df75708d171a1f0-mensaje inicio.scn
 res://menu.tscn::122756f3ba4c64475a0694338677e114::1754587914::res://.godot/exported/133200997/export-a4951207776b25ee5c8b2b05c1463587-menu.scn
 res://mini_botiquin.tscn::a6cfb5818dd73fb73abcd2b1643a4559::1754699997::res://.godot/exported/133200997/export-ca4b353c27f8aade29bfd27382f9dfdd-mini_botiquin.scn
-res://municion.tscn::3521c788a26ac1b049bf526156f653bc::1754751111::res://.godot/exported/133200997/export-6e0d1f89dbc14d79d2fffd9932f0b8eb-municion.scn
+res://municion.tscn::11232e195219bc634e5262bd6e6b7336::1773610434::res://.godot/exported/133200997/export-6e0d1f89dbc14d79d2fffd9932f0b8eb-municion.scn
 res://murcielago_vlador.tscn::7a097e9757a481779e3aa426cdd52113::1754539802::res://.godot/exported/133200997/export-eb13a9b3c951edc5ab5ca0482c1ffa57-murcielago_vlador.scn
 res://muro destruido.tscn::1b05b64d7b065fb3346cf310450e2f9b::1752620650::res://.godot/exported/133200997/export-af4bf4ce1d209cfc7f037ac950f4497f-muro destruido.scn
 res://old_tv.tscn::662bfa4c36384f0f0b4a9a07b00c7f4f::1753308029::res://.godot/exported/133200997/export-5b6a4af29ef820cb4f1feb11f20213d8-old_tv.scn
 res://papel.tscn::8174f3ff4223c89a5960004238010341::1751765087::res://.godot/exported/133200997/export-24dc58b69164a2da1e62a892e15127a0-papel.scn
-res://pared_destructible.tscn::b2a7ee0996ef2e4649f0cbf9470fc553::1754500647::res://.godot/exported/133200997/export-e9064df5d6c5f0798149cff5dc96bd03-pared_destructible.scn
+res://pared_destructible.tscn::171331b81352972acd1dff5b74cff461::1773634857::res://.godot/exported/133200997/export-e9064df5d6c5f0798149cff5dc96bd03-pared_destructible.scn
 res://pastillas.tscn::307e2430fd1c51b68ad6fe5a39bdafbb::1754355688::res://.godot/exported/133200997/export-50b53a2677bc8ba2ba1fe9cb0628f4ea-pastillas.scn
 res://pc_01.tscn::259b91417e50400525ba6096a5d5557b::1752092410::res://.godot/exported/133200997/export-cdf8c365c16f398a423c04c1898c3118-pc_01.scn
-res://puerta_azul.tscn::8c41a072ad8b0dcd0303a0bc3518ec29::1754539802::res://.godot/exported/133200997/export-cb122f0c0cf97a7af45aa931591fcf88-puerta_azul.scn
-res://puerta_final.tscn::d408ad345d2fa4d6d00537c1891ee254::1754716875::res://.godot/exported/133200997/export-8f1538057db54b16725966230e9eafec-puerta_final.scn
+res://puerta_azul.tscn::337c242f992fbd32aac8a87929551425::1768538107::res://.godot/exported/133200997/export-cb122f0c0cf97a7af45aa931591fcf88-puerta_azul.scn
+res://puerta_final.tscn::a0fdbc92b6ee365a181af310f84dcced::1767557231::res://.godot/exported/133200997/export-8f1538057db54b16725966230e9eafec-puerta_final.scn
 res://rata.tscn::32f4dff8265410cb62b22195d2533669::1753477773::res://.godot/exported/133200997/export-316b217cfb71d3dc6668456b07596cdd-rata.scn
 res://rata_help.tscn::963129d2acbe3d2dd35af436055f78ba::1753415391::res://.godot/exported/133200997/export-8035d54185b1d5bfa4a57aa744d3ffb9-rata_help.scn
-res://rat_minion.tscn::241417187b0e97b8330bd63e5c2b78b2::1754716875::res://.godot/exported/133200997/export-fdf1f71facdfbf4e609cef60d9dd3626-rat_minion.scn
+res://rat_minion.tscn::af303dc42edd309e3834bddfede9b8c1::1773624609::res://.godot/exported/133200997/export-fdf1f71facdfbf4e609cef60d9dd3626-rat_minion.scn
 res://refrigerador.tscn::fcf66380ebe229093c5af2213ac55518::1754420248::res://.godot/exported/133200997/export-92b928e2e2a83c04e7d3324682256a83-refrigerador.scn
 res://reja.tscn::37fcfb2cf981bd4f7c72a6b20e8a956d::1742187197::res://.godot/exported/133200997/export-d3f24aaa3b552308f054c34dc61dafd8-reja.scn
-res://fuego.tres::45f9e19eadd88b371f8bbaae5d202a6a::1754753308::res://.godot/exported/133200997/export-8ec8f8c08a18325198ca5046e5c40941-fuego.res
+res://fuego.tres::fe18b272f8ed779d7c51184431d842a1::1774811921::res://.godot/exported/133200997/export-8ec8f8c08a18325198ca5046e5c40941-fuego.res
 res://sillon.tscn::9a60e0b570a08515ce77b7a1e2289dba::1754501643::res://.godot/exported/133200997/export-0278727b3c407aa88a883249bae75caa-sillon.scn
 res://transicion.tscn::eebb25055b04ea966aac912a2ae41ae8::1754608699::res://.godot/exported/133200997/export-00163fad5525fcb61705da97e3d1a1d8-transicion.scn
 res://trozo_muro.tscn::6dc569a8bf7bdab4c7d976e02068c77a::1753036195::res://.godot/exported/133200997/export-31756563669c89062c390690967506da-trozo_muro.scn
 res://variante_botiquin.tscn::8d00974156d83bfb5a15a8e86006773b::1754699997::res://.godot/exported/133200997/export-62b7bedd1b04f267059d45633282b6cc-variante_botiquin.scn
 res://cadaver_001.tscn::68ac56a5a8395b59a2713b5014492161::1754717856::res://.godot/exported/133200997/export-d7f4e348800cd3fb7fbe3ae451080da0-cadaver_001.scn
-res://final_nivel1.tscn::914b6d505b9aff91ad03071f5f224b04::1754753308::res://.godot/exported/133200997/export-24311419fa02a5bd30c495520fb6c0e1-final_nivel1.scn
-res://particulas_flotantes.tres::d4e49f03002462e904b44335ce5066e5::1754753308::res://.godot/exported/133200997/export-0b1e46e84ae4e0f29a47cec9ecadf904-particulas_flotantes.res
+res://final_nivel1.tscn::f9c1ed04f8f631d1f1a1c09030bb9cf4::1771420367::res://.godot/exported/133200997/export-24311419fa02a5bd30c495520fb6c0e1-final_nivel1.scn
+res://particulas_flotantes.tres::afcec2f5397cf9f86198cafcccc4a67f::1774811921::res://.godot/exported/133200997/export-0b1e46e84ae4e0f29a47cec9ecadf904-particulas_flotantes.res
 res://cadaver_002.tscn::added0f702abfd3513648f23244bd52d::1754718169::res://.godot/exported/133200997/export-2ec4a85908131c6d9b96de5de2f178c0-cadaver_002.scn
-res://recepccion.tscn::fb90bafc3ba1bc24f76cce942485e330::1754751111::res://.godot/exported/133200997/export-8169144b50e6567def5b1303c7a10d0b-recepccion.scn
+res://recepccion.tscn::a1a60d8c22bbcb08d3bf0a6a445fa48f::1773795978::res://.godot/exported/133200997/export-8169144b50e6567def5b1303c7a10d0b-recepccion.scn
+res://almadena.tscn::f400516aef303a8b8ada1f709eae1bd2::1773804597::res://.godot/exported/133200997/export-a75fc1d6a00335cb9d7bedcc128b9c3b-almadena.scn
+res://cadaver_003.tscn::a1d44aa3831baada40925e7c9fecf6c7::1768524342::res://.godot/exported/133200997/export-306e35a43b49b46351dba71d462e9870-cadaver_003.scn
+res://escombros_3D.tscn::835cc508f93551cc76c92290c86403a3::1768501936::res://.godot/exported/133200997/export-2952f4b67536826003e2b10a9c4feee5-escombros_3D.scn
+res://mazo.tscn::9b2ada6386030e180b3d9dcc140d021e::1772143827::res://.godot/exported/133200997/export-ca90f2003464c6f759da9acf3ebc7bfb-mazo.scn
+res://menu_pausa.tscn::da75cf8a8c7caf89a835a426f638794a::1768762535::res://.godot/exported/133200997/export-cf1d202f6495c7dd2eed7d2d0827863e-menu_pausa.scn
+res://puerta_cabaña rota.tscn::b2bae47644b86d748a9d425e25e8c7c2::1768522988::res://.godot/exported/133200997/export-03c6022f77999ada696019e640b8063d-puerta_cabaña rota.scn
+res://puerta_dpto.tscn::0388a386a92dff857054658e6a3c7681::1773637157::res://.godot/exported/133200997/export-d7a714eb0ed7bc7d85e5dec319b6f73e-puerta_dpto.scn
+res://tabla.tscn::b7da4c7de12d51b655357c65a8ee0b6b::1773805324::res://.godot/exported/133200997/export-b4287393ec4e575a11b6aa44d974f285-tabla.scn

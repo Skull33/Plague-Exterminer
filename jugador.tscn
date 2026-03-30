@@ -13,6 +13,7 @@
 [ext_resource type="FontFile" uid="uid://censi8hyd7ld8" path="res://Fuentes_de_letra/SmackAttack/smackattackbb_bld.ttf" id="11_hcpjn"]
 [ext_resource type="Texture2D" uid="uid://m8fb3herhnw8" path="res://sprites/icono_municion.png" id="12_xwd11"]
 [ext_resource type="AudioStream" uid="uid://chqt87c0gbqps" path="res://audio/Muerte_prota.mp3" id="13_bpxwk"]
+[ext_resource type="Texture2D" uid="uid://bb1wefcy8gftn" path="res://sprites/patada.png" id="14_e6m2u"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o2m60"]
 render_priority = 0
@@ -23,6 +24,67 @@ material = SubResource("ShaderMaterial_o2m60")
 flip_faces = true
 top_radius = 0.3
 bottom_radius = 0.3
+
+[sub_resource type="Animation" id="Animation_e6m2u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_pn0r8"]
+resource_name = "patada"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.25, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_75jh1"]
+_data = {
+&"RESET": SubResource("Animation_e6m2u"),
+&"patada": SubResource("Animation_pn0r8")
+}
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r7xtl"]
 
@@ -36,6 +98,9 @@ material = SubResource("StandardMaterial3D_hir5a")
 font_size = 32
 outline_size = 12
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e6m2u"]
+size = Vector3(1.6994629, 1, 1.4301758)
 
 [node name="Jugador" type="CharacterBody3D" unique_id=400095966 groups=["jugador"]]
 script = ExtResource("1_buwlj")
@@ -51,9 +116,20 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.808, 0)
 current = true
 
+[node name="patada" type="Sprite2D" parent="cabeza/Camera3D" unique_id=896110534]
+visible = false
+position = Vector2(864, 820)
+scale = Vector2(18, 18)
+texture = ExtResource("14_e6m2u")
+hframes = 2
+
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="cabeza/Camera3D" unique_id=1538494048]
 transform = Transform3D(1.4, 0, 0, 0, 1, 0, 0, 0, 1.4, 0, -0.62966, 0)
 mesh = SubResource("CylinderMesh_ukil5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cabeza/Camera3D" unique_id=1319883400]
+root_node = NodePath("../patada")
+libraries/ = SubResource("AnimationLibrary_75jh1")
 
 [node name="rayo_interaccion" type="RayCast3D" parent="cabeza/Camera3D" unique_id=137565816]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.043118715, -0.474818)
@@ -116,14 +192,14 @@ size_flags_horizontal = 4
 texture = ExtResource("8_bpxwk")
 
 [node name="Barra_Salud" parent="." unique_id=1757154904 instance=ExtResource("8_qw2bf")]
-anchor_left = 0.062
-anchor_top = 0.938
-anchor_right = 0.323
-anchor_bottom = 0.951
-offset_left = -0.424004
-offset_top = 0.175964
-offset_right = -0.0960083
-offset_bottom = -0.248047
+anchor_left = 0.061631937
+anchor_top = 0.9382716
+anchor_right = 0.32291666
+anchor_bottom = 0.9506172
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 0
 
@@ -161,3 +237,10 @@ anchor_right = 0.993056
 anchor_bottom = 0.987654
 texture = ExtResource("12_xwd11")
 metadata/_edit_use_anchors_ = true
+
+[node name="Area3D" type="Area3D" parent="." unique_id=588260880]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0633049, 0.6563475, -1.0099232)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2075095046]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0579834, 0, -0.21508789)
+shape = SubResource("BoxShape3D_e6m2u")

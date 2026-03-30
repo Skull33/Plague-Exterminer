@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cyr2c6khamkxb"
+path="res://.godot/imported/la Primera Horda.mp3-98f9cb1ae623102f37d712295289b65e.mp3str"
+
+[deps]
+
+source_file="res://sonidos/soudtrack/la Primera Horda.mp3"
+dest_files=["res://.godot/imported/la Primera Horda.mp3-98f9cb1ae623102f37d712295289b65e.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=6.0
+bpm=0.0
+beat_count=0
+bar_beats=4

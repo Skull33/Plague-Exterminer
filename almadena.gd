@@ -4,6 +4,7 @@ extends Node3D
 @onready var anims =  $AnimationPlayer
 @onready var area_daño = $Sprite3D/Area3D
 @onready var colision_daño = $Sprite3D/Area3D/CollisionShape3D
+@onready var audio_recoger = $recoger_arma
 
 @export var tipo_arma :String = "mazo"
 
@@ -16,19 +17,20 @@ func _ready():
 	colision_daño.disabled = true
 
 func _physics_process(delta):
-	if Input.is_action_pressed("disparar") and puede_atacar:
+	if Input.is_action_pressed("disparar") and jugador.tiene_la_almadena and jugador.arma_actual.tipo_arma == "mazo" and puede_atacar:
 		puede_atacar = false
 		anims.play("ataque")
 		await (get_tree().create_timer(1).timeout)
+		jugador.cabeza.rotation_degrees.x -= 20
 		colision_daño.disabled = false
-		jugador.cabeza.rotation_degrees.x -= 10
 		await(anims.animation_finished)
+		colision_daño.disabled = true
 		anims.play("recoger_almadena")
-		await(anims.animation_finished)
+		audio_recoger.play()
+		await(audio_recoger.finished)
 		anims.play("podemos atacar otra vez")
 		await(anims.animation_finished)
 		puede_atacar = true
-		colision_daño.disabled = true
 
 func entro_area_daño(cuerpo):
 	if cuerpo is Malo:
@@ -41,5 +43,3 @@ func obtener_arma():
 		jugador.tiene_la_almadena = true
 		self.show()
 		print("Has obtenido la almadena")
-	else:
-		self.show()

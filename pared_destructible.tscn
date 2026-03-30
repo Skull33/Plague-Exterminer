@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://c7yrdl1ni5d0o" path="res://pared_destructible.gd" id="2_ctxxm"]
 [ext_resource type="PackedScene" uid="uid://cnp6lroc858hx" path="res://escombros.tscn" id="2_d6d3d"]
 [ext_resource type="AudioStream" uid="uid://f0rdawqvx2cv" path="res://audio/Derrumbe.mp3" id="3_aq71q"]
+[ext_resource type="Texture2D" uid="uid://bwagi618lkjsa" path="res://texturas/diana_pintura.png" id="5_s24s1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_574sl"]
 resource_name = "Material.015"
@@ -83,12 +84,13 @@ size = Vector3(0.13189697, 2.4459229, 1.9077148)
 mesh = SubResource("ArrayMesh_d6d3d")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cube_004" unique_id=1721539752 node_paths=PackedStringArray("particulas", "audio", "colision", "muro") groups=["es destructible"]]
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_004" unique_id=1721539752 node_paths=PackedStringArray("particulas", "audio", "colision", "muro", "sprite_aviso") groups=["es destructible"]]
 script = ExtResource("2_ctxxm")
 particulas = NodePath("../../Node3D")
 audio = NodePath("AudioStreamPlayer3D")
 colision = NodePath("CollisionShape3D")
 muro = NodePath("..")
+sprite_aviso = NodePath("Sprite3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_004/StaticBody3D" unique_id=603934172]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055511475, -0.19403076, -0.01586914)
@@ -97,6 +99,12 @@ shape = SubResource("BoxShape3D_aq71q")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Cube_004/StaticBody3D" unique_id=1883134301]
 stream = ExtResource("3_aq71q")
 bus = &"efecto explocion"
+
+[node name="Sprite3D" type="Sprite3D" parent="Cube_004/StaticBody3D" unique_id=996486356]
+transform = Transform3D(-1.09278474e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.09278474e-07, 0.12495494, 0, 0)
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("5_s24s1")
 
 [node name="Node3D" parent="." unique_id=1855716630 instance=ExtResource("2_d6d3d")]
 lifetime = 0.3

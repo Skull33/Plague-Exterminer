@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b5xsoqkg5bi36" path="res://almadena.gd" id="1_412p8"]
 [ext_resource type="Texture2D" uid="uid://mg1gfkpqa0yq" path="res://sprites/marro_item.png" id="1_u226j"]
+[ext_resource type="AudioStream" uid="uid://bykiqpvgn2ut3" path="res://audio/recoger almadena.mp3" id="3_im2ci"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_412p8"]
 size = Vector3(0.26470947, 0.6152344, 0.13085938)
@@ -35,7 +36,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_412p8"]
 resource_name = "ataque"
-length = 1.2
+length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -63,7 +64,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_pfiwv"]
 resource_name = "podemos atacar otra vez"
-length = 2.0
+length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -71,7 +72,7 @@ tracks/0/path = NodePath("Sprite3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, -1.0257138, 0), Vector3(0, 0, 0)]
@@ -83,7 +84,7 @@ tracks/1/path = NodePath("Sprite3D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(-0.4072449, 0.11882573, -0.031830948), Vector3(-0.4072449, 0.11882573, -0.031830948)]
@@ -129,7 +130,7 @@ _data = {
 script = ExtResource("1_412p8")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=326890687]
-transform = Transform3D(0.99393964, -0.015328994, 0.1088511, -0.029222729, 0.91775006, 0.3960812, -0.10596961, -0.39686152, 0.9117411, 0, 0, 0)
+transform = Transform3D(0.9939396, -0.015328992, 0.1088511, -0.029222727, 0.91775, 0.3960812, -0.1059696, -0.3968615, 0.9117411, 0, 0, 0)
 no_depth_test = true
 texture_filter = 0
 render_priority = 1
@@ -146,3 +147,6 @@ transform = Transform3D(0.62120247, 0.78365016, 0, -0.78365016, 0.62120247, 0, 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1915209342]
 libraries/ = SubResource("AnimationLibrary_im2ci")
+
+[node name="recoger_arma" type="AudioStreamPlayer3D" parent="." unique_id=1941080827]
+stream = ExtResource("3_im2ci")

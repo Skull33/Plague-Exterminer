@@ -1,9 +1,9 @@
-res://default_bus_layout.tres
-res://almadena.tscn
+res://cuarto_prota.tscn
 res://Dialogos/dialogo personalizado.tres
 res://jugador.gdshader
 res://fuego.tres
 res://particulas_flotantes.tres
 res://clipping_shader.gdshader
-res://jugador.tscn
-res://almadena.gd
+res://sistema_hordas.gd
+res://rat_minion.tscn
+res://escombros.tscn

@@ -6,6 +6,7 @@ signal SOY_destructible
 @export var audio: AudioStreamPlayer3D
 @export var colision: CollisionShape3D
 @export var muro : MeshInstance3D
+@export var sprite_aviso = Sprite3D
 var mensaje = "Analizar muro [E]"
 var interacted = false
 
@@ -14,6 +15,7 @@ func _destruccion():
 	audio.play()
 	muro.visible = false
 	colision.disabled = true
+	sprite_aviso.visible = false
 	particulas.restart()
 	await(get_tree().create_timer(particulas.lifetime).timeout)
 	queue_free()

@@ -109,7 +109,7 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="SphereShape3D" id="SphereShape3D_2xc13"]
 radius = 1.13567
 
-[node name="Enemigo" type="CharacterBody3D" unique_id=1274499079]
+[node name="Enemigo" type="CharacterBody3D" unique_id=1274499079 groups=["enemigos"]]
 process_priority = 1
 script = ExtResource("1_2xc13")
 velocidad = 5.0

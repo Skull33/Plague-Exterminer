@@ -27,6 +27,9 @@ var nueva_salud
 	"res://audio/quejido_prota 3.mp3"
 ]
 @onready var municion = $CanvasLayer/Municion
+@onready var patada = $cabeza/Camera3D/AnimationPlayer
+@onready var area_patada = $Area3D/CollisionShape3D
+@onready var area = $Area3D
 
 var sensibilidad = 0.1
 var rotacion = 0.0
@@ -39,6 +42,7 @@ var camara_esta_cayendo = false
 var gravedad_camara = 20.0
 var arma_actual_index = 0
 var arma_actual
+var patear = true
 #cabeceo
 @export_group("cabeceo")
 @export var frecuencia_cabeceo = 2.0
@@ -47,6 +51,8 @@ var tiempo_cabeceo = 0.0
 @export var cantidad_salud = 100
 @export var tiene_la_escopeta = false
 @export var tiene_la_almadena = false
+ 
+var daño = 10
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -65,6 +71,8 @@ func _ready():
 	salud.iniciar_salud(cantidad_salud)
 	municion.hide()
 	icono.hide()
+	area_patada.disabled = true
+	area.body_entered.connect(entro_al_area_patada)
 
 func _physics_process(delta):
 	if estamos_vivos:
@@ -95,6 +103,14 @@ func _physics_process(delta):
 			direccion += transform.basis.x
 		if Input.is_action_pressed("Izquierda"):
 			direccion -= transform.basis.x
+		if Input.is_action_pressed("patada") and patear:
+			patear = false
+			patada.play("patada")
+			await(get_tree().create_timer(0.3).timeout)
+			area_patada.disabled = false
+			await(patada.animation_finished)
+			area_patada.disabled = true
+			patear = true
 		
 		velocity.x = direccion.x * velocidad
 		velocity.z = direccion.z * velocidad
@@ -175,7 +191,8 @@ func _curar(puntos):
 
 func cambiar_arma(i):
 	if i >= 0 and i < arma_actual_array.size():
-		arma_actual.hide()
+		if arma_actual:
+			arma_actual.hide()
 		arma_actual_index = i
 		arma_actual = arma_actual_array[arma_actual_index]
 		arma_actual.show()
@@ -196,6 +213,11 @@ func obtener_arma_tipo(tipo:String):
 	for i in range(arma_actual_array.size()):
 		var arma = arma_actual_array[i]
 		if arma.tipo_arma == tipo:
+			if tipo == "escopeta":
+				tiene_la_escopeta = true
+			
+			if tipo == "almadena":
+				tiene_la_almadena = true
 			arma.obtener_arma()
 			cambiar_arma(i)
 			return
@@ -204,6 +226,9 @@ func intentar_cambio(i):
 	if i >= arma_actual_array.size():
 		return
 	var arma = arma_actual_array[i]
+	
+	if not arma.visible:
+		return
 	
 	if arma.tipo_arma == "escopeta" and not tiene_la_escopeta:
 		return
@@ -214,4 +239,11 @@ func intentar_cambio(i):
 	if i == arma_actual_index:
 		return
 	
+	
 	cambiar_arma(i)
+
+func entro_al_area_patada(cuerpo):
+	if cuerpo.is_in_group("enemigos"):
+		print("super patada")
+		if cuerpo.has_method("recibir_daño"):
+			cuerpo.recibir_daño(self)

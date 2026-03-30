@@ -24,8 +24,11 @@ func entro(cuerpo):
 				return
 			escopeta.municion_actual = clamp(escopeta.municion_actual + añadir_municion,0,escopeta.municion_maxima)
 			cuerpo.UI_arma()
-	colision.disabled = true
-	sprite.visible = false
-	audio.play()
-	await(audio.finished)
-	queue_free()
+		colision.disabled = true
+		sprite.visible = false
+		audio.play()
+		await(audio.finished)
+		queue_free()
+	else:
+		print("no puedo tocar la municion XD")
+		return

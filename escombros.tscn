@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnp6lroc858hx"]
+[gd_scene format=3 uid="uid://cnp6lroc858hx"]
 
 [ext_resource type="Texture2D" uid="uid://drae7f6kl1sn7" path="res://texturas/escombro.png" id="1_hpf0y"]
 
@@ -23,7 +23,7 @@ billboard_mode = 2
 material = SubResource("StandardMaterial3D_sn77g")
 size = Vector2(0.3, 0.3)
 
-[node name="GPUParticles3D" type="GPUParticles3D"]
+[node name="GPUParticles3D" type="GPUParticles3D" unique_id=1488762622]
 transform = Transform3D(0.999247, 0, 0, 0, 0.999247, 0, 0, 0, 0.999247, 0, 0, 0)
 emitting = false
 amount = 100

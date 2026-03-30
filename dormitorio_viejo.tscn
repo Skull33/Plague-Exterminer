@@ -2,4 +2,4 @@
 
 [ext_resource type="PackedScene" uid="uid://bhm7nbm376yco" path="res://escenarios/Dormitorio_viejo.blend" id="1_1wl14"]
 
-[node name="Dormitorio_viejo" unique_id=836263066 instance=ExtResource("1_1wl14")]
+[node name="Dormitorio_viejo" unique_id=1472079516 instance=ExtResource("1_1wl14")]

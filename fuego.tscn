@@ -129,7 +129,7 @@ draw_pass_1 = SubResource("QuadMesh_l57gg")
 stream = ExtResource("7_u23er")
 volume_db = -21.009
 autoplay = true
-max_distance = 15.0
+max_distance = 273.69
 bus = &"fuego"
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1575975792]
