@@ -1,8 +1,10 @@
 [gd_scene format=4 uid="uid://diwp7fcyuu7o7"]
 
 [ext_resource type="Texture2D" uid="uid://dgs0e1cwoygnn" path="res://texturas/puerta_dpto_2.png" id="1_emry3"]
-[ext_resource type="Script" uid="uid://1kktyc66mwpg" path="res://puerta_general.gd" id="2_63t3l"]
-[ext_resource type="AudioStream" uid="uid://jusdg80vx1f1" path="res://audio/abrir gabeta.mp3" id="3_sk2x1"]
+[ext_resource type="Script" uid="uid://byuphttq55oi4" path="res://puerta_rosa.gd" id="2_63t3l"]
+[ext_resource type="PackedScene" uid="uid://nmb4d4vbw5cx" path="res://escenarios/puerta_rota_2.blend" id="3_sk2x1"]
+[ext_resource type="AudioStream" uid="uid://btgcp55ylq4db" path="res://audio/Bloqueado.mp3" id="4_sk2x1"]
+[ext_resource type="AudioStream" uid="uid://2g3ldhsl35qk" path="res://audio/destruir puerta.mp3" id="5_b02eh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbb77"]
 resource_name = "Material.048"
@@ -72,43 +74,6 @@ shadow_mesh = SubResource("ArrayMesh_fkd25")
 [sub_resource type="BoxShape3D" id="BoxShape3D_63t3l"]
 size = Vector3(2, 2.0101318, 2.0628662)
 
-[sub_resource type="Animation" id="Animation_63t3l"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Cube_015:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_sk2x1"]
-resource_name = "abrir"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Cube_015:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 1.5707964, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_b02eh"]
-_data = {
-&"RESET": SubResource("Animation_63t3l"),
-&"abrir": SubResource("Animation_sk2x1")
-}
-
 [node name="puerta dpto" type="Node3D" unique_id=1586042663]
 
 [node name="Cube_015" type="MeshInstance3D" parent="." unique_id=1215817614]
@@ -116,20 +81,28 @@ transform = Transform3D(1.592956, 0, 0, 0, 1.2289878, 0, 0, 0, 0.17310739, 0, 0,
 mesh = SubResource("ArrayMesh_63t3l")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cube_015" unique_id=911608309 node_paths=PackedStringArray("animacion", "sonido_abrir")]
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_015" unique_id=911608309 groups=["Puertas"]]
 transform = Transform3D(1, 0, 0, 0, 0.9999998, 0, 2.842171e-14, 0, 1, 0.9844287, 0.33454597, -144.24321)
 script = ExtResource("2_63t3l")
-animacion = NodePath("AnimationPlayer")
-sonido_abrir = NodePath("AudioStreamPlayer3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_015/StaticBody3D" unique_id=302964784]
 transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0.009668642, -0.37894732, 144.44289)
 shape = SubResource("BoxShape3D_63t3l")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Cube_015/StaticBody3D" unique_id=760471781]
-transform = Transform3D(0.62776375, 0, 0, 0, 0.8136776, 0, 0, 0, 5.776761, 0.009668642, -0.37913048, 144.4698)
-stream = ExtResource("3_sk2x1")
+[node name="puerta_rota_2" parent="." unique_id=394942139 instance=ExtResource("3_sk2x1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2232163, -1.1690234, 2.1355708)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Cube_015/StaticBody3D" unique_id=1216436198]
-root_node = NodePath("../../..")
-libraries/ = SubResource("AnimationLibrary_b02eh")
+[node name="Cube_001" parent="puerta_rota_2" index="1" unique_id=584867521]
+transform = Transform3D(-0.96479946, -0.26298693, 1.3698198e-07, 8.940697e-08, 1.7881393e-07, 1, -0.262987, 0.9647994, -2.1464612e-07, 3.328985, 0, -0.4336245)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1328134193]
+stream = ExtResource("4_sk2x1")
+volume_db = 80.0
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="." unique_id=304569138]
+transform = Transform3D(1, 0, -3.0886025e-15, 0, 1, 0, 3.0886025e-15, 0, 1, 1.5835533, -0.05456862, 0.03456688)
+stream = ExtResource("5_b02eh")
+volume_db = 80.0
+max_distance = 30.0
+
+[editable path="puerta_rota_2"]

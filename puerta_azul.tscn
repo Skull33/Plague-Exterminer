@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=4 uid="uid://cyki8ktww0203"]
+[gd_scene format=4 uid="uid://cyki8ktww0203"]
 
 [ext_resource type="Texture2D" uid="uid://d3ej3cww25qk1" path="res://texturas/Puerta_dormitorio.png" id="1_cus0k"]
 [ext_resource type="Script" uid="uid://6hoc27441ynh" path="res://Puerta_A_dormitorio.gd" id="2_1uiib"]
+[ext_resource type="AudioStream" uid="uid://btgcp55ylq4db" path="res://audio/Bloqueado.mp3" id="3_y8tci"]
+[ext_resource type="AudioStream" uid="uid://jusdg80vx1f1" path="res://audio/abrir gabeta.mp3" id="4_3st6u"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24onl"]
 resource_name = "Material.004"
@@ -108,22 +110,26 @@ _data = {
 &"abrir": SubResource("Animation_3st6u")
 }
 
-[node name="PuertaAzul" type="Node3D"]
+[node name="PuertaAzul" type="Node3D" unique_id=1787552045]
 
-[node name="Cube_001" type="MeshInstance3D" parent="."]
+[node name="Cube_001" type="MeshInstance3D" parent="." unique_id=655487514]
 transform = Transform3D(1, 0, 0, 0, 1.3354, 0, 0, 0, 0.0526067, -1, 0, 0)
 mesh = SubResource("ArrayMesh_hyxqg")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cube_001" groups=["Puertas_Azules"]]
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_001" unique_id=318709638 groups=["Puertas_Azules"]]
 script = ExtResource("2_1uiib")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_001/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_001/StaticBody3D" unique_id=1824051976]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.13519289, 0.01601411)
 shape = SubResource("BoxShape3D_1uiib")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Cube_001/StaticBody3D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cube_001/StaticBody3D" unique_id=718712758]
 root_node = NodePath("../../..")
-libraries = {
-&"": SubResource("AnimationLibrary_52tgu")
-}
+libraries/ = SubResource("AnimationLibrary_52tgu")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1840991656]
+stream = ExtResource("3_y8tci")
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="." unique_id=1646780020]
+stream = ExtResource("4_3st6u")

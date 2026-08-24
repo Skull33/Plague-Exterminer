@@ -123,6 +123,7 @@ process_mode = 3
 process_priority = 1
 transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0.0462129, -0.00159737, -0.00515217)
 billboard = 2
+shaded = true
 texture_filter = 0
 render_priority = 1
 texture = ExtResource("2_i1x11")
@@ -133,8 +134,24 @@ frame = 1
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CollisionShape3D/Sprite3D" unique_id=803597885]
 libraries/ = SubResource("AnimationLibrary_e6yhu")
 
+[node name="sombra" type="Sprite3D" parent="CollisionShape3D" unique_id=939892602]
+process_mode = 3
+process_priority = 1
+transform = Transform3D(3.5, 0, 0, 0, -1.5298986e-07, -3.5, 0, 3.5, -1.5298986e-07, 0.07811296, -0.82273865, 0.7724098)
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("2_i1x11")
+hframes = 4
+vframes = 4
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CollisionShape3D/sombra" unique_id=14802564]
+libraries/ = SubResource("AnimationLibrary_e6yhu")
+
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=818251353]
 path_max_distance = 1.01
+avoidance_enabled = true
 
 [node name="rayo_frente" type="RayCast3D" parent="." unique_id=767876934]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.453889, 0)
@@ -232,7 +249,7 @@ target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
 [node name="rayo_der8" type="RayCast3D" parent="." unique_id=116750201]
-transform = Transform3D(-0.258819, 0.965926, 4.2222e-08, 0, -4.37114e-08, 1, 0.965926, 0.258819, 1.13133e-08, 0, 0.453889, 0)
+transform = Transform3D(-0.258819, 0.965926, 4.2222e-08, 0, -4.37114e-08, 1, 0.965926, 0.258819, 1.13133e-08, 0.0034537315, 0.45388913, 0.009489179)
 target_position = Vector3(0, -30, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 

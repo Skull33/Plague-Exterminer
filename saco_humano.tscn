@@ -1,0 +1,448 @@
+[gd_scene format=3 uid="uid://ckkucc8bq3lb8"]
+
+[ext_resource type="Texture2D" uid="uid://bxop5m53jiecw" path="res://sprites/saco_humano.png" id="1_52sl5"]
+[ext_resource type="Script" uid="uid://b0lnrqyauyxex" path="res://saco_humano.gd" id="1_khd71"]
+[ext_resource type="PackedScene" uid="uid://7j63vnb5aps4" path="res://barra_salud.tscn" id="2_ij3al"]
+[ext_resource type="AudioStream" uid="uid://fswsocvxfkrv" path="res://audio/respiracion .mp3" id="4_boocm"]
+[ext_resource type="AudioStream" uid="uid://gq1l2fehgako" path="res://audio/muerte.mp3" id="5_vu5tg"]
+[ext_resource type="PackedScene" uid="uid://e6wye41cajoq" path="res://chispa_disparo.tscn" id="6_ppeko"]
+[ext_resource type="AudioStream" uid="uid://cvq0dufdry7il" path="res://audio/alistar pistola.mp3" id="7_tkyp3"]
+[ext_resource type="AudioStream" uid="uid://co21beotc7ypq" path="res://audio/disparo_pistola.mp3" id="8_v4fd4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ij3al"]
+size = Vector3(0.3383789, 0.6220093, 0.33483887)
+
+[sub_resource type="Animation" id="Animation_khd71"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ppeko"]
+resource_name = "die"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_boocm"]
+resource_name = "idle"
+length = 0.85
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_tkyp3"]
+resource_name = "prepare"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_vu5tg"]
+resource_name = "walk"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vu5tg"]
+_data = {
+&"RESET": SubResource("Animation_khd71"),
+&"die": SubResource("Animation_ppeko"),
+&"idle": SubResource("Animation_boocm"),
+&"prepare": SubResource("Animation_tkyp3"),
+&"walk": SubResource("Animation_vu5tg")
+}
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_khd71"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_khd71"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_boocm"]
+radius = 1.815911
+
+[node name="saco_humano" type="CharacterBody3D" unique_id=1154746380 groups=["enemigos"]]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+script = ExtResource("1_khd71")
+velocidad = 4.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1201737390]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0021972656, -0.010345459, 0.00579834)
+shape = SubResource("BoxShape3D_ij3al")
+
+[node name="Sprite3D" type="Sprite3D" parent="CollisionShape3D" unique_id=2076712345]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0021972656, 0.010345459, -0.00579834)
+billboard = 2
+shaded = true
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("1_52sl5")
+hframes = 4
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CollisionShape3D/Sprite3D" unique_id=2121399867]
+libraries/ = SubResource("AnimationLibrary_vu5tg")
+
+[node name="Sprite3D2" type="Sprite3D" parent="CollisionShape3D" unique_id=1302303233]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.0043945313, -0.30560797, 0.3176471)
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("1_52sl5")
+hframes = 4
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CollisionShape3D/Sprite3D2" unique_id=2033700795]
+libraries/ = SubResource("AnimationLibrary_vu5tg")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=883603528]
+path_max_distance = 1.01
+avoidance_enabled = true
+
+[node name="salud" type="Sprite3D" parent="." unique_id=611043299]
+transform = Transform3D(0.38, 0, 0, 0, 0.38, 0, 0, 0, 0.38, 0, 0.31542954, 0)
+billboard = 2
+texture_filter = 0
+render_priority = 1
+texture = SubResource("ViewportTexture_khd71")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1251804239]
+canvas_item_default_texture_filter = 0
+size = Vector2i(301, 7)
+
+[node name="Panel" type="Panel" parent="SubViewport" unique_id=518674686]
+offset_right = 301.0
+offset_bottom = 7.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_khd71")
+
+[node name="Barra_Salud" parent="SubViewport/Panel" unique_id=1316450048 instance=ExtResource("2_ij3al")]
+layout_mode = 1
+anchors_preset = 14
+anchor_left = 0.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 0.0
+offset_top = -4.0
+offset_right = 0.0
+offset_bottom = 4.0
+
+[node name="rayo_frente" type="RayCast3D" parent="." unique_id=886834498]
+transform = Transform3D(1, 0, 0, 0, -4.3711406e-08, 1, 0, -1, -4.3711406e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_atras" type="RayCast3D" parent="." unique_id=1809668739]
+transform = Transform3D(-1, 8.742281e-08, 3.82137e-15, 0, -4.3711406e-08, 1, 8.742281e-08, 1, 4.3711406e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_izq2" type="RayCast3D" parent="." unique_id=688305276]
+transform = Transform3D(0.707107, -0.707107, -3.0908602e-08, 0, -4.3711406e-08, 1, -0.707107, -0.707107, -3.0908602e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_izq3" type="RayCast3D" parent="." unique_id=1251892235]
+transform = Transform3D(0.866025, -0.5, -2.1855703e-08, 0, -4.3711406e-08, 1, -0.5, -0.866025, -3.78552e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_izq4" type="RayCast3D" parent="." unique_id=244399348]
+transform = Transform3D(0.96592605, -0.25881904, -1.13133e-08, 0, -4.3711406e-08, 1, -0.25881904, -0.96592605, -4.2222e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_izq5" type="RayCast3D" parent="." unique_id=680210631]
+transform = Transform3D(0.5, -0.8660261, -3.78552e-08, 0, -4.3711406e-08, 1, -0.8660261, -0.5, -2.1855703e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_izq6" type="RayCast3D" parent="." unique_id=1656602773]
+transform = Transform3D(0.25881904, -0.96592605, -4.2222e-08, 0, -4.3711406e-08, 1, -0.96592605, -0.25881904, -1.13133e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_izq7" type="RayCast3D" parent="." unique_id=1142886283]
+transform = Transform3D(-4.3711406e-08, -1, -4.3711406e-08, 0, -4.3711406e-08, 1, -1, 4.3711406e-08, 1.91069e-15, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_izq8" type="RayCast3D" parent="." unique_id=1955220784]
+transform = Transform3D(-0.25881904, -0.96592605, -4.2222e-08, 0, -4.3711406e-08, 1, -0.96592605, 0.25881904, 1.13133e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_izq9" type="RayCast3D" parent="." unique_id=1831362244]
+transform = Transform3D(-0.5, -0.866025, -3.78552e-08, 0, -4.3711406e-08, 1, -0.866025, 0.5, 2.1855703e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_izq10" type="RayCast3D" parent="." unique_id=2065348733]
+transform = Transform3D(-0.707107, -0.707107, -3.0908602e-08, 0, -4.3711406e-08, 1, -0.707107, 0.707107, 3.0908602e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_izq11" type="RayCast3D" parent="." unique_id=2142273091]
+transform = Transform3D(-0.866025, -0.5, -2.1855703e-08, 0, -4.3711406e-08, 1, -0.5, 0.866025, 3.78552e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_izq12" type="RayCast3D" parent="." unique_id=1676834124]
+transform = Transform3D(-0.96592605, -0.25881904, -1.13133e-08, 0, -4.3711406e-08, 1, -0.25881904, 0.96592605, 4.2222e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_der2" type="RayCast3D" parent="." unique_id=414762021]
+transform = Transform3D(0.707107, 0.707107, 3.0908602e-08, 0, -4.3711406e-08, 1, 0.707107, -0.707107, -3.0908602e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_der3" type="RayCast3D" parent="." unique_id=1535587833]
+transform = Transform3D(0.866025, 0.5, 2.1855703e-08, 0, -4.3711406e-08, 1, 0.5, -0.866025, -3.78552e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_der4" type="RayCast3D" parent="." unique_id=813089219]
+transform = Transform3D(0.96592605, 0.25881904, 1.13133e-08, 0, -4.3711406e-08, 1, 0.25881904, -0.96592605, -4.2222e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_der5" type="RayCast3D" parent="." unique_id=599449838]
+transform = Transform3D(0.25881904, 0.96592605, 4.2222e-08, 0, -4.3711406e-08, 1, 0.96592605, -0.25881904, -1.13133e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_der6" type="RayCast3D" parent="." unique_id=692086380]
+transform = Transform3D(-4.3711406e-08, 1, 4.3711406e-08, 0, -4.3711406e-08, 1, 1, 4.3711406e-08, 1.91069e-15, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_der7" type="RayCast3D" parent="." unique_id=1905138820]
+transform = Transform3D(0.5, 0.8660261, 3.78552e-08, 0, -4.3711406e-08, 1, 0.8660261, -0.5, -2.1855703e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_der8" type="RayCast3D" parent="." unique_id=712193932]
+transform = Transform3D(-0.25881904, 0.96592605, 4.2222e-08, 0, -4.3711406e-08, 1, 0.96592605, 0.25881904, 1.13133e-08, 0.0034537315, -0.030722937, 0.009489179)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_der9" type="RayCast3D" parent="." unique_id=1572230430]
+transform = Transform3D(-0.5, 0.8660261, 3.78552e-08, 0, -4.3711406e-08, 1, 0.8660261, 0.5, 2.1855703e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_der10" type="RayCast3D" parent="." unique_id=1950263319]
+transform = Transform3D(-0.707107, 0.707107, 3.0908602e-08, 0, -4.3711406e-08, 1, 0.707107, 0.707107, 3.0908602e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_der11" type="RayCast3D" parent="." unique_id=834941453]
+transform = Transform3D(-0.866025, 0.5, 2.1855703e-08, 0, -4.3711406e-08, 1, 0.5, 0.866025, 3.78552e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_der12" type="RayCast3D" parent="." unique_id=1232798196]
+transform = Transform3D(-0.96592605, 0.25881904, 1.13133e-08, 0, -4.3711406e-08, 1, 0.25881904, 0.96592605, 4.2222e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_frente2" type="RayCast3D" parent="." unique_id=815460373]
+transform = Transform3D(0.99197215, 0.126459, 5.52769e-09, 0, -4.3711406e-08, 1, 0.126459, -0.99197215, -4.33605e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_atras2" type="RayCast3D" parent="." unique_id=399859885]
+transform = Transform3D(-0.99197215, -0.126459, -5.5276805e-09, 0, -4.3711406e-08, 1, -0.126459, 0.99197215, 4.33605e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_izq13" type="RayCast3D" parent="." unique_id=1857559780]
+transform = Transform3D(0.79085004, -0.61201, -2.6751803e-08, 0, -4.3711406e-08, 1, -0.61201, -0.79085004, -3.4569105e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_izq14" type="RayCast3D" parent="." unique_id=127675472]
+transform = Transform3D(0.922302, -0.38647002, -1.68931e-08, 0, -4.3711406e-08, 1, -0.38647002, -0.922302, -4.03151e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_izq15" type="RayCast3D" parent="." unique_id=308179594]
+transform = Transform3D(0.990901, -0.13459101, -5.88314e-09, 9.1951e-16, -4.3711406e-08, 1, -0.13459101, -0.990901, -4.33137e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_izq16" type="RayCast3D" parent="." unique_id=795851559]
+transform = Transform3D(0.605502, -0.795844, -3.47874e-08, -1.77636e-15, -4.3711406e-08, 1, -0.795844, -0.605502, -2.64674e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_izq17" type="RayCast3D" parent="." unique_id=2145282018]
+transform = Transform3D(0.378891, -0.925441, -4.0452402e-08, -9.1951e-16, -4.3711406e-08, 1, -0.925441, -0.378891, -1.6561803e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_izq18" type="RayCast3D" parent="." unique_id=1754522278]
+transform = Transform3D(0.126459, -0.99197215, -4.33605e-08, 0, -4.3711406e-08, 1, -0.99197215, -0.126459, -5.5276805e-09, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_izq19" type="RayCast3D" parent="." unique_id=1368560167]
+transform = Transform3D(-0.13459101, -0.990901, -4.33137e-08, 9.1951e-16, -4.3711406e-08, 1, -0.990901, 0.13459101, 5.88314e-09, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_izq20" type="RayCast3D" parent="." unique_id=1424818121]
+transform = Transform3D(-0.38647002, -0.922302, -4.03151e-08, 0, -4.3711406e-08, 1, -0.922302, 0.38647002, 1.68931e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_izq21" type="RayCast3D" parent="." unique_id=761750684]
+transform = Transform3D(-0.61201, -0.79085004, -3.4569105e-08, 0, -4.3711406e-08, 1, -0.79085004, 0.61201, 2.6751803e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_izq22" type="RayCast3D" parent="." unique_id=136437334]
+transform = Transform3D(-0.795843, -0.605502, -2.64674e-08, 0, -4.3711406e-08, 1, -0.605502, 0.795843, 3.47875e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_izq23" type="RayCast3D" parent="." unique_id=1954744757]
+transform = Transform3D(-0.925441, -0.378891, -1.6561803e-08, -9.1951e-16, -4.3711406e-08, 1, -0.378891, 0.925441, 4.0452402e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_der13" type="RayCast3D" parent="." unique_id=958618791]
+transform = Transform3D(0.61201, 0.79085004, 3.4569105e-08, 0, -4.3711406e-08, 1, 0.79085004, -0.61201, -2.6751803e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_der14" type="RayCast3D" parent="." unique_id=1202224424]
+transform = Transform3D(0.795843, 0.605502, 2.64674e-08, 0, -4.3711406e-08, 1, 0.605502, -0.795843, -3.47875e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_der15" type="RayCast3D" parent="." unique_id=2004528585]
+transform = Transform3D(0.925441, 0.378891, 1.6561803e-08, -9.1951e-16, -4.3711406e-08, 1, 0.378891, -0.925441, -4.0452402e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_der16" type="RayCast3D" parent="." unique_id=2063437810]
+transform = Transform3D(0.13459101, 0.990901, 4.33137e-08, 9.1951e-16, -4.3711406e-08, 1, 0.990901, -0.13459101, -5.88314e-09, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_der17" type="RayCast3D" parent="." unique_id=789581678]
+transform = Transform3D(-0.126459, 0.99197215, 4.33605e-08, 0, -4.3711406e-08, 1, 0.99197215, 0.126459, 5.52769e-09, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_der18" type="RayCast3D" parent="." unique_id=1532638509]
+transform = Transform3D(0.386469, 0.9223031, 4.03151e-08, 1.77636e-15, -4.3711406e-08, 1, 0.9223031, -0.386469, -1.68931e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_der19" type="RayCast3D" parent="." unique_id=929415413]
+transform = Transform3D(-0.378891, 0.925441, 4.0452402e-08, -9.1951e-16, -4.3711406e-08, 1, 0.925441, 0.378891, 1.6561803e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_der20" type="RayCast3D" parent="." unique_id=761733738]
+transform = Transform3D(-0.605502, 0.795844, 3.47874e-08, -1.77636e-15, -4.3711406e-08, 1, 0.795844, 0.605502, 2.64674e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_der21" type="RayCast3D" parent="." unique_id=219194951]
+transform = Transform3D(-0.79085004, 0.61201, 2.6751803e-08, 0, -4.3711406e-08, 1, 0.61201, 0.79085004, 3.4569105e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_der22" type="RayCast3D" parent="." unique_id=405836170]
+transform = Transform3D(-0.922302, 0.38647002, 1.68931e-08, 0, -4.3711406e-08, 1, 0.38647002, 0.922302, 4.03151e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="rayo_der23" type="RayCast3D" parent="." unique_id=1279486387]
+transform = Transform3D(-0.990901, 0.13459101, 5.88314e-09, 9.1951e-16, -4.3711406e-08, 1, 0.13459101, 0.990901, 4.33137e-08, 0, -0.030723056, 0)
+target_position = Vector3(0, -30, 0)
+debug_shape_custom_color = Color(0.67140764, 0, 0.17689359, 1)
+
+[node name="respiracion" type="AudioStreamPlayer3D" parent="." unique_id=1216337427]
+stream = ExtResource("4_boocm")
+volume_db = 80.0
+autoplay = true
+max_distance = 15.0
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1128148702]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1960981758]
+shape = SubResource("SphereShape3D_boocm")
+
+[node name="muerte" type="AudioStreamPlayer3D" parent="." unique_id=1942272115]
+stream = ExtResource("5_vu5tg")
+volume_db = 80.0
+max_distance = 10.0
+
+[node name="arma" type="Marker3D" parent="." unique_id=1466169700]
+transform = Transform3D(0.40000004, 0, 0, 0, 0.40000004, 0, 0, 0, 0.40000004, 0.10448031, 0.007780771, 0.24672383)
+
+[node name="GPUParticles3D" parent="arma" unique_id=969988528 instance=ExtResource("6_ppeko")]
+transform = Transform3D(0.33333334, 0, 0, 0, -1.4570467e-08, 0.33333334, 0, -0.33333334, -1.4570467e-08, 0, 0, 0)
+
+[node name="arma_lista" type="AudioStreamPlayer3D" parent="arma" unique_id=420622457]
+transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0)
+stream = ExtResource("7_tkyp3")
+volume_db = 80.0
+
+[node name="shoot" type="AudioStreamPlayer3D" parent="arma" unique_id=142565304]
+stream = ExtResource("8_v4fd4")
+volume_db = 80.0

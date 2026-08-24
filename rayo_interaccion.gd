@@ -14,19 +14,11 @@ func _physics_process(_delta):
 			texto.text = deteccion.mensaje
 			if Input.is_action_just_pressed("Interaccion"):
 				deteccion.hacer_texto()
-		elif deteccion is Interactuable_A:
+		elif deteccion.is_in_group("Puertas_Azules"):
 			texto.text = deteccion.mensaje
 			if Input.is_action_just_pressed("Interaccion"):
 				deteccion.hacer_texto()
-		elif deteccion is Dialogar:
-			texto.text = deteccion.mensaje
-			if is_colliding():
-				deteccion.esta_cerca = true
-				if Input.is_action_just_pressed("Interaccion"):
-					deteccion.Dialogos()
-			else:
-				deteccion.esta_cerca = false
-		elif deteccion is Interactuable_B:
+		elif deteccion.is_in_group("Puertas"):
 			texto.text = deteccion.mensaje
 			if Input.is_action_just_pressed("Interaccion"):
 				deteccion.hacer_texto()

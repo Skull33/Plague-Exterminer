@@ -2,30 +2,31 @@
 
 [ext_resource type="Script" uid="uid://kac14e5bgj6l" path="res://bala_disparo.gd" id="1_hvkc4"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_rpcs8"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_hvkc4"]
+radius = 0.133426
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hvkc4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hvkc4"]
-albedo_color = Color(0, 0, 0, 1)
+shading_mode = 0
+albedo_color = Color(0.8776983, 0.9754234, 0.6253981, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_iqx07"]
 material = SubResource("StandardMaterial3D_hvkc4")
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_hvkc4"]
-radius = 0.133426
 
 [node name="Bala" type="CharacterBody3D" unique_id=1244413724]
 process_priority = 1
 script = ExtResource("1_hvkc4")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1801737801]
-transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, 0, 0, 0)
-shape = SubResource("BoxShape3D_rpcs8")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=851170930]
-mesh = SubResource("BoxMesh_iqx07")
-skeleton = NodePath("../..")
-
 [node name="Area3D" type="Area3D" parent="." unique_id=1088172244]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1793616698]
 shape = SubResource("SphereShape3D_hvkc4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1801737801]
+transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, 0, 0, 0)
+shape = SubResource("BoxShape3D_hvkc4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=851170930]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 0, 0)
+mesh = SubResource("BoxMesh_iqx07")

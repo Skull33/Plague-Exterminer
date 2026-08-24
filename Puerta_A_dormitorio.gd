@@ -4,6 +4,8 @@ extends StaticBody3D
 signal interactuado_1
 @export var mensaje = "Abrir Puerta [E]"
 @onready var animacion = $AnimationPlayer
+@onready var audio = $"../../AudioStreamPlayer3D"
+@onready var audio_2 = $"../../AudioStreamPlayer3D2"
 
 var abrio = false
 var llave = false
@@ -16,6 +18,7 @@ func _ready() :
 func hacer_texto():
 	emit_signal("interactuado_1")
 	if not llave and not interacted:
+		audio.play()
 		mensaje = "Esta puerte requiere una llave [color=blue]AZUL[/color]"
 		await (get_tree().create_timer(2).timeout)
 		interacted = true
@@ -25,6 +28,7 @@ func hacer_texto():
 
 	if not abrio and llave:
 		animacion.play("abrir")
+		audio_2.play()
 		abrio = true
 		mensaje = "Cerrar puerta [E]"
 	elif abrio and llave and es_azul:

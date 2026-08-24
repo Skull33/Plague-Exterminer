@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cwgou57ooc7sf"]
+
+[ext_resource type="FontFile" uid="uid://d38ws1xa8rgjb" path="res://Fuentes_de_letra/Aston Script.ttf" id="1_lsy21"]
+
+[node name="Node3D" type="Node3D" unique_id=596303702]
+
+[node name="Label3D" type="Label3D" parent="." unique_id=2110234043]
+gi_lightmap_texel_scale = 10.0
+gi_lightmap_scale = 3
+texture_filter = 0
+render_priority = 1
+outline_render_priority = 1
+modulate = Color(0.5952235, 1, 1, 1)
+outline_modulate = Color(0, 1, 1, 1)
+text = "El Cillar Blanco"
+font = ExtResource("1_lsy21")
+outline_size = 5
+
+[node name="Label3D2" type="Label3D" parent="." unique_id=1836279062]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19503796, 0)
+gi_lightmap_texel_scale = 8.0
+gi_lightmap_scale = 3
+texture_filter = 0
+render_priority = 1
+outline_render_priority = 1
+outline_modulate = Color(0, 0, 0, 0)
+text = "HOTEL"
+font_size = 28

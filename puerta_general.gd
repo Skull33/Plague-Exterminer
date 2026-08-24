@@ -1,4 +1,3 @@
-class_name Interactuable_B
 extends StaticBody3D
 
 signal interactuado_1

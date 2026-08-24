@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bppg6d67soayl"]
+
+[ext_resource type="Texture2D" uid="uid://bl30e7j0bkn8p" path="res://sprites/foco largo.png" id="1_v05c8"]
+
+[node name="foco_largo" type="Node3D" unique_id=1642230758]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=636979795]
+shaded = true
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("1_v05c8")
+
+[node name="SpotLight3D" type="OmniLight3D" parent="." unique_id=1438956123]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -0.12693325, 0)
+light_energy = 5.522
+light_indirect_energy = 3.957
+light_volumetric_fog_energy = 1.957
+light_size = 2.248
+light_specular = 2.065
+shadow_enabled = true
+omni_range = 2.078439

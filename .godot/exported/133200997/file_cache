@@ -106,7 +106,7 @@ res://addons/dialogic/Modules/Text/character_settings/character_moods_settings.t
 res://addons/dialogic/Modules/Text/character_settings/character_portrait_mood_settings.tscn::5039b5540515dd57d8de08f4e8a6fbc7::1749405884::res://.godot/exported/133200997/export-37c35566857061453231ad11bc175413-character_portrait_mood_settings.scn
 res://addons/dialogic/Modules/Text/settings_text.tscn::794e594e8e32909b7d3fae5193685889::1749405884::res://.godot/exported/133200997/export-67100a9f8a5726886cf8dbc525c7a035-settings_text.scn
 res://addons/dialogic/Modules/Variable/variables_editor/variables_editor.tscn::1f4a64952b7986e6aa5ae128a589dbc8::1749405884::res://.godot/exported/133200997/export-81d6117e9fbfcc345d9d0dd8f77e3c55-variables_editor.scn
-res://Dialogos/dialogo personalizado.tres::90202fd01d169f665f827533b0d26057::1774811921::res://.godot/exported/133200997/export-83bbf2ffeefaa3e5f98c17807fb4a39d-dialogo personalizado.res
+res://Dialogos/dialogo personalizado.tres::90202fd01d169f665f827533b0d26057::1774831973::res://.godot/exported/133200997/export-83bbf2ffeefaa3e5f98c17807fb4a39d-dialogo personalizado.res
 res://Fuentes_de_letra/SmackAttack/mi estilo.tres::557c7f3432020a5185fae89f0d540b19::1754094695::res://.godot/exported/133200997/export-b639dc5294ccb9f5005bcbf366c2dbd6-mi estilo.res
 res://arboleda.tscn::608ff4e4555dace87eb7025d39e19cd9::1742187197::res://.godot/exported/133200997/export-e0bf698c764c5353c493969659c0b140-arboleda.scn
 res://bala disparo.tscn::de69bf6f9bf11901709f3d28ceae13a1::1771646218::res://.godot/exported/133200997/export-9c3450e7982075493591de967ad15364-bala disparo.scn
@@ -118,13 +118,13 @@ res://cadaver.tscn::b984b25e45da3f4d51d21d6b54ee0f95::1754587033::res://.godot/e
 res://chispa_fuego.tscn::d70bed5b8f973b753ecb9ac9c1e5a075::1770830788::res://.godot/exported/133200997/export-af135ce9eeb441831135e1f2e0de00b3-chispa_fuego.scn
 res://cocina.tscn::fbd4137910107c0045867dae4f845b64::1754420248::res://.godot/exported/133200997/export-0a7fc6a929dac36b6f7939971f0e43be-cocina.scn
 res://contratador.tscn::f4d98b04db4c820624520761b44efca5::1752951112::res://.godot/exported/133200997/export-00cb43e5bc0c5acd5604cc2b92998e78-contratador.scn
-res://cuarto_prota.tscn::1a6c524eefe48c83aaf778bbdadca40d::1774811921::res://.godot/exported/133200997/export-beea3d8508c7ad276d91af0a561c4fb1-cuarto_prota.scn
+res://cuarto_prota.tscn::444d5bf34e6da35c6ee9cdc92f0441a1::1774844132::res://.godot/exported/133200997/export-beea3d8508c7ad276d91af0a561c4fb1-cuarto_prota.scn
 res://default_bus_layout.tres::ba07c92583a54c3e5d66bf12315fcbb1::1774140650::res://.godot/exported/133200997/export-19246414aa9fb561ced4b8dce477acec-default_bus_layout.res
 res://doble_cañon.tscn::edabcaabc4438d82882971b01dde57e1::1771867738::res://.godot/exported/133200997/export-43fe1c35f4a27f99e53e3943faf8d4b6-doble_cañon.scn
 res://dormitorio_viejo.tscn::dea28c3f5198dc7b90149f2ba5ff5381::1773637225::res://.godot/exported/133200997/export-207c45679472918e90d43ee4a6fcba44-dormitorio_viejo.scn
 res://escena de muerte.tscn::3de707a61af517957693a8ee535a887d::1767497177::res://.godot/exported/133200997/export-ef24ee38b5113dcbba8d17c0c839ad9a-escena de muerte.scn
 res://escena_menu.tscn::13648bf8f09e148dae7beb12587be022::1770955669::res://.godot/exported/133200997/export-b9edd7372511e1830d08688545c801e1-escena_menu.scn
-res://escombros.tscn::90a034a7be78cf188ab2bcc4d8d49b7d::1754331199::res://.godot/exported/133200997/export-9c6d5e6cfcacfcbf7ef5460b757a1a6f-escombros.scn
+res://escombros.tscn::452edfa6fa4e0eea3d7fad67ecd070a0::1774843737::res://.godot/exported/133200997/export-9c6d5e6cfcacfcbf7ef5460b757a1a6f-escombros.scn
 res://escopeta_item.tscn::ea6041bc036eb4e3e541418286bd1436::1772734663::res://.godot/exported/133200997/export-0fd1540ba2fa304ef72af13d6b4cf865-escopeta_item.scn
 res://estante_de_armas.tscn::bd2813a883d02fce7cff8326ca155c77::1754235612::res://.godot/exported/133200997/export-1024f050c14c69b45fb87dd4eb0b4e8e-estante_de_armas.scn
 res://farol.tscn::baee817692c65d79fb7caf669ad7d06a::1754586647::res://.godot/exported/133200997/export-c6df9b0f09ad3d342820fc2344390677-farol.scn
@@ -150,17 +150,17 @@ res://puerta_azul.tscn::337c242f992fbd32aac8a87929551425::1768538107::res://.god
 res://puerta_final.tscn::a0fdbc92b6ee365a181af310f84dcced::1767557231::res://.godot/exported/133200997/export-8f1538057db54b16725966230e9eafec-puerta_final.scn
 res://rata.tscn::32f4dff8265410cb62b22195d2533669::1753477773::res://.godot/exported/133200997/export-316b217cfb71d3dc6668456b07596cdd-rata.scn
 res://rata_help.tscn::963129d2acbe3d2dd35af436055f78ba::1753415391::res://.godot/exported/133200997/export-8035d54185b1d5bfa4a57aa744d3ffb9-rata_help.scn
-res://rat_minion.tscn::af303dc42edd309e3834bddfede9b8c1::1773624609::res://.godot/exported/133200997/export-fdf1f71facdfbf4e609cef60d9dd3626-rat_minion.scn
+res://rat_minion.tscn::af303dc42edd309e3834bddfede9b8c1::1774843528::res://.godot/exported/133200997/export-fdf1f71facdfbf4e609cef60d9dd3626-rat_minion.scn
 res://refrigerador.tscn::fcf66380ebe229093c5af2213ac55518::1754420248::res://.godot/exported/133200997/export-92b928e2e2a83c04e7d3324682256a83-refrigerador.scn
 res://reja.tscn::37fcfb2cf981bd4f7c72a6b20e8a956d::1742187197::res://.godot/exported/133200997/export-d3f24aaa3b552308f054c34dc61dafd8-reja.scn
-res://fuego.tres::fe18b272f8ed779d7c51184431d842a1::1774811921::res://.godot/exported/133200997/export-8ec8f8c08a18325198ca5046e5c40941-fuego.res
+res://fuego.tres::fe18b272f8ed779d7c51184431d842a1::1774831973::res://.godot/exported/133200997/export-8ec8f8c08a18325198ca5046e5c40941-fuego.res
 res://sillon.tscn::9a60e0b570a08515ce77b7a1e2289dba::1754501643::res://.godot/exported/133200997/export-0278727b3c407aa88a883249bae75caa-sillon.scn
 res://transicion.tscn::eebb25055b04ea966aac912a2ae41ae8::1754608699::res://.godot/exported/133200997/export-00163fad5525fcb61705da97e3d1a1d8-transicion.scn
 res://trozo_muro.tscn::6dc569a8bf7bdab4c7d976e02068c77a::1753036195::res://.godot/exported/133200997/export-31756563669c89062c390690967506da-trozo_muro.scn
 res://variante_botiquin.tscn::8d00974156d83bfb5a15a8e86006773b::1754699997::res://.godot/exported/133200997/export-62b7bedd1b04f267059d45633282b6cc-variante_botiquin.scn
 res://cadaver_001.tscn::68ac56a5a8395b59a2713b5014492161::1754717856::res://.godot/exported/133200997/export-d7f4e348800cd3fb7fbe3ae451080da0-cadaver_001.scn
 res://final_nivel1.tscn::f9c1ed04f8f631d1f1a1c09030bb9cf4::1771420367::res://.godot/exported/133200997/export-24311419fa02a5bd30c495520fb6c0e1-final_nivel1.scn
-res://particulas_flotantes.tres::afcec2f5397cf9f86198cafcccc4a67f::1774811921::res://.godot/exported/133200997/export-0b1e46e84ae4e0f29a47cec9ecadf904-particulas_flotantes.res
+res://particulas_flotantes.tres::afcec2f5397cf9f86198cafcccc4a67f::1774831973::res://.godot/exported/133200997/export-0b1e46e84ae4e0f29a47cec9ecadf904-particulas_flotantes.res
 res://cadaver_002.tscn::added0f702abfd3513648f23244bd52d::1754718169::res://.godot/exported/133200997/export-2ec4a85908131c6d9b96de5de2f178c0-cadaver_002.scn
 res://recepccion.tscn::a1a60d8c22bbcb08d3bf0a6a445fa48f::1773795978::res://.godot/exported/133200997/export-8169144b50e6567def5b1303c7a10d0b-recepccion.scn
 res://almadena.tscn::f400516aef303a8b8ada1f709eae1bd2::1773804597::res://.godot/exported/133200997/export-a75fc1d6a00335cb9d7bedcc128b9c3b-almadena.scn

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cvq0dufdry7il"
+path="res://.godot/imported/alistar pistola.mp3-98d948ca7b0c1183201b32d8702dddb2.mp3str"
+
+[deps]
+
+source_file="res://audio/alistar pistola.mp3"
+dest_files=["res://.godot/imported/alistar pistola.mp3-98d948ca7b0c1183201b32d8702dddb2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

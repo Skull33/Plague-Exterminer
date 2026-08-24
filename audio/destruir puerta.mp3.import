@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://2g3ldhsl35qk"
+path="res://.godot/imported/destruir puerta.mp3-4e1e06690fce578d6fe1d487de3bd31c.mp3str"
+
+[deps]
+
+source_file="res://audio/destruir puerta.mp3"
+dest_files=["res://.godot/imported/destruir puerta.mp3-4e1e06690fce578d6fe1d487de3bd31c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://bma2rulx516ew"]
+[gd_scene format=4 uid="uid://bma2rulx516ew"]
 
 [ext_resource type="PackedScene" uid="uid://djvh1epyvx8u0" path="res://escenarios/escombros.blend" id="1_w2crs"]
 
@@ -7,7 +7,7 @@ resource_name = "Material"
 cull_mode = 2
 albedo_color = Color(0.5254888, 0.39215708, 0.29803932, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k8v1s"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j3pel"]
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_tqjex"]
@@ -34,7 +34,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_w2c5h"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_w2crs"]
 resource_name = "escombros_Cube"
 _surfaces = [{
 "aabb": AABB(-0.9826795, -0.9826795, -0.9826795, 1.965359, 1.965359, 1.965359),
@@ -54,7 +54,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 36,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
-"material": SubResource("StandardMaterial3D_k8v1s"),
+"material": SubResource("StandardMaterial3D_j3pel"),
 "name": "Material.011",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -69,7 +69,7 @@ resource_name = "Material.001"
 cull_mode = 2
 albedo_color = Color(0.5254888, 0.39215708, 0.29803932, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qeqre"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g28q7"]
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_8m5bh"]
@@ -96,7 +96,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_djqgh"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_k8v1s"]
 resource_name = "escombros_Cube_001"
 _surfaces = [{
 "aabb": AABB(-0.9826795, -0.9826795, -0.9826795, 1.965359, 1.965359, 1.965359),
@@ -116,7 +116,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 36,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
-"material": SubResource("StandardMaterial3D_qeqre"),
+"material": SubResource("StandardMaterial3D_g28q7"),
 "name": "Material.010",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -131,7 +131,7 @@ resource_name = "Material.008"
 cull_mode = 2
 albedo_color = Color(0.450979, 0.45098066, 0.4509805, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_clyer"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n8wo2"]
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ji83l"]
@@ -158,7 +158,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_0r3bw"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_w2c5h"]
 resource_name = "escombros_Cube_002"
 _surfaces = [{
 "aabb": AABB(-0.9653087, -1.2016157, -0.96544397, 1.9848328, 2.2074852, 2.0458117),
@@ -178,7 +178,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 132,
 "index_data": PackedByteArray("AAABAAIAAwAEAAUAAwAGAAQABwAIAAkACgALAAwACgANAAsADgAPABAADgARAA8AEgATABQAEgAVABMAFgAXABgAGQAaABsAGQAcABoAHQAeAB8AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANwA4ADkANwA6ADgAOwA8AD0AOwA+ADwAPwBAAEEAPwBCAEAAQwBEAEUAQwBGAEQARwBIAEkARwBKAEgASwBMAE0ATgBPAFAATgBRAE8AUgBTAFQAUgBVAFMAVgBXAFgAVgBZAFcAWgBbAFwAXQBeAF8A"),
-"material": SubResource("StandardMaterial3D_clyer"),
+"material": SubResource("StandardMaterial3D_n8wo2"),
 "name": "Material.017",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -193,7 +193,7 @@ resource_name = "Material.004"
 cull_mode = 2
 albedo_color = Color(0.450979, 0.45098066, 0.4509805, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mls25"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5t1r3"]
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_svc2e"]
@@ -220,7 +220,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_wcnrh"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_qeqre"]
 resource_name = "escombros_Cube_003"
 _surfaces = [{
 "aabb": AABB(-0.9653087, -1.2016157, -0.96544397, 1.9848328, 2.2074852, 2.0458117),
@@ -240,7 +240,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 132,
 "index_data": PackedByteArray("AAABAAIAAwAEAAUAAwAGAAQABwAIAAkACgALAAwACgANAAsADgAPABAADgARAA8AEgATABQAEgAVABMAFgAXABgAGQAaABsAGQAcABoAHQAeAB8AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANwA4ADkANwA6ADgAOwA8AD0AOwA+ADwAPwBAAEEAPwBCAEAAQwBEAEUAQwBGAEQARwBIAEkARwBKAEgASwBMAE0ATgBPAFAATgBRAE8AUgBTAFQAUgBVAFMAVgBXAFgAVgBZAFcAWgBbAFwAXQBeAF8A"),
-"material": SubResource("StandardMaterial3D_mls25"),
+"material": SubResource("StandardMaterial3D_5t1r3"),
 "name": "Material.013",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -255,7 +255,7 @@ resource_name = "Material.005"
 cull_mode = 2
 albedo_color = Color(0.450979, 0.45098066, 0.4509805, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3d7ps"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cenje"]
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_fyp0s"]
@@ -282,7 +282,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_wgsif"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_djqgh"]
 resource_name = "escombros_Cube_004"
 _surfaces = [{
 "aabb": AABB(-0.9505474, -0.9500851, -0.96802306, 1.9126666, 2.0686486, 2.1908839),
@@ -302,7 +302,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 144,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkAPAA9AD4APAA/AD0AQABBAEIAQABDAEEARABFAEYARABHAEUASABJAEoASABLAEkATABNAE4ATABPAE0AUABRAFIAUABTAFEAVABVAFYAVABXAFUAWABZAFoAWABbAFkAXABdAF4AXABfAF0A"),
-"material": SubResource("StandardMaterial3D_3d7ps"),
+"material": SubResource("StandardMaterial3D_cenje"),
 "name": "Material.014",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -317,7 +317,7 @@ resource_name = "Material.003"
 cull_mode = 2
 albedo_color = Color(0.450979, 0.45098066, 0.4509805, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mhpie"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7kkex"]
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_kutgg"]
@@ -344,7 +344,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_juus4"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_clyer"]
 resource_name = "escombros_Cube_005"
 _surfaces = [{
 "aabb": AABB(-0.9505474, -0.9500851, -0.96802306, 1.9126666, 2.0686486, 2.1908839),
@@ -364,7 +364,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 144,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkAPAA9AD4APAA/AD0AQABBAEIAQABDAEEARABFAEYARABHAEUASABJAEoASABLAEkATABNAE4ATABPAE0AUABRAFIAUABTAFEAVABVAFYAVABXAFUAWABZAFoAWABbAFkAXABdAF4AXABfAF0A"),
-"material": SubResource("StandardMaterial3D_mhpie"),
+"material": SubResource("StandardMaterial3D_7kkex"),
 "name": "Material.012",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -379,7 +379,7 @@ resource_name = "Material.002"
 cull_mode = 2
 albedo_color = Color(0.5254888, 0.39215708, 0.29803932, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bmffr"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dqt2m"]
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_46cmx"]
@@ -406,7 +406,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_yrie4"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_0r3bw"]
 resource_name = "escombros_Cube_006"
 _surfaces = [{
 "aabb": AABB(-0.9826795, -0.9826795, -0.9826795, 1.965359, 1.965359, 1.965359),
@@ -426,7 +426,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 36,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
-"material": SubResource("StandardMaterial3D_bmffr"),
+"material": SubResource("StandardMaterial3D_dqt2m"),
 "name": "Material.009",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -441,7 +441,7 @@ resource_name = "Material.007"
 cull_mode = 2
 albedo_color = Color(0.450979, 0.45098066, 0.4509805, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m7t0b"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k2ilm"]
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_00inf"]
@@ -468,7 +468,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_83oat"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_mls25"]
 resource_name = "escombros_Cube_007"
 _surfaces = [{
 "aabb": AABB(-0.9505474, -0.9500851, -0.96802306, 1.9126666, 2.0686486, 2.1908839),
@@ -488,7 +488,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 144,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkAPAA9AD4APAA/AD0AQABBAEIAQABDAEEARABFAEYARABHAEUASABJAEoASABLAEkATABNAE4ATABPAE0AUABRAFIAUABTAFEAVABVAFYAVABXAFUAWABZAFoAWABbAFkAXABdAF4AXABfAF0A"),
-"material": SubResource("StandardMaterial3D_m7t0b"),
+"material": SubResource("StandardMaterial3D_k2ilm"),
 "name": "Material.015",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -503,7 +503,7 @@ resource_name = "Material.006"
 cull_mode = 2
 albedo_color = Color(0.450979, 0.45098066, 0.4509805, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1cf0g"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2g6t7"]
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_wqh1y"]
@@ -530,7 +530,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_gvj21"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_wcnrh"]
 resource_name = "escombros_Cube_008"
 _surfaces = [{
 "aabb": AABB(-0.9653087, -1.2016157, -0.96544397, 1.9848328, 2.2074852, 2.0458117),
@@ -550,7 +550,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 132,
 "index_data": PackedByteArray("AAABAAIAAwAEAAUAAwAGAAQABwAIAAkACgALAAwACgANAAsADgAPABAADgARAA8AEgATABQAEgAVABMAFgAXABgAGQAaABsAGQAcABoAHQAeAB8AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANwA4ADkANwA6ADgAOwA8AD0AOwA+ADwAPwBAAEEAPwBCAEAAQwBEAEUAQwBGAEQARwBIAEkARwBKAEgASwBMAE0ATgBPAFAATgBRAE8AUgBTAFQAUgBVAFMAVgBXAFgAVgBZAFcAWgBbAFwAXQBeAF8A"),
-"material": SubResource("StandardMaterial3D_1cf0g"),
+"material": SubResource("StandardMaterial3D_2g6t7"),
 "name": "Material.016",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -560,31 +560,32 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wqh1y")
 
-[node name="escombros" instance=ExtResource("1_w2crs")]
+[node name="escombros" unique_id=389446213 instance=ExtResource("1_w2crs")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
-[node name="Cube" parent="." index="0"]
+[node name="Cube" parent="." index="0" unique_id=690206295]
+mesh = SubResource("ArrayMesh_w2crs")
+
+[node name="Cube_001" parent="." index="1" unique_id=1355513578]
+mesh = SubResource("ArrayMesh_k8v1s")
+
+[node name="Cube_002" parent="." index="2" unique_id=1789980779]
 mesh = SubResource("ArrayMesh_w2c5h")
 
-[node name="Cube_001" parent="." index="1"]
+[node name="Cube_003" parent="." index="3" unique_id=1101673355]
+mesh = SubResource("ArrayMesh_qeqre")
+
+[node name="Cube_004" parent="." index="4" unique_id=1281681790]
 mesh = SubResource("ArrayMesh_djqgh")
 
-[node name="Cube_002" parent="." index="2"]
+[node name="Cube_005" parent="." index="5" unique_id=1571732719]
+mesh = SubResource("ArrayMesh_clyer")
+
+[node name="Cube_006" parent="." index="6" unique_id=953151359]
 mesh = SubResource("ArrayMesh_0r3bw")
 
-[node name="Cube_003" parent="." index="3"]
+[node name="Cube_007" parent="." index="7" unique_id=546282829]
+mesh = SubResource("ArrayMesh_mls25")
+
+[node name="Cube_008" parent="." index="8" unique_id=1232729802]
 mesh = SubResource("ArrayMesh_wcnrh")
-
-[node name="Cube_004" parent="." index="4"]
-mesh = SubResource("ArrayMesh_wgsif")
-
-[node name="Cube_005" parent="." index="5"]
-mesh = SubResource("ArrayMesh_juus4")
-
-[node name="Cube_006" parent="." index="6"]
-mesh = SubResource("ArrayMesh_yrie4")
-
-[node name="Cube_007" parent="." index="7"]
-mesh = SubResource("ArrayMesh_83oat")
-
-[node name="Cube_008" parent="." index="8"]
-mesh = SubResource("ArrayMesh_gvj21")

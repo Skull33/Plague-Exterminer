@@ -137,3 +137,8 @@ bus = &"fuego"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=396400558]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.803754, 0.0310059)
 shape = SubResource("BoxShape3D_u23er")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1661844891]
+light_color = Color(0.9063318, 0.6583885, 0.1428257, 1)
+shadow_enabled = true
+omni_range = 2.8275385

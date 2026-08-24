@@ -8,6 +8,9 @@ extends CharacterBody3D
 @export var velocidad = 10.0
 @onready var agente = $NavigationAgent3D
 @onready var animaciones = $CollisionShape3D/Sprite3D/AnimationPlayer
+@onready var cuerpo = $CollisionShape3D/Sprite3D
+@onready var sombra = $CollisionShape3D/sombra/AnimationPlayer
+@onready var sombra_dinamica = $CollisionShape3D/sombra
 @onready var colision = $CollisionShape3D
 @onready var vida = $SubViewport/Panel/Barra_Salud
 @onready var sprite_vida = $Sprite3D
@@ -71,12 +74,14 @@ signal Soy_malo
 signal muerto
 var esta_vivo = true
 var sigue_vivo = true
+var he_visto_al_jugador = false
 var esta_en_zona_de_ataque = false
 var salud = 50
 var daño = 8
 var jugador_en_rango: EsJugador = null
 func _ready():
 	animaciones.play("idle")
+	sombra.play("idle")
 	sonido_quieto.play()
 	vida.iniciar_salud(salud)
 	zona_de_ataque.body_entered.connect(entro_a_la_zona_de_ataque)
@@ -85,17 +90,27 @@ func _ready():
 
 func _physics_process(delta):
 	velocity.y -= 9.8 * delta
-	
 	for rayo in rayos:
 		if rayo.is_colliding():
 			var deteccion = rayo.get_collider()
 			if deteccion is EsJugador and esta_vivo and not esta_en_zona_de_ataque:
-				posicion_jugador(jugador)
-				animaciones.play("andar")
-				var localizacion_actual = global_transform.origin
-				var siguiente_localizacion = agente.get_next_path_position()
-				var seguimiento = (siguiente_localizacion - localizacion_actual).normalized() * velocidad
-				velocity = velocity.move_toward(seguimiento, 0.2)
+				he_visto_al_jugador = true
+				break
+	if he_visto_al_jugador and esta_vivo:
+		posicion_jugador(jugador)
+		if not esta_en_zona_de_ataque:
+			animaciones.play("andar")
+			sombra.play("andar")
+		var localizacion_actual = global_transform.origin
+		var siguiente_localizacion = agente.get_next_path_position()
+		var seguimiento = (siguiente_localizacion - localizacion_actual).normalized() * velocidad
+		velocity = velocity.move_toward(seguimiento, 0.2)
+	else:
+		if esta_vivo and not esta_en_zona_de_ataque:
+			animaciones.play("idle")
+			sombra.play("idle")
+			velocity.x = move_toward(velocity.x, 0.0, 0.5)
+			velocity.z = move_toward(velocity.z, 0.0, 0.5)
 	
 	move_and_slide()
 
@@ -107,6 +122,8 @@ func entro_a_la_zona_de_ataque(cuerpo):
 		esta_en_zona_de_ataque = true
 		jugador_en_rango = cuerpo
 		timer_ataque.start()
+	else:
+		salio_de_la_zona_de_ataque(cuerpo)
 
 func salio_de_la_zona_de_ataque(cuerpo):
 	if cuerpo is EsJugador and esta_vivo:
@@ -114,11 +131,14 @@ func salio_de_la_zona_de_ataque(cuerpo):
 		jugador_en_rango = null
 		timer_ataque.stop()
 
-func recibir_daño(bala):
+func recibir_daño(bala, dir_empuje = Vector3.ZERO):
 	if not esta_vivo:
 		return
 	emit_signal("Soy_malo")
 	print("Auch... me duele")
+	velocity.x += dir_empuje.x * 8.0
+	velocity.z += dir_empuje.z * 8.0
+	
 	var nueva_salud = salud - bala.daño
 	salud = nueva_salud
 	if is_instance_valid(vida):
@@ -126,6 +146,7 @@ func recibir_daño(bala):
 	if nueva_salud <= 0:
 		emit_signal("muerto")
 		animaciones.play("morir")
+		sombra.play("morir")
 		sonido_muerto.play()
 		esta_vivo = false
 		collision_layer = 0
@@ -142,4 +163,5 @@ func hora_de_atacar():
 	if esta_vivo and jugador_en_rango != null:
 		jugador_en_rango.hemos_sido_dañados(self)
 		animaciones.play("atacar")
+		sombra.play("atacar")
 		sonido_ataque.play()

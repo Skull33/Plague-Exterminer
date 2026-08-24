@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b28pal01exsqt"]
+[gd_scene format=3 uid="uid://b28pal01exsqt"]
 
 [ext_resource type="Script" uid="uid://nbsajpdpukjk" path="res://hoyo_de_bala.gd" id="1_8uwhm"]
 [ext_resource type="Texture2D" uid="uid://4mhpjaes70e2" path="res://texturas/hoyo_bala_001.png" id="2_rf3ra"]
@@ -23,10 +23,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="hoyo_de_bala" type="Node3D"]
+[node name="hoyo_de_bala" type="Node3D" unique_id=1637030708]
 script = ExtResource("1_8uwhm")
 
-[node name="concreto" type="AnimatedSprite3D" parent="."]
+[node name="concreto" type="AnimatedSprite3D" parent="." unique_id=180556023]
 visible = false
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_h17sh")

@@ -16,7 +16,6 @@ var sonar = false
 var nueva_salud
 
 @onready var escopeta = $"cabeza/sway/doble cañon"
-@onready var almadena = $cabeza/sway/mazo
 @onready var arma_actual_array = []
 @onready var quejidos = $quejidos
 @onready var muerte = $muerte
@@ -30,6 +29,7 @@ var nueva_salud
 @onready var patada = $cabeza/Camera3D/AnimationPlayer
 @onready var area_patada = $Area3D/CollisionShape3D
 @onready var area = $Area3D
+@onready var audio_patada = $cabeza/AudioStreamPlayer3D
 
 var sensibilidad = 0.1
 var rotacion = 0.0
@@ -62,12 +62,10 @@ func _unhandled_input(event):
 		cabeza.rotation_degrees.x = rotacion
 
 func _ready():
-	arma_actual_array = [almadena, escopeta]
+	arma_actual_array = [escopeta]
 	arma_actual = arma_actual_array[arma_actual_index]
 	emit_signal("persigueme")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	Dialogic.connect("timeline_started",Callable(self,"inicio_dialogo"))
-	Dialogic.connect("timeline_ended", Callable(self, "fin_dialogo"))
 	salud.iniciar_salud(cantidad_salud)
 	municion.hide()
 	icono.hide()
@@ -106,6 +104,7 @@ func _physics_process(delta):
 		if Input.is_action_pressed("patada") and patear:
 			patear = false
 			patada.play("patada")
+			audio_patada.play()
 			await(get_tree().create_timer(0.3).timeout)
 			area_patada.disabled = false
 			await(patada.animation_finished)
@@ -215,10 +214,6 @@ func obtener_arma_tipo(tipo:String):
 		if arma.tipo_arma == tipo:
 			if tipo == "escopeta":
 				tiene_la_escopeta = true
-			
-			if tipo == "almadena":
-				tiene_la_almadena = true
-			arma.obtener_arma()
 			cambiar_arma(i)
 			return
 

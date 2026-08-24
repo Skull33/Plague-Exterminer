@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://byyppnupq7unp"]
+[gd_scene format=4 uid="uid://byyppnupq7unp"]
 
 [ext_resource type="Texture2D" uid="uid://cddgawskbn6ks" path="res://texturas/botiquin_armario_.png" id="1_ekuxp"]
 [ext_resource type="Texture2D" uid="uid://drnxqy8rpooj1" path="res://texturas/repiza.png" id="2_8wvw7"]
@@ -193,45 +193,43 @@ _data = {
 &"abrir": SubResource("Animation_11lqu")
 }
 
-[node name="botiquin_estanteria" type="Node3D"]
+[node name="botiquin_estanteria" type="Node3D" unique_id=29269976]
 
-[node name="Cube" type="MeshInstance3D" parent="."]
+[node name="Cube" type="MeshInstance3D" parent="." unique_id=1552772490]
 mesh = SubResource("ArrayMesh_xe544")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cube"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube" unique_id=856440994]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/StaticBody3D" unique_id=710789411]
 shape = SubResource("ConcavePolygonShape3D_ib042")
 
-[node name="Cube_001" type="MeshInstance3D" parent="."]
+[node name="Cube_001" type="MeshInstance3D" parent="." unique_id=23200098]
 transform = Transform3D(0.523455, 0, 0, 0, 0.0692537, 0, 0, 0, 0.887754, 0.466501, 0, 0)
 mesh = SubResource("ArrayMesh_th3nf")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cube_001"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_001" unique_id=203245487]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_001/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_001/StaticBody3D" unique_id=2028689963]
 shape = SubResource("ConcavePolygonShape3D_iw8bd")
 
-[node name="Cube_002" type="MeshInstance3D" parent="."]
+[node name="Cube_002" type="MeshInstance3D" parent="." unique_id=169560771]
 transform = Transform3D(0.0225145, 0, 0, 0, 0.889314, 0, 0, 0, 0.889314, 0.971391, 0.0977895, 0.889321)
 mesh = SubResource("ArrayMesh_big6c")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cube_002" node_paths=PackedStringArray("animacion", "sonido_abrir")]
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_002" unique_id=173460282 node_paths=PackedStringArray("animacion", "sonido_abrir") groups=["Puertas"]]
 script = ExtResource("4_6sxkq")
 animacion = NodePath("AnimationPlayer")
 sonido_abrir = NodePath("AudioStreamPlayer3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_002/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_002/StaticBody3D" unique_id=120886817]
 shape = SubResource("ConcavePolygonShape3D_yy8qu")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Cube_002/StaticBody3D"]
-libraries = {
-&"": SubResource("AnimationLibrary_1ev7m")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cube_002/StaticBody3D" unique_id=1072594837]
+libraries/ = SubResource("AnimationLibrary_1ev7m")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Cube_002/StaticBody3D"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Cube_002/StaticBody3D" unique_id=1537144264]
 transform = Transform3D(44.4158, 0, 0, 0, 1.12446, 0, 0, 0, 1.12446, -43.1452, -0.109961, -1.00001)
 stream = ExtResource("5_eq25g")

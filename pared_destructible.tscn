@@ -76,7 +76,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_u3imk")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_aq71q"]
-size = Vector3(0.13189697, 2.4459229, 1.9077148)
+size = Vector3(0.53567505, 2.4459229, 1.9077148)
 
 [node name="ParedDestructible" type="Node3D" unique_id=1814488451]
 
@@ -93,7 +93,7 @@ muro = NodePath("..")
 sprite_aviso = NodePath("Sprite3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_004/StaticBody3D" unique_id=603934172]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055511475, -0.19403076, -0.01586914)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14637756, -0.19403076, -0.01586914)
 shape = SubResource("BoxShape3D_aq71q")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Cube_004/StaticBody3D" unique_id=1883134301]

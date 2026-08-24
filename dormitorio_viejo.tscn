@@ -1,5 +1,253 @@
 [gd_scene format=3 uid="uid://be2cug272k3tt"]
 
 [ext_resource type="PackedScene" uid="uid://bhm7nbm376yco" path="res://escenarios/Dormitorio_viejo.blend" id="1_1wl14"]
+[ext_resource type="PackedScene" uid="uid://bma2rulx516ew" path="res://escombros_3D.tscn" id="2_ppn3o"]
 
-[node name="Dormitorio_viejo" unique_id=1472079516 instance=ExtResource("1_1wl14")]
+[sub_resource type="Animation" id="Animation_1wl14"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube_009:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("escombros:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-29.337513, 3.5445685, -1.3619256)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("escombros2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-29.337513, 3.5445685, -1.3619256)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("escombros:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.40812784, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("escombros2:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.21047705, 1.0540267, -0.35230836)]
+}
+
+[sub_resource type="Animation" id="Animation_ppn3o"]
+resource_name = "destruir"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube_009:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.4567004, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("escombros:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-29.337513, 3.5445685, -1.3619256), Vector3(-29.337513, 1.7286458, -3.4504485)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("escombros2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-29.337513, 3.5445685, -1.3619256), Vector3(-29.337513, 0.2500267, -5.3816614)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("escombros:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.40812784, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("escombros2:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.21047705, 1.0540267, -0.35230836)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6w61b"]
+_data = {
+&"RESET": SubResource("Animation_1wl14"),
+&"destruir": SubResource("Animation_ppn3o")
+}
+
+[node name="Dormitorio_viejo" unique_id=1474461886 instance=ExtResource("1_1wl14")]
+
+[node name="Cube" parent="." index="0" unique_id=760337146 groups=["mundo"]]
+
+[node name="StaticBody3D" parent="Cube" index="0" unique_id=1229108229 groups=["mundo"]]
+
+[node name="CollisionShape3D" parent="Cube/StaticBody3D" index="0" unique_id=686512839 groups=["mundo"]]
+
+[node name="Cube_002" parent="." index="1" unique_id=1293158158 groups=["mundo"]]
+
+[node name="StaticBody3D" parent="Cube_002" index="0" unique_id=1308616209 groups=["mundo"]]
+
+[node name="CollisionShape3D" parent="Cube_002/StaticBody3D" index="0" unique_id=1807952875 groups=["mundo"]]
+
+[node name="Cube_003" parent="." index="2" unique_id=1397571494 groups=["mundo"]]
+
+[node name="StaticBody3D" parent="Cube_003" index="0" unique_id=1713586842 groups=["mundo"]]
+
+[node name="CollisionShape3D" parent="Cube_003/StaticBody3D" index="0" unique_id=1869136302 groups=["mundo"]]
+
+[node name="Cube_005" parent="." index="3" unique_id=2116015203 groups=["mundo"]]
+
+[node name="StaticBody3D" parent="Cube_005" index="0" unique_id=962685013 groups=["mundo"]]
+
+[node name="CollisionShape3D" parent="Cube_005/StaticBody3D" index="0" unique_id=1743077829 groups=["mundo"]]
+
+[node name="Cube_001" parent="." index="4" unique_id=343940624 groups=["mundo"]]
+
+[node name="StaticBody3D" parent="Cube_001" index="0" unique_id=236470857 groups=["mundo"]]
+
+[node name="CollisionShape3D" parent="Cube_001/StaticBody3D" index="0" unique_id=1257653023 groups=["mundo"]]
+
+[node name="Cube_004" parent="." index="5" unique_id=582510012 groups=["mundo"]]
+
+[node name="StaticBody3D" parent="Cube_004" index="0" unique_id=185455783 groups=["mundo"]]
+
+[node name="CollisionShape3D" parent="Cube_004/StaticBody3D" index="0" unique_id=1166907681 groups=["mundo"]]
+
+[node name="Cube_006" parent="." index="6" unique_id=2031679322 groups=["mundo"]]
+
+[node name="StaticBody3D" parent="Cube_006" index="0" unique_id=1977714401 groups=["mundo"]]
+
+[node name="CollisionShape3D" parent="Cube_006/StaticBody3D" index="0" unique_id=1118736670 groups=["mundo"]]
+
+[node name="Cube_007" parent="." index="7" unique_id=279890973 groups=["mundo"]]
+
+[node name="StaticBody3D" parent="Cube_007" index="0" unique_id=2051362468 groups=["mundo"]]
+
+[node name="CollisionShape3D" parent="Cube_007/StaticBody3D" index="0" unique_id=634322462 groups=["mundo"]]
+
+[node name="Cube_008" parent="." index="8" unique_id=1555466501 groups=["mundo"]]
+
+[node name="StaticBody3D" parent="Cube_008" index="0" unique_id=178607163 groups=["mundo"]]
+
+[node name="CollisionShape3D" parent="Cube_008/StaticBody3D" index="0" unique_id=792682268 groups=["mundo"]]
+
+[node name="Cube_009" parent="." index="9" unique_id=915111971 groups=["mundo"]]
+transform = Transform3D(1.8607022, 0, 0, 0, 0.14816965, 0, 0, 0, 2.0339074, -29.780624, -0.5387409, 2.3808606)
+
+[node name="StaticBody3D" parent="Cube_009" index="0" unique_id=561578522 groups=["mundo"]]
+
+[node name="CollisionShape3D" parent="Cube_009/StaticBody3D" index="0" unique_id=23616082 groups=["mundo"]]
+
+[node name="Cube_010" parent="." index="10" unique_id=1205677229 groups=["mundo"]]
+
+[node name="StaticBody3D" parent="Cube_010" index="0" unique_id=2051872247 groups=["mundo"]]
+
+[node name="CollisionShape3D" parent="Cube_010/StaticBody3D" index="0" unique_id=1780038798 groups=["mundo"]]
+
+[node name="Cube_011" parent="." index="11" unique_id=832227997 groups=["mundo"]]
+
+[node name="StaticBody3D" parent="Cube_011" index="0" unique_id=1282974899 groups=["mundo"]]
+
+[node name="CollisionShape3D" parent="Cube_011/StaticBody3D" index="0" unique_id=1608419577 groups=["mundo"]]
+
+[node name="Cube_012" parent="." index="12" unique_id=443796157 groups=["mundo"]]
+
+[node name="StaticBody3D" parent="Cube_012" index="0" unique_id=770882286 groups=["mundo"]]
+
+[node name="CollisionShape3D" parent="Cube_012/StaticBody3D" index="0" unique_id=391819585 groups=["mundo"]]
+
+[node name="Cube_013" parent="." index="13" unique_id=166216052 groups=["mundo"]]
+
+[node name="StaticBody3D" parent="Cube_013" index="0" unique_id=446693618 groups=["mundo"]]
+
+[node name="CollisionShape3D" parent="Cube_013/StaticBody3D" index="0" unique_id=11043611 groups=["mundo"]]
+
+[node name="Cube_014" parent="." index="14" unique_id=492807796 groups=["mundo"]]
+
+[node name="StaticBody3D" parent="Cube_014" index="0" unique_id=831471083 groups=["mundo"]]
+
+[node name="CollisionShape3D" parent="Cube_014/StaticBody3D" index="0" unique_id=1761603403 groups=["mundo"]]
+
+[node name="Cube_015" parent="." index="15" unique_id=21818517 groups=["mundo"]]
+
+[node name="StaticBody3D" parent="Cube_015" index="0" unique_id=1438506919 groups=["mundo"]]
+
+[node name="CollisionShape3D" parent="Cube_015/StaticBody3D" index="0" unique_id=697855520 groups=["mundo"]]
+
+[node name="Cube_016" parent="." index="16" unique_id=394362837 groups=["mundo"]]
+
+[node name="StaticBody3D" parent="Cube_016" index="0" unique_id=1574946494 groups=["mundo"]]
+
+[node name="CollisionShape3D" parent="Cube_016/StaticBody3D" index="0" unique_id=686718729 groups=["mundo"]]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="17" unique_id=469334038]
+libraries/ = SubResource("AnimationLibrary_6w61b")
+
+[node name="escombros" parent="." index="18" unique_id=1489551303 instance=ExtResource("2_ppn3o")]
+transform = Transform3D(0.39999998, 0, 0, 0, 0.36714616, 0.15875664, 0, -0.15875664, 0.36714616, -29.337513, 3.5445685, -1.3619256)
+
+[node name="escombros2" parent="." index="19" unique_id=555752253 instance=ExtResource("2_ppn3o")]
+transform = Transform3D(0.21056265, -2.980232e-08, 0.34009314, -0.13498004, 0.3671462, 0.083570585, -0.31215966, -0.1587566, 0.19326824, -29.337513, 3.5445685, -1.3619256)
+
+[editable path="escombros"]

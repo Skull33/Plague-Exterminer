@@ -5,6 +5,8 @@ signal termino
 @export var _termino_todas_las_hordas = false
 @export var mensaje = "Abrir [E]"
 var interacted = false
+@onready var anims = $"../AnimationPlayer"
+@onready var colision = $CollisionShape3D
 
 func finish_level():
 	emit_signal("termino")
@@ -14,7 +16,10 @@ func finish_level():
 		await(get_tree().create_timer(2).timeout)
 		mensaje = "Abrir [E]"
 		interacted = false
-	if _termino_todas_las_hordas:
+	if _termino_todas_las_hordas and not interacted:
 		print("ganaste")
-		get_tree().change_scene_to_file("res://final_nivel1.tscn")
+		mensaje = ""
+		anims.play("abrir")
+		colision.disabled = true
+		interacted = true
 	return mensaje
