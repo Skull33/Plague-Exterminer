@@ -1,5 +1,5 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1786938788
+::res://::1787545950
 almadena.gd::GDScript::4540685444296310943::1773802835::0::1::::<>Node3D<><>0<>0<><>::
 almadena.tscn::PackedScene::8268779120443681974::1773804597::0::1::::<><><>0<>0<><>::uid://b5xsoqkg5bi36::::res://almadena.gd<>uid://mg1gfkpqa0yq::::res://sprites/marro_item.png<>uid://bykiqpvgn2ut3::::res://audio/recoger almadena.mp3
 animation_player.gd::GDScript::1955542008744833732::1779066811::0::1::::<>AnimationPlayer<><>0<>0<><>::
@@ -176,7 +176,7 @@ cama.blend::PackedScene/PackedScene::7688286199423150212::1752602091::1752602548
 estante_de_armas.blend::PackedScene/PackedScene::5830976356842470442::1754193364::1754193370::1::::<><><>0<>0<>3ad39b9c82cff46f6f16f5aa946998ed<>res://.godot/imported/estante_de_armas.blend-aea5bf0528bddb16452abe5b071944b8.scn::uid://c4suuda5iyrn8::::res://texturas/estante_de_armas_exterior.png<>uid://tlgt7i8s0mcw::::res://texturas/estante_de_armas_interior.png<>uid://cdu0fm6t1i6gj::::res://texturas/puertas.png
 pastillas.blend::PackedScene/PackedScene::5751619581176468518::1754244236::1754244239::1::::<><><>0<>0<>81581b109ece0aaba67c5ce78df274d0<>res://.godot/imported/pastillas.blend-ee23a23171cee01c305bda6e53b191fc.scn::uid://ds5erjw76ev7::::res://texturas/etiqueta_pastillas.png
 PC_01.blend::PackedScene/PackedScene::308364158581543312::1750649319::1752273743::1::::<><><>0<>0<>20cab77a5ea221d99e9788fb601179b6<>res://.godot/imported/PC_01.blend-6e4a73d59022e6de75ba5268722eb7dd.scn::uid://ctg30pbfx3bjk::::res://texturas/PC.png<>uid://d3cs3wdhu56gd::::res://texturas/pantalla001.png<>uid://bev0vtqexp8jy::::res://texturas/CPU.png
-::res://Enemigos/::1786121876
+::res://Enemigos/::1787448208
 murcielago.png::CompressedTexture2D::9167947921015335610::1767501119::1767495804::1::::<><><>0<>0<>19a64045ddf6ac09dc755ffc97b76afa<>res://.godot/imported/murcielago.png-120dadb51087d4935859dc9ff14add95.ctex::
 rata_mutante1.png::CompressedTexture2D::653596482159443551::1774843514::1786121876::1::::<><><>0<>0<>788db53fbe62f32b190a2fbab87e202f<>res://.godot/imported/rata_mutante1.png-8d941ae1b642a9a00e7055cea6378762.ctex::
 rata_mutante2.png::CompressedTexture2D/CompressedTexture2D::2553656895912528794::1753544165::1753544197::1::::<><><>0<>0<>f7296df13d5f9939df46ade9f7d54a73<>res://.godot/imported/rata_mutante2.png-aa254bc4df77c8616786e775079634d9.ctex::
@@ -186,7 +186,7 @@ rat_minion.blend::PackedScene/PackedScene::3452229427933894645::1764550047::1767
 rata_mutante1.png::CompressedTexture2D/CompressedTexture2D::2164076010057124136::1753373946::1753413850::1::::<><><>0<>0<>cccbcbae531304b14e5d9eff96369acb<>res://.godot/imported/rata_mutante1.png-082bea5f12cc23d45ad22e41fd9414d1.ctex::
 rata_mutante2.png::CompressedTexture2D/CompressedTexture2D::4560765246304994442::1753373946::1753413850::1::::<><><>0<>0<>f5cead58703e5c1de3da5b34885e3349<>res://.godot/imported/rata_mutante2.png-f2f8d623bf99ef889d5404e1d786ed52.ctex::
 rata_mutante3.png::CompressedTexture2D/CompressedTexture2D::4009834378415460575::1753373946::1753413850::1::::<><><>0<>0<>9ea872ae9677c9a52c6c447356a3b0ee<>res://.godot/imported/rata_mutante3.png-5aa7164dc988a7eeeeee9a1359d9c0db.ctex::
-::res://escenarios/::1786408137
+::res://escenarios/::1786938798
 arboles.blend::PackedScene/PackedScene::2583398829203516040::1741456082::1752273744::1::::<><><>0<>0<>e9df569f052b34e3bea646050a956e03<>res://.godot/imported/arboles.blend-a3ce89086dd474bf23b702156c2d18ae.scn::uid://dehjbmvtwxxtd::::res://texturas/arboleda.png
 botiquin pequeño.blend::PackedScene/PackedScene::206222646691821117::1754352995::1754353022::1::::<><><>0<>0<>4eb7f3443ef63484f59070e6dfd86a1f<>res://.godot/imported/botiquin pequeño.blend-4ba6df1259d0afd6887a92b78e0e7c32.scn::uid://hx5ebd4m4bx1::::res://texturas/botiquin_pequeño.png
 cabaña.blend::PackedScene/PackedScene::4156786102463439330::1741212385::1752273744::1::::<><><>0<>0<>9cf9d2e342d9f27257956c32aba0d48a<>res://.godot/imported/cabaña.blend-570bc8ff97d03703301227f6e84682a0.scn::uid://bvxrw5qu44i62::::res://texturas/cuerpo_cabaña.png<>uid://d3rrnygqar50p::::res://texturas/piso cabaña.png<>uid://bwvf7veq0q78s::::res://texturas/techo_cabaña.png<>uid://b142oo5yt7n14::::res://texturas/ventana.png<>uid://bdrxrgc1fli8t::::res://texturas/vidrio.png
@@ -278,7 +278,7 @@ municion.png::CompressedTexture2D/CompressedTexture2D::2511524494071005702::1754
 murcielago.png::CompressedTexture2D/CompressedTexture2D::8808370200870969955::1754524062::1754524204::1::::<><><>0<>0<>76ce391b7492ecec2075f26a5bfa377c<>res://.godot/imported/murcielago.png-4179304163ca82a9445aa3a4ff7a14d3.s3tc.ctex::
 patada.png::CompressedTexture2D::2511626532794320487::1773621180::1773612423::1::::<><><>0<>0<>f41cc05822a18052ecf140dd8476b016<>res://.godot/imported/patada.png-929cd00feb2e8302bf91b8bfc0503c18.s3tc.ctex::
 saco_humano.png::CompressedTexture2D::4030630382542198842::1783981808::1786121834::1::::<><><>0<>0<>3370f91f8e34656d997c86c34497523c<>res://.godot/imported/saco_humano.png-cf1a36695e7a26dc5de8409b747b980d.ctex::
-::res://texturas/::1786407639
+::res://texturas/::1786938791
 advetencia.png::CompressedTexture2D/CompressedTexture2D::4196485219334709854::1754697709::1754697737::1::::<><><>0<>0<>cc067154c9534489a5d3eecbc675d36a<>res://.godot/imported/advetencia.png-3754df974d0ff68ecf2758dbc4de504b.s3tc.ctex::
 arboleda.png::CompressedTexture2D/CompressedTexture2D::7455016972253352349::1741411588::1752273735::1::::<><><>0<>0<>93ebd3aea68debbec79db8140505f882<>res://.godot/imported/arboleda.png-e90dd6a2c353f5bff31e7bee454ab88e.s3tc.ctex::
 arboles.png::CompressedTexture2D/CompressedTexture2D::237104049218327468::1739496326::1752273735::1::::<><><>0<>0<>418ea18ea94caf761c2260a6ff3e4128<>res://.godot/imported/arboles.png-0a47c49d2b5d3a74b3fb7571ce516603.s3tc.ctex::
