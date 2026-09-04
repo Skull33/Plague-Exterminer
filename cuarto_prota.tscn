@@ -114,6 +114,9 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.3712
 [node name="rata3" parent="." unique_id=886346096 instance=ExtResource("5_ecpyt")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.66823, -0.14276, -2.50965)
 
+[node name="rata5" parent="." unique_id=1274499079 instance=ExtResource("5_ecpyt")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15.869047, -0.14276, -16.390608)
+
 [node name="rata4" parent="." unique_id=2055670056 instance=ExtResource("5_ecpyt")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11.0221, -0.14276, -3.97012)
 
@@ -369,6 +372,9 @@ transform = Transform3D(1, 0, 0, 0, 0.9, 0, 0, 0, 1, -7.9920907, 0.55490124, 4.3
 
 [node name="CharacterBody3D" parent="." unique_id=1154746380 instance=ExtResource("42_ryey5")]
 transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, -8.798151, 0.40267718, -9.668647)
+
+[node name="CharacterBody3D3" parent="." unique_id=1427944133 instance=ExtResource("42_ryey5")]
+transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, -11.723562, 0.40267718, -18.429823)
 
 [node name="CharacterBody3D2" parent="." unique_id=1595339257 instance=ExtResource("42_ryey5")]
 transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 3.1364632, 0.40267718, -20.271736)

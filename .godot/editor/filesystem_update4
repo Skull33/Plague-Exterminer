@@ -1,1 +1,8 @@
 res://default_bus_layout.tres
+res://cuarto_prota.tscn
+res://jugador.gdshader
+res://clipping_shader.gdshader
+res://Cielo.tres
+res://fuego.tres
+res://particulas_flotantes.tres
+res://microrata.tscn

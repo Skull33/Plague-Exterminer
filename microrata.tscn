@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://u2ds3vge3bdr"]
+
+[ext_resource type="Texture2D" uid="uid://bdkbw4wloujwp" path="res://Enemigos/mini_rata.png" id="1_rr0ft"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5h11f"]
+size = Vector3(0.24307251, 0.22399902, 0.24847412)
+
+[sub_resource type="Animation" id="Animation_b2sws"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_vd6nw"]
+resource_name = "blow"
+length = 0.45
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11, 12, 13, 14, 15, 7]
+}
+
+[sub_resource type="Animation" id="Animation_rr0ft"]
+resource_name = "die"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.13333334, 0.16666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [16, 17, 18, 19]
+}
+
+[sub_resource type="Animation" id="Animation_73p0u"]
+resource_name = "walk"
+length = 0.25
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_al0f4"]
+_data = {
+&"RESET": SubResource("Animation_b2sws"),
+&"blow": SubResource("Animation_vd6nw"),
+&"die": SubResource("Animation_rr0ft"),
+&"walk": SubResource("Animation_73p0u")
+}
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1055276268]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=618735885]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008529663, -0.051208496, -0.009918213)
+shape = SubResource("BoxShape3D_5h11f")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1677896429]
+billboard = 2
+texture_filter = 0
+texture = ExtResource("1_rr0ft")
+hframes = 8
+vframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite3D" unique_id=1250541314]
+libraries/ = SubResource("AnimationLibrary_al0f4")
