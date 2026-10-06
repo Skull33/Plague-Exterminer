@@ -8,9 +8,11 @@ extends Node3D
 @onready var col_destruccion = $destruccion/CollisionShape3D
 @onready var audio_derrumbe = $AudioStreamPlayer3D
 @onready var puerta_rosa = $"puerta dpto/Cube_015/StaticBody3D"
+@onready var boton = $Boton/Cube/StaticBody3D
 
 var musica_iniciada = false
 var entro_al_evento = false
+var puerta_abierta = false
 
 func _ready():
 	evento.body_entered.connect(entro)
@@ -20,12 +22,15 @@ func _process(_delta):
 	if jugador.tiene_la_escopeta and not musica_iniciada:
 		musica_nivel.play()
 		var tween = get_tree().create_tween()
-		tween.tween_property(musica_nivel,"volume_db",20,3)
+		tween.tween_property(musica_nivel,"volume_db",-10,3)
 		musica_iniciada = true
 	if evento.horda_terminada:
 		await (get_tree().create_timer(5).timeout)
 		var tween = get_tree().create_tween()
-		tween.tween_property(musica_nivel,"volume_db",20,3)
+		tween.tween_property(musica_nivel,"volume_db",-10,3)
+	if boton.abrio == true and not puerta_abierta:
+		anims_escena.play("abrir puerta_secreta")
+		puerta_abierta = true
 
 func entro(cuerpo):
 	if cuerpo is EsJugador:

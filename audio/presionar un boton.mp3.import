@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ds70nxhcxqly8"
+path="res://.godot/imported/presionar un boton.mp3-73577c9499ec21778d4abeca4393345c.mp3str"
+
+[deps]
+
+source_file="res://audio/presionar un boton.mp3"
+dest_files=["res://.godot/imported/presionar un boton.mp3-73577c9499ec21778d4abeca4393345c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

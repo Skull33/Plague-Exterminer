@@ -1,10 +1,10 @@
+AudioStreamPlayer3D
 AnimationPlayer
 Sprite3D
 CollisionShape3D
 CharacterBody3D
 CharacterBody2D
 SpotLight3D
-AudioStreamPlayer3D
 Marker3D
 OmniLight3D
 Area3D
