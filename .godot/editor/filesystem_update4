@@ -1,6 +1,7 @@
-res://boton.tscn
 res://jugador.gdshader
 res://clipping_shader.gdshader
 res://Cielo.tres
 res://fuego.tres
 res://particulas_flotantes.tres
+res://murodestructible_2.tscn
+res://cuarto_prota.tscn

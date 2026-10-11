@@ -97,6 +97,9 @@ _subresources={
 },
 "PATH:Cube_018": {
 "generate/physics": true
+},
+"PATH:Cube_019": {
+"generate/physics": true
 }
 }
 }
