@@ -1,7 +1,7 @@
 <h1 align = "center">Plague Exterminer</h1>
 
 <p align = "left"> 
-    <span  style="color:red; font-size:18px;"> SI ENCONTRASTE ESTE PROYECTO ESPERO QUE MI JUEGO TE HAYA GUSTADO</span><br>
+    <b  style="color: red; font-size:18px;"> SI ENCONTRASTE ESTE PROYECTO ESPERO QUE MI JUEGO TE HAYA GUSTADO</b><br>
     Se que esto parece un blog personal pero es el proceso completo de como desarrolle este juego
 </p><br>
 
