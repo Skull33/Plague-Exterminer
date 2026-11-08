@@ -80,7 +80,7 @@ LISTA DE INTENTOS PASADOS
         <a href="https://skullstds.itch.io/plague-exterminer" style="color: #792d2dbe; font-weight: bold;"> PLAGUE EXTERMINER (OLD VERSIONS)</a><br>
         la primera idea de trama era sobre un veterano de guerra, abandonado por la vida donde un personaje extraño (EL CONTRATADOR), lo convoca y lo<br> 
         contrata como exterminador de plagas, sin embargo; la escena inicial se corrompio, eso me llevo a abandonar el proyecto unos meses.<br><br>
-        Afortunadamente tambien estaba trabajando en la escena siguiente odne planeaba que al estilo de Hotline Miami<br><br>
+        Afortunadamente tambien estaba trabajando en la escena siguiente donde planeaba que al estilo de Hotline Miami<br><br>
         <img src="img_readme/hotline.png"><br><br>
         recibieras llamadas de desconocidos para empezar tus misiones.<br>
         Como puedes notar esa idea no prevalecio, de ella conserve ese segundo escenario que se convertiria en el principal<br>
