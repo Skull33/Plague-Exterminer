@@ -1,7 +1,7 @@
 <h1 align = "center">Plague Exterminer</h1>
 
 <p align = "left"> 
-    <b  style="color: red; font-size:18px;"> SI ENCONTRASTE ESTE PROYECTO ESPERO QUE MI JUEGO TE HAYA GUSTADO</b><br>
+    $\color{red}{\text{SI ENCONTRASTE ESTE PROYECTO ESPERO QUE MI JUEGO TE HAYA GUSTADO}}$<br>
     Se que esto parece un blog personal pero es el proceso completo de como desarrolle este juego
 </p><br>
 
@@ -21,7 +21,14 @@ es algo larga
 
 LISTA DE INTENTOS PASADOS
 
-1. UNSLAYED DEATH (la idea original)
+1. UNSLAYED DEATH (la idea original):<br>
+    <p>
     Pues todo esto nace de la idea de programar juego, como cualquiera<br>
     que guste de este arte, tenia unos quince o dieciseis, cuando se me<br>
-    ocurrio unir varias de mis franquicias favoritas
+    ocurrio unir varias de mis franquicias favoritas, en ese momento de mi vida<br>
+    juegos como: DOOM, Left 4 Dead 2, etc.<br><br>
+    Queria hacer una especia de mundo abierto con zombies, un estilo de comic con<br>
+    graficos como en DOOM, mas no tenia los conocimientos sobre programacion ni<br>
+    idea de como empezar.<br>
+
+    </p>
