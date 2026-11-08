@@ -103,5 +103,7 @@ LISTA DE INTENTOS PASADOS
     </p>
 4. PLAGUE EXTERMINER PARTE 2 (un reinicio forzosamente necesario):<br>
     <p>
-    
+    Bueno llegamos a la actualidad, como mecioné olvide hacer esas pruebas, entonces cree una nueva escena del proyecto, un lienzo en blanco,<br>
+    y por fin a partir de este punto es que realmente empieza nuevamente el desarrollo del juego, donde me doy cuenta de que realmente me<br> 
+    resulta entretnido para un juego como este, y a partir de aqui empieza el documento de diseño del juego.<br>
     </p>
