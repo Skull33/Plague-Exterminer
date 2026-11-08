@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://dk1e8cgqstiv6"]
+
+[ext_resource type="PackedScene" uid="uid://bwpfe8dlfwebt" path="res://escenas viejas/jugador.tscn" id="1_o7g25"]
+[ext_resource type="PackedScene" uid="uid://b7mydoad2ji0k" path="res://escenas viejas/escopeta_item.tscn" id="2_s3xit"]
+[ext_resource type="FontFile" uid="uid://brt7cqfkuxxnd" path="res://Fuentes_de_letra/Fira_Code/FiraCode-Light.ttf" id="3_wgecj"]
+[ext_resource type="PackedScene" uid="uid://g2wl6pw4diqn" path="res://escenas viejas/menu_pausa.tscn" id="4_5ssyl"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s3xit"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_wgecj"]
+sky_material = SubResource("ProceduralSkyMaterial_s3xit")
+
+[sub_resource type="Environment" id="Environment_5ssyl"]
+background_mode = 2
+sky = SubResource("Sky_wgecj")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_1pfw3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_738h6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c4a7t"]
+albedo_color = Color(0.30323282, 0.30323282, 0.30323282, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_738h6"]
+material = SubResource("StandardMaterial3D_c4a7t")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iifpg"]
+
+[node name="Escena Pruebas" type="Node3D" unique_id=1937377294]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1516713633]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_max_distance = 1.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=881771624]
+environment = SubResource("Environment_5ssyl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=15268444]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
+mesh = SubResource("BoxMesh_1pfw3")
+skeleton = NodePath("StaticBody3D")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1452444042]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=15339929]
+shape = SubResource("BoxShape3D_738h6")
+
+[node name="Jugador" parent="." unique_id=400095966 instance=ExtResource("1_o7g25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5182907, 0.51395845, 10.435322)
+velocidad = 20.0
+amplitud_cabeceo = 0.09
+
+[node name="escopeta_Item" parent="." unique_id=931581546 instance=ExtResource("2_s3xit")]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -15.89774, 2.157516, 14.027167)
+
+[node name="zona armas" type="MeshInstance3D" parent="." unique_id=2049642880]
+transform = Transform3D(-8.742278e-07, 0, 1, 0, 1, 0, -20, 0, -4.371139e-08, -15.934937, 1.3150778, 6.190346)
+mesh = SubResource("BoxMesh_738h6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="zona armas" unique_id=1097092336]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="zona armas/StaticBody3D" unique_id=1924343905]
+shape = SubResource("BoxShape3D_iifpg")
+
+[node name="Label3D" type="Label3D" parent="zona armas" unique_id=13352893]
+transform = Transform3D(0.01, 0, -2.842171e-15, 0, 0.1, 0, 5.684342e-16, 0, 0.05, 0, 3.9852638, 0)
+pixel_size = 0.1
+billboard = 2
+texture_filter = 0
+modulate = Color(0, 1, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "<zona de armas>"
+font = ExtResource("3_wgecj")
+font_size = 64
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1031559620]
+
+[node name="Control" parent="CanvasLayer" unique_id=1944686428 instance=ExtResource("4_5ssyl")]
+process_mode = 3

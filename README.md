@@ -1,0 +1,1 @@
+<h1 align = "center">Plague Exterminer</h1>

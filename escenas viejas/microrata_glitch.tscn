@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://bx5dd25nf3q1g"]
+
+[ext_resource type="Script" uid="uid://bpv37jwpoonlx" path="res://microrata.gd" id="1_372be"]
+[ext_resource type="Shader" uid="uid://dpr38fyxmsljm" path="res://glitch_binario.gdshader" id="2_d2jwk"]
+[ext_resource type="Texture2D" uid="uid://bdkbw4wloujwp" path="res://Enemigos/mini_rata.png" id="2_fc3sp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5h11f"]
+size = Vector3(0.20979786, 0.19598389, 0.24847412)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_372be"]
+render_priority = 1
+shader = ExtResource("2_d2jwk")
+shader_parameter/source_texture = ExtResource("2_fc3sp")
+shader_parameter/grid_size = 90.6890038327275
+shader_parameter/speed = 12.501000546297501
+shader_parameter/binary_color = Color(0.71554327, 1, 0.68987286, 1)
+shader_parameter/corruption_intensity = 0.66000003135
+
+[sub_resource type="Animation" id="Animation_b2sws"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_vd6nw"]
+resource_name = "blow"
+length = 0.45
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11, 12, 13, 14, 15, 7]
+}
+
+[sub_resource type="Animation" id="Animation_rr0ft"]
+resource_name = "die"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.13333334, 0.16666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [16, 17, 18, 19]
+}
+
+[sub_resource type="Animation" id="Animation_73p0u"]
+resource_name = "walk"
+length = 0.25
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_al0f4"]
+_data = {
+&"RESET": SubResource("Animation_b2sws"),
+&"blow": SubResource("Animation_vd6nw"),
+&"die": SubResource("Animation_rr0ft"),
+&"walk": SubResource("Animation_73p0u")
+}
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1pfw3"]
+radius = 0.21118051
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1055276268 groups=["enemigos"]]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+script = ExtResource("1_372be")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=618735885]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0071349144, -0.065216064, -0.009918213)
+shape = SubResource("BoxShape3D_5h11f")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1677896429]
+material_override = SubResource("ShaderMaterial_372be")
+transparency = 1.0
+modulate = Color(0, 0, 0, 1)
+billboard = 2
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("2_fc3sp")
+hframes = 8
+vframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite3D" unique_id=1250541314]
+libraries/ = SubResource("AnimationLibrary_al0f4")
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=1052702773]
+transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106857e-15, 0.15429688, -0.15870962, -0.016401708)
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("2_fc3sp")
+hframes = 8
+vframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite3D2" unique_id=1504629568]
+libraries/ = SubResource("AnimationLibrary_al0f4")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1978953099]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04451274, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1115832069]
+shape = SubResource("SphereShape3D_1pfw3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=641530629]
+process_priority = 1

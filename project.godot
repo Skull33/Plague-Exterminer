@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Plague Exterminer"
 config/version="Demo v0.00"
-run/main_scene="uid://bg5bxvt2ucqab"
+run/main_scene="uid://dk1e8cgqstiv6"
 config/features=PackedStringArray("4.7", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/stretch_mode=0
