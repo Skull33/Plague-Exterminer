@@ -27,7 +27,8 @@ LISTA DE INTENTOS PASADOS
     que guste de este arte, tenia unos quince o dieciseis, cuando se me<br>
     ocurrio unir varias de mis franquicias favoritas, en ese momento de mi vida<br>
     juegos como: DOOM, Left 4 Dead 2, etc.<br><br>
-    !(img_readme/doom.png)<br><br>
+    ![Imagen del logo de DOOM](img_readme/doom.png)
+    <br><br>
     Queria hacer una especia de mundo abierto con zombies, un estilo de comic con<br>
     graficos como en DOOM, mas no tenia los conocimientos sobre programacion ni<br>
     idea de como empezar.<br>
