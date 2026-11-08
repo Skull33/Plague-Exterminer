@@ -96,8 +96,8 @@ LISTA DE INTENTOS PASADOS
         <img src="img_readme/mini_rata.png" alt = "rata diminuta que es parte del rellano del saco humano su función era escapar del jugador a menos que este se encuentre cerca, en ese caso saltaban ajugador y explotaban en su cara"><br><br>
         Tuve otra idea donde la plaga era como un virus de computadora al estilo PONY ISLAND, vivias una aventura donde el juego estaba corrupto.<br>
         Y tal y como te imaginarás esa idea también quedo descartada, a este paso sabia que la trama se me escapaba de las manos y que desviaba muchos<br>
-        recursos del proyecto sin hacer avances reales, entre en la misma etapa de estancamineto que me haiba llevado a desarrollar este juego.<br><br>
-        Salvo que algo cambio está vez, ahora no me sentia incapaz, sino que me importaba tanto elproyecto que olvide hacer las pruebas en Gray Box,<br>
+        recursos del proyecto sin hacer avances reales, entre en la misma etapa de estancamiento que me había llevado a desarrollar este juego.<br><br>
+        Salvo que algo cambio esta vez, ahora no me sentia incapaz, sino que me importaba tanto el proyecto (en especial su trama) que olvide hacer las pruebas en Gray Box,<br>
         pruebas escenciales para saber que era lo que queria realmente del juego.<br>
         </p>
     </p>
